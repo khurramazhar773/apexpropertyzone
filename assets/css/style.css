@@ -109,7 +109,7 @@
 .banner-tabs .tab-btns .tab-btn {
 	position: relative;
 	display: inline-block;
-	color: var(--color-two);
+	color: var(--white-color);
 	line-height: 24px;
 	cursor: pointer;
 	font-weight: 500;
@@ -6617,6 +6617,7 @@
 .message-form .form-group input[type="password"],
 .message-form .form-group input[type="tel"],
 .message-form .form-group input[type="email"],
+.message-form .form-group input[type="number"],
 .message-form .form-group textarea,
 .message-form .form-group select {
 	position: relative;
@@ -7586,11 +7587,11 @@ input {
 .widget-content-buttons {
 	display: flex;
 	align-items: center;
-	column-gap: 10px;
+	justify-content: space-between;
 }
 
 .property-detail-button {
-	max-width: 160px;
+	max-width: 175px;
 	width: 50%;
 	height: 50%;
 	border-radius: 10px;
@@ -7679,7 +7680,7 @@ input[type="number"]::-webkit-inner-spin-button {
 /* new changes */
 
 swiper-container {
-	width: 60%;
+	width: 57.5%;
 	height: 60%;
 }
 
@@ -7700,22 +7701,27 @@ swiper-slide img {
 }
 
 .sidebar-images-container {
-	display: flex;
-	column-gap: 5px;
+    display: flex;
+    column-gap: 5px;
+    width: 100%;
+    padding: 10px 10px 0px 0px;
+    overflow: hidden;
 }
 
 .side-images {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
+	gap: 18px;
+	max-width: 300px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 .side-images img {
-	width: 20rem;
-	height: 154px;
 	margin-bottom: 5px;
+	width: 90%;
 }
-
-
 
 /* new today changes */
 .contact-three_form-column {
@@ -7757,3 +7763,11 @@ swiper-slide img {
 }
 
 /*  */
+/* new changes */
+/*  */
+.property-book-btn{
+	width: auto !important;
+}
+.property-book-message{
+	height: 120px !important;
+}

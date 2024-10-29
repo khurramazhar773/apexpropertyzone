@@ -22,6 +22,56 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" defer></script>
+	<style>
+		.popup-slider-modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			z-index: 100000;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.popup-slider-content {
+			position: relative;
+			width: 80%;
+			max-width: 800px;
+			background: #fff;
+			z-index: 100000;
+		}
+
+		.close-button {
+			position: absolute;
+			top: -10px;
+			right: -200px;
+			font-size: 50px;
+			color: #ffffff;
+			cursor: pointer;
+			z-index: 200000;
+		}
+
+		.popupSwiper {
+			width: 100%;
+			height: 100%;
+		}
+
+		.popupSwiper swiper-slide img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+
+		.left-side-img {
+			max-width: 540px;
+			width: 100%;
+			height: auto;
+		}
+	</style>
 
 </head>
 
@@ -50,8 +100,8 @@
 
 							<!-- Logo Box -->
 							<div class="logo-box">
-								<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png"
-											alt="" title=""></a></div>
+								<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png" alt=""
+											title=""></a></div>
 							</div>
 							<!-- End Logo Box -->
 
@@ -117,8 +167,8 @@
 										<div class="modal-content">
 											<div class="logo-box">
 												<div class="logo"><a href="index.html"><img
-															src="assets/images/FINAL A-01.png" alt=""
-															title=""></a></div>
+															src="assets/images/FINAL A-01.png" alt="" title=""></a>
+												</div>
 											</div>
 											<div class="sec-title">
 												<div class="sec-title_title ps-5">Contact Us</div>
@@ -241,37 +291,44 @@
 						<!-- Property Detail -->
 						<div class="property-detail">
 							<div class="property-detail_inner">
-								<div class="sidebar-images-container">
-									<swiper-container class="mySwiper" pagination="true" pagination-clickable="true"
-										 space-between="30" centered-slides="true"
-										autoplay-delay="2500" autoplay-disable-on-interaction="false">
-										<swiper-slide><img src="assets/images/Bedroom/beach1.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-										<swiper-slide><img src="assets/images/Bedroom/beach2.jpg" alt=""></swiper-slide>
-
-									</swiper-container>
-									<div class="side-images">
-										<img src="assets/images/Bedroom/beach3.jpg" alt="">
-										<img src="assets/images/Bedroom/beach4.jpg" alt="">
+								<!-- Sidebar Image Slider -->
+								<div class="row">
+									<div class="sidebar-images-container">
+										<div class="col-lg-8 p-0">
+											<div class="left-side-img">
+												<img src="assets/images/Bedroom/beach3.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-4 p-0">
+											<div class="side-images">
+												<img src="assets/images/Bedroom/beach3.jpg" alt="">
+												<img src="assets/images/Bedroom/beach4.jpg" alt="">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Popup Modal -->
+								<div id="popup-slider-modal" class="popup-slider-modal"
+									onclick="closePopupIfClickedOutside(event)">
+									<div class="popup-slider-content">
+										<span class="close-button" onclick="closePopupSlider()">&times;</span>
+										<swiper-container class="popupSwiper" pagination="true"
+											pagination-clickable="true">
+											<!-- Your Swiper slides go here; they will be generated dynamically with JavaScript -->
+										</swiper-container>
 									</div>
 								</div>
 
+
+								<!-- Property Detail Content -->
 								<div class="property-detail_content">
-									<h3 class="property-detail_heading">Super deluxe bed room near sea beech</h3>
+									<h3 class="property-detail_heading">Super deluxe bed room near sea beach</h3>
 									<div class="property-detail_location"><i
 											class="flaticon-maps-and-flags"></i>Pasadena 809b-2, Oklahoma</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa me.
-										Aliquam
-										hendrerit urna vitae mattis tellus ultrices.. Pellentesque sit amet sapien
-										magna interdum eu. Curabitur pellentesque sit amet sapien.
-										Lorem ipsum dolor sit amet consectetur adipiscing elit
-									</p>
+									<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa me. Aliquam
+										hendrerit urna vitae mattis tellus ultrices.. Pellentesque sit amet sapien magna
+										interdum eu. Curabitur pellentesque sit amet sapien. Lorem ipsum dolor sit amet
+										consectetur adipiscing elit</p>
 									<h4 class="property-detail_subheading">Properties Details</h4>
 									<div class="propert-info">
 										<div class="row clearfix">
@@ -297,12 +354,9 @@
 											</div>
 										</div>
 									</div>
-
 								</div>
 							</div>
-
 						</div>
-
 					</div>
 
 					<!-- Sidebar Side -->
@@ -334,18 +388,26 @@
 
 											<!--Form Group-->
 											<div class="form-group">
-												<input type="email" name="email" value="" placeholder="Email*" required>
+												<input type="email" name="email" value="" placeholder="Email (Optional)"
+													required>
+											</div>
+											<!-- contact number -->
+											<div class="form-group">
+												<input type="number" name="number" value=""
+													placeholder="Contact Number*" required>
 											</div>
 
 											<div class="form-group">
-												<textarea class="" name="message" placeholder="Message"></textarea>
+												<textarea class="property-book-message" name="message"
+													placeholder="Message"></textarea>
 											</div>
 
 											<div class="form-group">
-												<button type="button" class="template-btn btn-style-one">
+												<button type="button"
+													class="template-btn btn-style-one property-book-btn">
 													<span class="btn-wrap">
-														<span class="text-one">SEND EMAIL</span>
-														<span class="text-two">SEND EMAIL</span>
+														<span class="text-one">Book Property</span>
+														<span class="text-two">Book Property</span>
 													</span>
 												</button>
 											</div>
@@ -653,7 +715,71 @@
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/property.js"></script>
 	<script src="assets/js/quote.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<!--  -->
+	<script>
+		// Array of image URLs for the slider
+		const imageUrls = [
+			"assets/images/Bedroom/beach1.jpg",
+			"assets/images/Bedroom/beach2.jpg",
+			"assets/images/Bedroom/beach3.jpg",
+			"assets/images/Bedroom/beach4.jpg"
+		];
 
+		// Initialize Swiper for popup slider
+		let popupSwiper;
+
+		function openPopupSlider(selectedIndex) {
+			// Populate the popup slider with images
+			const popupSwiperContainer = document.querySelector('.popupSwiper');
+			popupSwiperContainer.innerHTML = ''; // Clear previous slides
+
+			// Generate slides
+			imageUrls.forEach((url, index) => {
+				const slide = document.createElement('swiper-slide');
+				const img = document.createElement('img');
+				img.src = url;
+				slide.appendChild(img);
+				popupSwiperContainer.appendChild(slide);
+			});
+
+			// Initialize Swiper (if not already initialized)
+			if (!popupSwiper) {
+				popupSwiper = new Swiper('.popupSwiper', {
+					initialSlide: selectedIndex,
+					pagination: { clickable: true },
+					navigation: true,
+					autoplay: false,
+				});
+			} else {
+				// Update Swiper to start from the selected slide
+				popupSwiper.update();
+				popupSwiper.slideTo(selectedIndex, 0);
+			}
+
+			// Show the modal
+			document.getElementById('popup-slider-modal').style.display = 'flex';
+		}
+
+		function closePopupSlider() {
+			document.getElementById('popup-slider-modal').style.display = 'none';
+		}
+
+		// Function to close the popup if clicked outside of the slider content
+		function closePopupIfClickedOutside(event) {
+			const popupContent = document.querySelector('.popup-slider-content');
+			if (!popupContent.contains(event.target)) {
+				closePopupSlider();
+			}
+		}
+
+		// Add click event listeners to images in the main slider and side images
+		document.querySelectorAll('.sidebar-images-container img').forEach((img, index) => {
+			img.addEventListener('click', () => openPopupSlider(index));
+		});
+
+	</script>
+	<!--  -->
 	<script>
 		function initMap() {
 			var location = { lat: 40.758896, lng: -73.985130 }; // Example coordinates for 636 5th Ave, New York
