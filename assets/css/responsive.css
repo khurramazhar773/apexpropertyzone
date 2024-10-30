@@ -1132,7 +1132,7 @@
 	}
 
 	.banner-tabs .tabs-content {
-		margin-right: 80px;
+		margin-right: 90px;
 	}
 
 	.banner-two .banner-tabs .tab-btns {
@@ -1212,5 +1212,17 @@
 
 	.main-header {
 		min-height: 5rem;
+	}
+	.banner-tabs .tabs-content {
+        margin-right: 100px;
+        padding: 15px !important;
+    }
+	.property-detail-button {
+		width: 48%;
+		font-size: 13px;
+	}
+	.property-detail-button img {
+		width: 20px;
+		height: 20px;
 	}
 }
