@@ -10,7 +10,6 @@
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
-	<link href="assets/css/quote.css" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -25,12 +24,7 @@
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<style>
-		.sell-property{
-			width: 100% !important;
-			height: auto !important;
-		}
-	</style>
+
 </head>
 
 <body>
@@ -58,8 +52,8 @@
 
 							<!-- Logo Box -->
 							<div class="logo-box">
-								<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png" alt=""
-											title=""></a></div>
+								<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png"
+											alt="" title=""></a></div>
 							</div>
 							<!-- End Logo Box -->
 
@@ -80,15 +74,21 @@
 
 									<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
 										<ul class="navigation clearfix">
-											<li><a href="index.html">Home</a></li>
-											<li><a href="about.html">About</a></li>
-											<li><a href="services.html">services</a></li>
-											<li><a href="property.html">property</a></li>
-											<li><a href="blog.html">Blog</a></li>
-											<li><a href="contact.html">Contact</a></li>
-											<li class="quote-property">
-												<a href="Sell.html" class="quote-property">Add Property</a>
+											<li><a href="index.html">Home</a>
+
 											</li>
+											<li><a href="about.html">About</a>
+
+											</li>
+											<li><a href="services.html">services</a>
+											</li>
+											<li><a href="property.html">property</a>
+
+											</li>
+											<li><a href="blog.html">Blog</a>
+
+											</li>
+											<li><a href="contact.html">Contact</a></li>
 										</ul>
 									</div>
 								</nav>
@@ -97,197 +97,100 @@
 
 							<!-- Outer Box -->
 							<div class="outer-box d-flex align-items-center flex-wrap">
+
 								<div class="header-options_box d-flex align-items-center">
-									<a href="Sell.html" class="search-box-btn-anchor quote-btn-inner-box">
+									<a href="Sell.html" class="search-box-btn-anchor">
 										<div class="search-box-btn">Add Property</div>
 									</a>
 								</div>
 
+								<!-- Header Button Box -->
 								<div class="header_button-box" id="openModalBtn">
-									<a href="#" class="theme-btn btn-style-one trigger-btn quote-btn-home"
-										data-bs-toggle="modal" data-bs-target="#quotationModal">
+									<a href="#" class="theme-btn btn-style-one">
 										<span class="btn-wrap">
 											<span class="text-one">Get a Quote</span>
 											<span class="text-two">Get a Quote</span>
 										</span>
 									</a>
-									<!-- Modal -->
-									<div class="modal fade" id="quotationModal" tabindex="-1"
-										aria-labelledby="quotationModalLabel" aria-hidden="true">
-										<div class="modal-dialog modal-dialog-centered">
-											<div class="modal-content">
-												<div class="modal-header">
-													<img src="assets/images/FINAL A-01.png" alt="Logo" class="logo"
-														style="height:auto;">
-													<button type="button" class="btn-close" data-bs-dismiss="modal"
-														aria-label="Close"></button>
-												</div>
-												<div class="modal-body">
-													<form>
-														<div class="row">
-															<div class="col-md-6">
-																<input type="text"
-																	class="form-control quote-top-inputs quote-form-group"
-																	placeholder="Your Name" required>
-															</div>
-															<div class="col-md-6">
-																<input type="tel"
-																	class="form-control quote-top-inputs quote-form-group"
-																	placeholder="Phone Number" required>
-															</div>
-														</div>
-
-														<div class="row">
-															<div class="col-md-6">
-																<select
-																	class="form-control form-select service-type quote-form-select"
-																	id="serviceType" onchange="toggleFields()" required>
-																	<option value="sell">Select Property</option>
-																	<option value="sell">Sell Property</option>
-																	<option value="buy">Buy Property</option>
-																	<option value="rent">Rent/Lease Property</option>
-																</select>
-															</div>
-															<div class="col-md-6">
-																<select class="form-select quote-form-select">
-																	<option selected>Select City</option>
-																	<option>Faisalabad</option>
-																	<option>Lahore</option>
-																	<option>Islamabad</option>
-																	<option>karachi</option>
-																	<option>Patoki</option>
-																</select>
-															</div>
-														</div>
-
-														<!-- Seller Specific Fields -->
-														<div class="seller-fields">
-															<div class="row">
-																<div class="col-md-6">
-																	<input type="text"
-																		class="form-control quote-title-inputs quote-form-group"
-																		placeholder="Property Title/Name">
-																</div>
-																<div class="col-md-6">
-																	<input type="text"
-																		class="form-control quote-title-inputs quote-form-group"
-																		placeholder="Complete Property Address">
-																</div>
-															</div>
-
-															<div class="row">
-																<div class="col-md-4">
-																	<input type="number"
-																		class="form-control quote-input quote-form-group"
-																		placeholder="Property Area (sq ft)">
-																</div>
-																<div class="col-md-4">
-																	<input type="number"
-																		class="form-control quote-input quote-form-group"
-																		placeholder="Expected Price">
-																</div>
-																<div class="col-md-4">
-																	<select class="form-select quote-form-select">
-																		<option selected>Property Age</option>
-																		<option>Under Construction</option>
-																		<option>0-2 years</option>
-																		<option>2-5 years</option>
-																		<option>5+ years</option>
-																	</select>
-																</div>
-															</div>
-
-															<div class="row">
-																<div class="col-md-6">
-																	<select class="form-select quote-form-select">
-																		<option selected>Number of Bedrooms</option>
-																		<option>1 BHK</option>
-																		<option>2 BHK</option>
-																		<option>3 BHK</option>
-																		<option>4 BHK</option>
-																		<option>4+ BHK</option>
-																	</select>
-																</div>
-																<div class="col-md-6">
-																	<select class="form-select quote-form-select">
-																		<option selected>Furnishing Status</option>
-																		<option>Fully Furnished</option>
-																		<option>Semi Furnished</option>
-																		<option>Unfurnished</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<!-- Buyer Specific Fields -->
-														<div class="buyer-fields">
-															<div class="row">
-																<div class="col-md-6">
-																	<select class="form-select quote-form-select">
-																		<option selected>Subarban Area</option>
-																		<option>Option 1</option>
-																		<option>Option 2</option>
-																		<option>Option 3</option>
-																		<option>Option 4</option>
-																	</select>
-																</div>
-																<div class="col-md-6">
-																	<input type="number"
-																		class="form-control quote-budget-input quote-form-group"
-																		placeholder="Budget Range">
-																</div>
-															</div>
-														</div>
-
-														<div class="mb-3 mt-3">
-															<div class="form-label">Property Type</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="propertyType" id="residential">
-																<label
-																	class="form-check-label property-type-label quote-radio-label"
-																	for="residential">
-																	Residential
-																</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="propertyType" id="commercial">
-																<label
-																	class="form-check-label property-type-label quote-radio-label"
-																	for="commercial">
-																	Commercial
-																</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="propertyType" id="industrial">
-																<label
-																	class="form-check-label property-type-label quote-radio-label"
-																	for="industrial">
-																	Industrial
-																</label>
-															</div>
-														</div>
-
-														<textarea class="form-control quote-textarea quote-form-group"
-															rows="2" placeholder="Add Message"></textarea>
-
-														<div class="text-center mt-4 mb-2">
-															<button type="submit"
-																class="btn btn-primary submit-btn">Submit
-																Request</button>
-														</div>
-													</form>
-												</div>
+									<!-- The Modal (hidden by default) -->
+									<div id="quoteModal" class="modal">
+										<div class="modal-content">
+											<div class="logo-box">
+												<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png"
+															alt="" title=""></a></div>
 											</div>
+											<div class="sec-title">
+												<div class="sec-title_title ps-5">Contact Us</div>
+												<h5 class="sec-title_heading ps-5 fw-bolder">Have Legal Queries? Leave
+													Them to Us.</h5>
+
+											</div>
+											<!-- Your form content here -->
+                                            <div class="contact-three_form-column col-lg-12 col-md-12 col-sm-12">
+                                                <div class="contact-three_form-outer ">
+                                                    <div class="default-form contact-form">
+                                                        <form method="post" action="sendemail.php" id="contact-form">
+                                                            <div class="row clearfix">
+                                                                <!--Form Group-->
+                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                                    <input type="text" name="username" value=""
+                                                                        placeholder="Name" required>
+                                                                </div>
+                                                                <!--Form Group-->
+                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                                    <input type="email" name="email" value=""
+                                                                        placeholder="Email" required>
+                                                                </div>
+                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                                    <input type="text" name="phone" value=""
+                                                                        placeholder="Phone" required>
+                                                                </div>
+                                                                <!--Form Group-->
+                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                                    <select name="Service" class="service-dropdown">
+                                                                        <option value="">Services</option>
+                                                                        <option value="service01">Service 01</option>
+                                                                        <option value="service02">Service 02</option>
+                                                                        <option value="service03">Service 03</option>                                                                        
+                                                                    </select>
+                                                                    
+                                                                </div>
+                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                                    <select name="Purpose" class="purpose-drowdown">
+                                                                        <option>Purpose</option>
+                                                                        <option>Sale</option>
+                                                                        <option>Purchase</option>
+                                                                        <option>Rent</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                                    <textarea name="message"
+                                                                        placeholder="Write a Message"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                                                    <div
+                                                                        class="story-two_button d-flex align-items-center justify-content-end flex-wrap">
+                                                                        <a href="#" class="theme-btn btn-style-one">
+                                                                            <span class="btn-wrap">
+                                                                                <span class="text-one">SUBMIT</span>
+                                                                                <span class="text-two">SUBMIT</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
 										</div>
 									</div>
 								</div>
+
+
 								<!-- Mobile Navigation Toggler -->
-								<div class="mobile-nav-toggler">
-									<span class="icon flaticon-menu"></span>
-								</div>
+								<div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
 							</div>
 							<!-- End Outer Box -->
 
@@ -345,7 +248,7 @@
 						<div class="contact-three_form-outer">
 							<h3>Share Your Details</h3>
 							<div class="default-form contact-form col-lg-12 col-md-6 col-sm-12">
-								<form method="post" action="sendemail.php" id="contact-form">
+								<form method="post" action="admin/php/user-property.php" id="contact-form">
 									<div class="row clearfix">
 										<!-- Name Input -->
 										<div class="form-group col-lg-4 col-md-6 col-sm-6">
@@ -376,7 +279,7 @@
 										<!-- Sale or Rent Dropdown -->
 										<div class="form-group col-lg-6 col-md-12 col-sm-12">
 											<label for="saleOrRent">Select:</label>
-											<select id="saleOrRent" class="form-control">
+											<select id="saleOrRent" name="status" class="form-control">
 												<option value="">Select Option</option>
 												<option value="sale">For Sale</option>
 												<option value="rent">For Rent</option>
@@ -386,7 +289,7 @@
 										<!-- Property Type Dropdown -->
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="propertyType">Property Type:</label>
-											<select id="propertyType" class="form-control" onchange="updateSubtypes()">
+											<select id="propertyType" name="property_type" class="form-control" onchange="updateSubtypes()">
 												<option value="">Select</option>
 												<option value="residential">Residential</option>
 												<option value="commercial">Commercial</option>
@@ -396,7 +299,7 @@
 										<!-- Subtype Dropdown -->
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="propertySubtype">Subtype:</label>
-											<select id="propertySubtype" class="form-control">
+											<select id="propertySubtype" name="Subtype"  class="form-control">
 												<!-- Options will be dynamically populated -->
 											</select>
 										</div>
@@ -404,7 +307,7 @@
 										<!-- Dropdown for Bathrooms and Rooms -->
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="bathrooms">Bathrooms:</label>
-											<select id="bathrooms" class="form-control">
+											<select id="bathrooms" name="baths" class="form-control">
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3+</option>
@@ -412,7 +315,7 @@
 										</div>
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="rooms">Rooms:</label>
-											<select id="rooms" class="form-control">
+											<select id="rooms" name="rooms" class="form-control">
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3+</option>
@@ -422,7 +325,7 @@
 										<!-- Dropdown for Bedrooms -->
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="bedrooms">Bedrooms:</label>
-											<select id="bedrooms" class="form-control">
+											<select id="bedrooms" name="bedrooms" class="form-control">
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3+</option>
@@ -432,60 +335,29 @@
 										<!-- Utilities Section -->
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="electricityMeter">Electricity Meter:</label>
-											<select id="electricityMeter" class="form-control">
+											<select id="electricityMeter" name="electricityMeter" class="form-control">
 												<option value="0">Yes</option>
 												<option value="1">No</option>
 											</select>
 										</div>
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											<label for="gasMeter">Sui Gas Meter:</label>
-											<select id="gasMeter" class="form-control">
+											<select id="gasMeter" name="gasMeter" class="form-control">
 												<option value="0">Yes</option>
 												<option value="1">No</option>
 											</select>
 										</div>
 
-										<!--  -->
-										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											<label for="lotArea">Lot Area (sq ft):</label>
-											<input type="number" id="lotArea" class="form-control sell-property">
-										</div>
-										
-										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											<label for="constructedArea">Constructed Area (sq ft):</label>
-											<input type="number" id="constructedArea" class="form-control sell-property">
-										</div>
-										
-										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											<label for="location">Location:</label>
-											<input type="text" id="location" class="form-control sell-property">
-										</div>
-										
-										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											<label for="title">Title:</label>
-											<input type="text" id="title" class="form-control sell-property">
-										</div>
-										
-										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											<label for="condition">Condition:</label>
-											<select id="condition" class="form-control">
-												<option value="new">New</option>
-												<option value="good">Good</option>
-												<option value="fair">Fair</option>
-												<option value="old">Old</option>
-											</select>
-										</div>
-										<!--  -->
 										<!-- Residential Section -->
 										<div id="residentialSection" class="section" style="display: none;">
 											<h4>Residential Details</h4>
 											<div class="form-group">
 												<label for="residentialArea">Area (sq ft):</label>
-												<input type="number" id="residentialArea" class="form-control">
+												<input type="number" name="area_sq" id="residentialArea" class="form-control">
 											</div>
 											<div class="form-group">
 												<label for="residentialPrice">Price Range:</label>
-												<input type="text" id="residentialPrice" class="form-control">
+												<input type="text" name="price" id="residentialPrice" class="form-control">
 											</div>
 										</div>
 
@@ -494,18 +366,18 @@
 											<h4>Commercial Details</h4>
 											<div class="form-group">
 												<label for="commercialArea">Area (sq ft):</label>
-												<input type="number" id="commercialArea" class="form-control">
+												<input type="number" name="c_area_sq" id="commercialArea" class="form-control">
 											</div>
 											<div class="form-group">
 												<label for="commercialPrice">Price Range:</label>
-												<input type="text" id="commercialPrice" class="form-control">
+												<input type="text" name="c_price" id="commercialPrice" class="form-control">
 											</div>
 										</div>
 
 										<!-- Multiple Image Upload -->
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
 											<label for="imageUpload">Upload Property Images:</label>
-											<input type="file" id="imageUpload" class="form-control-file"
+											<input type="file" id="imageUpload" name="additional_imgs[]" class="form-control-file"
 												accept="image/*" multiple>
 											<div id="imageContainer" class="image-preview-container"></div>
 										</div>
@@ -519,7 +391,7 @@
 										</div>
 
 										<!-- Submit Button -->
-										<button type="submit" class="btn btn-primary sell-form-button">Submit</button>
+										<button type="submit" name="submit" class="btn btn-primary sell-form-button">Submit</button>
 									</div>
 								</form>
 							</div>
@@ -528,58 +400,58 @@
 
 					<div class="faq-two_title-column col-lg-5 col-md-12 col-sm-12 m-4">
 						<div class="faq-two_title-outer">
-							<!-- Sec Title -->
-							<div class="sec-title">
-								<div class="sec-title_title">Real Estate Policy</div>
-								<h3 class="sec-title_heading">Introduction</h3>
-								<div class="sec-title_text">
-									This policy outlines the rules and guidelines for the
-									management, maintenance, and occupancy of REAL ESTATE. It
-									aims to ensure the safety, comfort, and satisfaction of all
-									tenants and stakeholders.
-								</div>
-								<div class="sec-title_text">
-									The policy applies to all building owners, management staff,
-									tenants, contractors, and visitors.
-								</div>
+						  <!-- Sec Title -->
+						  <div class="sec-title">
+							<div class="sec-title_title">Real Estate Policy</div>
+							<h3 class="sec-title_heading">Introduction</h3>
+							<div class="sec-title_text">
+							  This policy outlines the rules and guidelines for the
+							  management, maintenance, and occupancy of REAL ESTATE. It
+							  aims to ensure the safety, comfort, and satisfaction of all
+							  tenants and stakeholders.
 							</div>
-							<div class="sec-title">
-								<h3 class="sec-title_heading">Health and Safety</h3>
-								<div class="sec-title_text">
-									The building will have clearly marked emergency exits, fire
-									alarms, and evacuation plans. Regular drills will be
-									conducted.
-								</div>
-								<div class="sec-title_text">
-									Security personnel and surveillance systems will be in place
-									to ensure the safety of all occupants. Access control
-									systems will be used to manage entry to the building
-								</div>
-								<div class="sec-title_text">
-									All tenants must comply with fire safety regulations,
-									including the installation and maintenance of smoke
-									detectors and fire extinguishers.
-								</div>
+							<div class="sec-title_text">
+							  The policy applies to all building owners, management staff,
+							  tenants, contractors, and visitors.
 							</div>
-							<div class="sec-title">
-								<h3 class="sec-title_heading">Building Management</h3>
-								<div class="sec-title_text">
-									Building owners are responsible for maintaining the property
-									in compliance with local regulations, including safety,
-									health, and environmental standards.
-								</div>
-								<div class="sec-title_text">
-									The appointed property management team will oversee
-									day-to-day operations, maintenance, tenant relations, and
-									financial management.
-								</div>
-								<div class="sec-title_text">
-									Regular inspections, cleaning, and repairs are to be
-									conducted to ensure the building remains in good condition.
-								</div>
+						  </div>
+						  <div class="sec-title">
+							<h3 class="sec-title_heading">Health and Safety</h3>
+							<div class="sec-title_text">
+							  The building will have clearly marked emergency exits, fire
+							  alarms, and evacuation plans. Regular drills will be
+							  conducted.
 							</div>
+							<div class="sec-title_text">
+							  Security personnel and surveillance systems will be in place
+							  to ensure the safety of all occupants. Access control
+							  systems will be used to manage entry to the building
+							</div>
+							<div class="sec-title_text">
+							  All tenants must comply with fire safety regulations,
+							  including the installation and maintenance of smoke
+							  detectors and fire extinguishers.
+							</div>
+						  </div>
+						  <div class="sec-title">
+							<h3 class="sec-title_heading">Building Management</h3>
+							<div class="sec-title_text">
+							  Building owners are responsible for maintaining the property
+							  in compliance with local regulations, including safety,
+							  health, and environmental standards.
+							</div>
+							<div class="sec-title_text">
+							  The appointed property management team will oversee
+							  day-to-day operations, maintenance, tenant relations, and
+							  financial management.
+							</div>
+							<div class="sec-title_text">
+							  Regular inspections, cleaning, and repairs are to be
+							  conducted to ensure the building remains in good condition.
+							</div>
+						  </div>
 						</div>
-					</div>
+					  </div>
 
 				</div>
 			</div>

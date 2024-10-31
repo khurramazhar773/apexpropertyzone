@@ -1,0 +1,13 @@
+.hidden{
+    display: none;
+}
+
+#success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: green;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}

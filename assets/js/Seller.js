@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to preview images and add bin icon for removal
   function previewImages() {
-    imageContainer.innerHTML = "";
+    imageContainer.innerHTML = ""; // Clear any existing images
 
     const files = imageUpload.files;
     if (files && files.length > 0) {
@@ -69,35 +69,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const propertyType = document.getElementById("propertyType").value;
     const subtypeDropdown = document.getElementById("propertySubtype");
     subtypeDropdown.innerHTML = ""; // Clear the existing options
-
+  
     if (propertyType === "residential") {
       const residentialSubtypes = [
-        "Home",
-        "Apartment",
-        "Villa",
-        "Duplex",
-        "Townhouse",
+        { name: "Home", value: "home" },
+        { name: "Apartment", value: "apartment" },
+        { name: "Villa", value: "villa" },
+        { name: "Duplex", value: "duplex" },
+        { name: "Townhouse", value: "townhouse" }
       ];
       residentialSubtypes.forEach((subtype) => {
         const option = document.createElement("option");
-        option.value = subtype.toLowerCase();
-        option.text = subtype;
+        option.value = subtype.value;
+        option.text = subtype.name;
         subtypeDropdown.appendChild(option);
       });
       document.getElementById("residentialSection").style.display = "block";
       document.getElementById("commercialSection").style.display = "none";
     } else if (propertyType === "commercial") {
       const commercialSubtypes = [
-        "Shop",
-        "Office",
-        "Warehouse",
-        "Restaurant",
-        "Showroom",
+        { name: "Shop", value: "shop" },
+        { name: "Office", value: "office" },
+        { name: "Warehouse", value: "warehouse" },
+        { name: "Restaurant", value: "restaurant" },
+        { name: "Showroom", value: "showroom" }
       ];
       commercialSubtypes.forEach((subtype) => {
         const option = document.createElement("option");
-        option.value = subtype.toLowerCase();
-        option.text = subtype;
+        option.value = subtype.value;
+        option.text = subtype.name;
         subtypeDropdown.appendChild(option);
       });
       document.getElementById("commercialSection").style.display = "block";
@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("commercialSection").style.display = "none";
     }
   }
+  
+
 
   // Event listener to toggle sections based on property type
   document
