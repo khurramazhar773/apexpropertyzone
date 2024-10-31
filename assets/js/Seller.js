@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to preview images and add bin icon for removal
   function previewImages() {
-    imageContainer.innerHTML = ""; // Clear any existing images
+    imageContainer.innerHTML = "";
 
     const files = imageUpload.files;
     if (files && files.length > 0) {

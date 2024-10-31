@@ -1,17 +1,19 @@
-// Get the modal
-var modal = document.getElementById("quoteModal");
+function toggleFields() {
+    const serviceType = document.getElementById('serviceType').value;
+    const sellerFields = document.querySelector('.seller-fields');
+    const buyerFields = document.querySelector('.buyer-fields');
 
-// Get the button that opens the modal
-var btn = document.getElementById("openModalBtn");
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (serviceType === 'sell') {
+        sellerFields.classList.add('active');
+        buyerFields.classList.remove('active');
+    } else if (serviceType === 'buy') {
+        buyerFields.classList.add('active');
+        sellerFields.classList.remove('active');
+    } else {
+        sellerFields.classList.remove('active');
+        buyerFields.classList.remove('active');
     }
 }
+$(document).on('click', '.trigger-btn', function () {
+    $('#quotationModal').modal('show');
+});

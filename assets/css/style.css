@@ -1848,9 +1848,10 @@
 .contact-with-us .form-group input[type="tel"],
 .contact-with-us .form-group input[type="email"],
 .contact-with-us .form-group textarea,
-.contact-with-us .form-group .ui-selectmenu-button.ui-button{
+.contact-with-us .form-group .ui-selectmenu-button.ui-button {
 	padding: 5px 20px 10px 50px;
 }
+
 .contact-form .form-group input[type="text"],
 .contact-form .form-group .ui-selectmenu-button.ui-button {
 	border: 1px solid #c2c2c2;
@@ -6052,7 +6053,7 @@
 
 .property-three {
 	position: relative;
-	padding: 50px 0px 30px;
+	padding: 50px 0px 40px;
 	margin-bottom: 20px;
 }
 
@@ -7592,7 +7593,7 @@ input {
 
 .property-detail-button {
 	max-width: 175px;
-	width: 50%;
+	width: 48%;
 	height: 50%;
 	border-radius: 10px;
 	padding: 10px;
@@ -7701,21 +7702,21 @@ swiper-slide img {
 }
 
 .sidebar-images-container {
-    display: flex;
-    column-gap: 5px;
-    width: 100%;
-    padding: 10px 10px 0px 0px;
-    overflow: hidden;
+	display: flex;
+	column-gap: 5px;
+	width: 100%;
+	padding: 10px 10px 0px 0px;
+	overflow: hidden;
 }
 
 .side-images {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	gap: 18px;
 	max-width: 300px;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
 }
 
 .side-images img {
@@ -7735,10 +7736,10 @@ swiper-slide img {
 	padding: 20px;
 	border: 1px solid #888;
 	width: 40rem;
-	height: 45rem;
+	height: auto;
 	border-radius: 20px;
 	padding-bottom: 0 !important;
-	top: -120px;
+	top: -80px;
 }
 
 .contact-three_form-outer {
@@ -7765,9 +7766,20 @@ swiper-slide img {
 /*  */
 /* new changes */
 /*  */
-.property-book-btn{
+.property-book-btn {
 	width: auto !important;
 }
-.property-book-message{
+
+.property-book-message {
 	height: 120px !important;
+}
+
+/* footer logo */
+.footer-widget .footer-logo a img {
+	width: 220px;
+	object-fit: contain;
+}
+/*  */
+.modal-backdrop{
+	z-index: auto;
 }

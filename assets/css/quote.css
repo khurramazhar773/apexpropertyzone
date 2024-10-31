@@ -1,0 +1,162 @@
+.quote-input,
+.quote-budget-input{
+    width: 100% !important;
+    height: auto !important;
+    background-color: #F9F9F9 !important;
+    border: 1px solid #e0e0e0 !important;
+    
+}
+.quote-input,
+.quote-budget-input::placeholder{
+    color: #212529;
+}
+.quote-form-group::placeholder {
+    color: #212529;
+}
+.quote-form-select{
+    color: #212529;
+}
+
+.quote-budget-input::placeholder {
+    color: #212529;
+}
+
+.quote-top-inputs {
+    background-color: #F9F9F9 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.quote-top-inputs::placeholder {
+    color: #212529;
+}
+
+.quote-title-inputs {
+    background-color: #F9F9F9 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.quote-title-inputs::placeholder,
+.quote-textarea::placeholder {
+    color: #212529;
+}
+
+.quote-radio-label {
+    color: #212529;
+}
+
+.quote-textarea {
+    background-color: #F9F9F9 !important;
+    box-shadow: none;
+}
+
+.quote-textarea:focus {
+    border: 1px solid #eb2027;
+}
+
+.banner-two {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+
+}
+
+.modal-dialog {
+    max-width: 700px;
+}
+
+.modal {
+    z-index: 1050 !important;
+}
+
+.form-control,
+.form-select {
+    /* padding: 0.6rem 1rem; */
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.1);
+    border-color: #eb2027;
+}
+
+.submit-btn {
+    background: #eb2027;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    font-weight: 500;
+}
+
+.submit-btn:hover {
+    background: #eb2027;
+}
+
+.property-type-label {
+    margin-right: 1.5rem;
+}
+
+.seller-fields,
+.buyer-fields {
+    display: none;
+}
+
+.seller-fields.active,
+.buyer-fields.active {
+    display: block;
+}
+
+.trigger-btn:hover {
+    background: #eb2027;
+}
+
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    right: 40px;
+    top: 45px;
+}
+
+.controlData {
+    width: fit-content;
+}
+
+li a span .smallBtn {
+    margin: auto;
+    width: 140px;
+    margin-top: 35px;
+}
