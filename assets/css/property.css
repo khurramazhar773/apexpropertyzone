@@ -1,0 +1,47 @@
+.popup-slider-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-slider-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    z-index: 100000;
+}
+
+.close-button {
+    position: absolute;
+    top: -10px;
+    right: -200px;
+    font-size: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 200000;
+}
+
+.popupSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.popupSwiper swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.left-side-img {
+    max-width: 540px;
+    width: 100%;
+    height: auto;
+}
