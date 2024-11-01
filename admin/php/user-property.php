@@ -6,11 +6,11 @@ if (isset($_POST['submit'])) {
     $name = $_POST['username'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    // $title = $_POST['title'];
-    // $location = $_POST['location'];
+    $title = $_POST['title'];
+    $location = $_POST['location'];
     $address = $_POST['address'];
-    // $lot_area = $_POST['lot_area'];
-    // $constructed_area = $_POST['constructed_area'];
+    $lot_area = $_POST['lot_area'];
+    $constructed_area = $_POST['constructed_area'];
     $property_type = $_POST['property_type'];
     // $subtype = $_POST['subtype'];
     $rooms = $_POST['rooms'];
@@ -18,12 +18,12 @@ if (isset($_POST['submit'])) {
     $electricityMeter = $_POST['electricityMeter'];
     $gasMeter = $_POST['gasMeter'];
     $area_sq = $_POST['area_sq'];
-    $c_area_sq = $_POST['c_area_sq'];
+    // $c_area_sq = $_POST['c_area_sq'];
     $baths = $_POST['baths'];
     $description = $_POST['description'];
-    // $cond = $_POST['condition'];
+    $cond = $_POST['condition'];
     $price = $_POST['price'];
-    $c_price = $_POST['c_price'];
+    // $c_price = $_POST['c_price'];
 
     // Set permission to 'pending' for new user submissions
     $permission = 'pending';
@@ -75,14 +75,15 @@ if (isset($_POST['submit'])) {
     $gallery_json = json_encode($image_urls);
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO `property` (`title`, `location`, `address`, `lot_area`, `constructed_area`, `property_type`, `subtype`, `rooms`, `bedrooms`, `elecMeter`, `gasMeter`, `areaSq`, `CareaSq`, `Cprice`, `baths`, `permission`, `description`, `cond`, `price`, `gallery`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+    $stmt = $conn->query();
     
-    $stmt->bind_param('ssssssssssssssssssssss', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq, $c_area_sq, $c_price, $baths, $permission, $description, $cond, $price, $gallery_json);
+    $stmt->bind_param('ssssssssssssssssss', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq, $baths, $description, $cond, $price, $gallery_json, $permission);
 
     // Execute the prepared statement
-    if ($stmt->execute()) {
+    if ($stmt) {
         // Uncomment the next line if you want to redirect after successful insertion
-        header('Location: ../add-property.html');
+        header('Location: ../add-property.php');
         echo "Property added successfully. It is pending admin approval.";
     } else {
         echo "Error inserting property: " . $stmt->error;

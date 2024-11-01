@@ -77,7 +77,7 @@ if (!empty($_FILES['additional_imgs']['name'][0])) {
     // Execute the prepared statement
     if ($stmt->execute()) {
         // Uncomment the next line if you want to redirect after successful insertion
-        header('Location: ../add-property.html');
+        header('Location: ../add-property.php');
         echo "Property added successfully.";
     } else {
         echo "Error inserting property: " . $stmt->error;

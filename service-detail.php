@@ -1,3 +1,6 @@
+<?php
+include "config.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -77,7 +80,7 @@
 											<li><a href="about.html">About</a>
 
 											</li>
-											<li><a href="services.html">services</a>
+											<li><a href="services.php">services</a>
 											</li>
 											<li><a href="property.html">property</a>
 
@@ -116,8 +119,9 @@
 									<div id="quoteModal" class="modal">
 										<div class="modal-content">
 											<div class="logo-box">
-												<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png"
-															alt="" title=""></a></div>
+												<div class="logo"><a href="index.html"><img
+															src="assets/images/FINAL A-01.png" alt="" title=""></a>
+												</div>
 											</div>
 											<div class="sec-title">
 												<div class="sec-title_title ps-5">Contact Us</div>
@@ -126,64 +130,64 @@
 
 											</div>
 											<!-- Your form content here -->
-                                            <div class="contact-three_form-column col-lg-12 col-md-12 col-sm-12">
-                                                <div class="contact-three_form-outer ">
-                                                    <div class="default-form contact-form">
-                                                        <form method="post" action="sendemail.php" id="contact-form">
-                                                            <div class="row clearfix">
-                                                                <!--Form Group-->
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <input type="text" name="username" value=""
-                                                                        placeholder="Name" required>
-                                                                </div>
-                                                                <!--Form Group-->
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <input type="email" name="email" value=""
-                                                                        placeholder="Email" required>
-                                                                </div>
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <input type="text" name="phone" value=""
-                                                                        placeholder="Phone" required>
-                                                                </div>
-                                                                <!--Form Group-->
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <select name="Service" class="service-dropdown">
-                                                                        <option value="">Services</option>
-                                                                        <option value="service01">Service 01</option>
-                                                                        <option value="service02">Service 02</option>
-                                                                        <option value="service03">Service 03</option>                                                                        
-                                                                    </select>
-                                                                    
-                                                                </div>
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <select name="Purpose" class="purpose-drowdown">
-                                                                        <option>Purpose</option>
-                                                                        <option>Sale</option>
-                                                                        <option>Purchase</option>
-                                                                        <option>Rent</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                                    <textarea name="message"
-                                                                        placeholder="Write a Message"></textarea>
-                                                                </div>
-                                                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                                                    <div
-                                                                        class="story-two_button d-flex align-items-center justify-content-end flex-wrap">
-                                                                        <a href="#" class="theme-btn btn-style-one">
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">SUBMIT</span>
-                                                                                <span class="text-two">SUBMIT</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
+											<div class="contact-three_form-column col-lg-12 col-md-12 col-sm-12">
+												<div class="contact-three_form-outer ">
+													<div class="default-form contact-form">
+														<form method="post" action="sendemail.php" id="contact-form">
+															<div class="row clearfix">
+																<!--Form Group-->
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<input type="text" name="username" value=""
+																		placeholder="Name" required>
+																</div>
+																<!--Form Group-->
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<input type="email" name="email" value=""
+																		placeholder="Email" required>
+																</div>
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<input type="text" name="phone" value=""
+																		placeholder="Phone" required>
+																</div>
+																<!--Form Group-->
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<select name="Service" class="service-dropdown">
+																		<option value="">Services</option>
+																		<option value="service01">Service 01</option>
+																		<option value="service02">Service 02</option>
+																		<option value="service03">Service 03</option>
+																	</select>
 
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+																</div>
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<select name="Purpose" class="purpose-drowdown">
+																		<option>Purpose</option>
+																		<option>Sale</option>
+																		<option>Purchase</option>
+																		<option>Rent</option>
+																	</select>
+																</div>
+																<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+																	<textarea name="message"
+																		placeholder="Write a Message"></textarea>
+																</div>
+																<div class="form-group col-lg-12 col-md-12 col-sm-12">
+																	<div
+																		class="story-two_button d-flex align-items-center justify-content-end flex-wrap">
+																		<a href="#" class="theme-btn btn-style-one">
+																			<span class="btn-wrap">
+																				<span class="text-one">SUBMIT</span>
+																				<span class="text-two">SUBMIT</span>
+																			</span>
+																		</a>
+																	</div>
+
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -237,84 +241,94 @@
 					<!-- Content Side -->
 					<div class="content-side col-lg-8 col-md-12 col-sm-12">
 						<div class="service-detail">
-							<div class="service-detail_inner">
-								<div class="service-detail_image">
-									<img src="assets/images/services_page/pages/building1.jpg" alt="" />
-								</div>
-								<div class="service-detail_content">
-									<h3 class="service-detail_heading">
-										BUILDING CONSTRUCTION
-									</h3>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
-										et massa me. Aliquam hendrerit urna vitae mattis tellus
-										ultrices.. Pellentesque sit amet sapien fringilla, mattis
-										ligula consectetur, ultric Maecenas vitae mattis tellus.
-										Nullam quis imperdiet augue. Vestibulum auctor ornare leo,
-										non our suscipit magna interdum eu. Curabitur pellentesque
-										sit amet sapien.
-									</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
-										et massa mi. Aliquam hendrerit urna. Pellentesque sit amet
-										sapien mattis ligula consectetur, ultrices Maecenas
-									</p>
-									<h4 class="service-detail_subheading">Business Growth</h4>
-									<div class="service-detail_graph">
-										<div class="row clearfix">
-											<!-- Column -->
-											<div class="column col-lg-4 col-md-4 col-sm-6">
-												<!-- Graph Outer -->
-												<div class="graph-outer">
-													<input type="text" class="dial" data-fgColor="#eb2027"
-														data-bgColor="#f9bcbe" data-width="150" data-height="150"
-														data-linecap="normal" value="86" thickness="0.20" />
-													<div class="graph_counter">
-														<span class="odometer" data-count="86"></span><i>%</i>
-													</div>
-													<div class="dial-year">2020</div>
-												</div>
-											</div>
-											<!-- Column -->
-											<div class="column col-lg-4 col-md-4 col-sm-6">
-												<!-- Graph Outer -->
-												<div class="graph-outer">
-													<input type="text" class="dial" data-fgColor="#eb2027"
-														data-bgColor="#f9bcbe" data-width="150" data-height="150"
-														data-linecap="normal" value="88" thickness="0.20" />
-													<div class="graph_counter">
-														<span class="odometer" data-count="88"></span><i>%</i>
-													</div>
-													<div class="dial-year">2022</div>
-												</div>
-											</div>
-											<!-- Column -->
-											<div class="column col-lg-4 col-md-4 col-sm-6">
-												<!-- Graph Outer -->
-												<div class="graph-outer">
-													<input type="text" class="dial" data-fgColor="#eb2027"
-														data-bgColor="#f9bcbe" data-width="150" data-height="150"
-														data-linecap="normal" value="98" thickness="0.20" />
-													<div class="graph_counter">
-														<span class="odometer" data-count="98"></span><i>%</i>
-													</div>
-													<div class="dial-year">2024</div>
-												</div>
-											</div>
+							<?php
+							if (isset($_GET["service_id"])) {
+
+								$service_id = $_GET['service_id'];
+								$query = "select * from `service` where service_id = $service_id";
+								$result = mysqli_query($conn, $query);
+								while ($row = mysqli_fetch_assoc($result)) {
+									$service_id = $row["service_id"];
+									$service_title = $row["service_name"];
+									$service_description = $row["service_desc"];
+									$service_bg = $row["service_bg"];
+									?>
+									<div class="service-detail_inner">
+										<div class="service-detail_image">
+											<img src="admin/images/<?php echo $service_bg ?>" alt="No Internet!" />
+										</div>
+										<div class="service-detail_content">
+											<h3 class="service-detail_heading">
+												<?php echo $service_title ?>
+											</h3>
+											<p>
+												<?php echo $service_description ?>
+											</p>
 										</div>
 									</div>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
-										et massa me. Aliquam hendrerit urna vitae mattis tellus
-										ultrices.. Pellentesque sit amet sapien fringilla, mattis
-										ligula consectetur, ultric Maecenas vitae mattis tellus.
-										Nullam quis imperdiet augue. Vestibulum auctor orn.
-									</p>
+									<?php
+								}
+							}
+							?>
+							<h4 class="service-detail_subheading">Business Growth</h4>
+							<div class="service-detail_graph">
+								<div class="row clearfix">
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-6">
+										<!-- Graph Outer -->
+										<div class="graph-outer">
+											<input type="text" class="dial" data-fgColor="#eb2027"
+												data-bgColor="#f9bcbe" data-width="150" data-height="150"
+												data-linecap="normal" value="86" thickness="0.20" />
+											<div class="graph_counter">
+												<span class="odometer" data-count="86"></span><i>%</i>
+											</div>
+											<div class="dial-year">2020</div>
+										</div>
+									</div>
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-6">
+										<!-- Graph Outer -->
+										<div class="graph-outer">
+											<input type="text" class="dial" data-fgColor="#eb2027"
+												data-bgColor="#f9bcbe" data-width="150" data-height="150"
+												data-linecap="normal" value="88" thickness="0.20" />
+											<div class="graph_counter">
+												<span class="odometer" data-count="88"></span><i>%</i>
+											</div>
+											<div class="dial-year">2022</div>
+										</div>
+									</div>
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-6">
+										<!-- Graph Outer -->
+										<div class="graph-outer">
+											<input type="text" class="dial" data-fgColor="#eb2027"
+												data-bgColor="#f9bcbe" data-width="150" data-height="150"
+												data-linecap="normal" value="98" thickness="0.20" />
+											<div class="graph_counter">
+												<span class="odometer" data-count="98"></span><i>%</i>
+											</div>
+											<div class="dial-year">2024</div>
+										</div>
+									</div>
 								</div>
 							</div>
+							<p>
+								In the dynamic world of building construction, our company is dedicated to sustainable
+								growth and innovation. We prioritize quality craftsmanship and efficient project
+								management, ensuring timely delivery without compromising standards. By leveraging
+								advanced technologies and sustainable practices, we reduce waste and enhance
+								productivity, appealing to eco-conscious clients. <br>
+
+								Our skilled team, with decades of combined experience, fosters strong client
+								relationships built on trust and transparency. We adapt to market trends, continuously
+								expanding our service offerings to include residential, commercial, and industrial
+								projects. Strategic partnerships with suppliers and subcontractors enhance our
+								capabilities, enabling us to tackle diverse projects effectively.
+							</p>
 						</div>
 					</div>
-
 					<!-- Sidebar Side -->
 					<div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
 						<aside class="sidebar">
@@ -324,30 +338,20 @@
 									<div class="widget-content">
 										<h5 class="sidebar-widget_title">Services</h5>
 										<ul class="service-list_two">
-											<li>
-												<a href="service-detail.html">Interior designing
-													<span class="flaticon-next-1"></span></a>
-											</li>
-											<li>
-												<a href="service-detail.html">General Construct
-													<span class="flaticon-next-1"></span></a>
-											</li>
-											<li>
-												<a href="service-detail.html">Building Construct
-													<span class="flaticon-next-1"></span></a>
-											</li>
-											<li>
-												<a href="service-detail.html">Investment Construct
-													<span class="flaticon-next-1"></span></a>
-											</li>
-											<li>
-												<a href="service-detail.html">Real Estate Consultancy
-													<span class="flaticon-next-1"></span></a>
-											</li>
-											<li>
-												<a href="service-detail.html">Real Estate Develop
-													<span class="flaticon-next-1"></span></a>
-											</li>
+											<?php
+											$cat_query = "select* from `service`";
+											$result = mysqli_query($conn, $cat_query);
+											while ($row = mysqli_fetch_assoc($result)) {
+												$service_name = $row["service_name"];
+												?>
+												<li>
+													<a href="services.php"><?php echo $service_name ?>
+														<span class="flaticon-next-1"></span></a>
+												</li>
+												<?php
+											}
+											?>
+
 										</ul>
 									</div>
 								</div>
@@ -355,7 +359,7 @@
 								<!-- Subscribe Widget -->
 								<div class="sidebar-widget subscribe-widget">
 									<div class="widget-content"
-										style="background-image: url(./assets/images/buildings-details/building1.jpg)">
+										style="background-image: url(admin/images/<?php echo $service_bg ?>)">
 										<div class="title">
 											<a href="contact.html">
 												Subscribe Now
@@ -363,9 +367,6 @@
 										</div>
 									</div>
 								</div>
-
-
-
 							</div>
 						</aside>
 					</div>

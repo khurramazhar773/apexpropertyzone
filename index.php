@@ -9,6 +9,7 @@
   <link href="assets/css/bootstrap.css" rel="stylesheet" />
   <link href="assets/css/style.css" rel="stylesheet" />
   <link href="assets/css/responsive.css" rel="stylesheet" />
+  <link href="assets/css/quote.css" rel="stylesheet" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -20,38 +21,7 @@
   <!-- Responsive -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <style>
-    .banner-two {
-      position: relative;
-      overflow: hidden;
-    }
 
-    .carousel {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      /* Keeps the carousel behind other content */
-    }
-
-    .carousel-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .carousel-slide.active {
-      opacity: 1;
-    }
-  </style>
 </head>
 
 <body>
@@ -99,114 +69,216 @@
                   </div>
 
                   <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                    <ul class="navigation clearfix">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="services.html">services</a></li>
-                      <li><a href="property.html">property</a></li>
-                      <li><a href="blog.html">Blog</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                    </ul>
+										<ul class="navigation clearfix">
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="services.html">services</a></li>
+											<li><a href="property.html">property</a></li>
+											<li><a href="blog.html">Blog</a></li>
+											<li><a href="contact.html">Contact</a></li>
+											<li class="quote-property">
+												<a href="Sell.html" class="quote-property">Add Property</a>
+											</li>
+										</ul>
                   </div>
                 </nav>
               </div>
               <!-- End Nav Outer -->
 
               <!-- Outer Box -->
-              <div class="outer-box d-flex align-items-center flex-wrap">
-                <div class="header-options_box d-flex align-items-center">
-                  <a href="Sell.html" class="search-box-btn-anchor">
-                    <div class="search-box-btn">Add Property</div>
-                  </a>
-                </div>
+							<div class="outer-box d-flex align-items-center flex-wrap">
+								<div class="header-options_box d-flex align-items-center">
+									<a href="Sell.html" class="search-box-btn-anchor quote-btn-inner-box">
+										<div class="search-box-btn">Add Property</div>
+									</a>
+								</div>
 
-                <div class="header_button-box" id="openModalBtn">
-                  <a href="#" class="theme-btn btn-style-one">
-                    <span class="btn-wrap">
-                      <span class="text-one">Get a Quote</span>
-                      <span class="text-two">Get a Quote</span>
-                    </span>
-                  </a>
-                  <!-- The Modal (hidden by default) -->
-                  <div id="quoteModal" class="modal">
-                    <div class="modal-content">
-                      <div class="logo-box">
-                        <div class="logo">
-                          <a href="index.html"><img src="assets/images/FINAL A-01.png" alt="" title="" /></a>
-                        </div>
-                      </div>
-                      <div class="sec-title">
-                        <div class="sec-title_title ps-5">Contact Us</div>
-                        <h5 class="sec-title_heading ps-5 fw-bolder">
-                          Have Legal Queries? Leave Them to Us.
-                        </h5>
-                      </div>
-                      <!-- Your form content here -->
-                      <div class="contact-three_form-column col-lg-12 col-md-12 col-sm-12">
-                        <div class="contact-three_form-outer">
-                          <div class="default-form contact-form">
-                            <form method="post" action="sendemail.php" id="contact-form">
-                              <div class="row clearfix">
-                                <!--Form Group-->
-                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                  <input type="text" name="username" value="" placeholder="Name" required />
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                  <input type="email" name="email" value="" placeholder="Email" required />
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                  <input type="text" name="phone" value="" placeholder="Phone" required />
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                  <select name="Service" class="service-dropdown">
-                                    <option value="">Services</option>
-                                    <option value="service01">
-                                      Service 01
-                                    </option>
-                                    <option value="service02">
-                                      Service 02
-                                    </option>
-                                    <option value="service03">
-                                      Service 03
-                                    </option>
-                                  </select>
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                  <select name="Purpose" class="purpose-drowdown">
-                                    <option>Purpose</option>
-                                    <option>Sale</option>
-                                    <option>Purchase</option>
-                                    <option>Rent</option>
-                                  </select>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                  <textarea name="message" placeholder="Write a Message"></textarea>
-                                </div>
-                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                  <div class="story-two_button d-flex align-items-center justify-content-end flex-wrap">
-                                    <a href="#" class="theme-btn btn-style-one">
-                                      <span class="btn-wrap">
-                                        <span class="text-one">SUBMIT</span>
-                                        <span class="text-two">SUBMIT</span>
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Mobile Navigation Toggler -->
-                <div class="mobile-nav-toggler">
-                  <span class="icon flaticon-menu"></span>
-                </div>
-              </div>
+								<div class="header_button-box" id="openModalBtn">
+									<a href="#" class="theme-btn btn-style-one trigger-btn quote-btn-home"
+										data-bs-toggle="modal" data-bs-target="#quotationModal">
+										<span class="btn-wrap">
+											<span class="text-one">Get a Quote</span>
+											<span class="text-two">Get a Quote</span>
+										</span>
+									</a>
+									<!-- Modal -->
+									<div class="modal fade" id="quotationModal" tabindex="-1"
+										aria-labelledby="quotationModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<div class="modal-header">
+													<img src="assets/images/FINAL A-01.png" alt="Logo" class="logo"
+														style="height:auto;">
+													<button type="button" class="btn-close" data-bs-dismiss="modal"
+														aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													<form>
+														<div class="row">
+															<div class="col-md-6">
+																<input type="text"
+																	class="form-control quote-top-inputs quote-form-group"
+																	placeholder="Your Name" required>
+															</div>
+															<div class="col-md-6">
+																<input type="tel"
+																	class="form-control quote-top-inputs quote-form-group"
+																	placeholder="Phone Number" required>
+															</div>
+														</div>
+
+														<div class="row">
+															<div class="col-md-6">
+																<select
+																	class="form-control form-select service-type quote-form-select"
+																	id="serviceType" onchange="toggleFields()" required>
+																	<option value="sell">Select Property</option>
+																	<option value="sell">Sell Property</option>
+																	<option value="buy">Buy Property</option>
+																	<option value="rent">Rent/Lease Property</option>
+																</select>
+															</div>
+															<div class="col-md-6">
+																<select class="form-select quote-form-select">
+																	<option selected>Select City</option>
+																	<option>Faisalabad</option>
+																	<option>Lahore</option>
+																	<option>Islamabad</option>
+																	<option>karachi</option>
+																	<option>Patoki</option>
+																</select>
+															</div>
+														</div>
+
+														<!-- Seller Specific Fields -->
+														<div class="seller-fields">
+															<div class="row">
+																<div class="col-md-6">
+																	<input type="text"
+																		class="form-control quote-title-inputs quote-form-group"
+																		placeholder="Property Title/Name">
+																</div>
+																<div class="col-md-6">
+																	<input type="text"
+																		class="form-control quote-title-inputs quote-form-group"
+																		placeholder="Complete Property Address">
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-4">
+																	<input type="number"
+																		class="form-control quote-input quote-form-group"
+																		placeholder="Property Area (sq ft)">
+																</div>
+																<div class="col-md-4">
+																	<input type="number"
+																		class="form-control quote-input quote-form-group"
+																		placeholder="Expected Price">
+																</div>
+																<div class="col-md-4">
+																	<select class="form-select quote-form-select">
+																		<option selected>Property Age</option>
+																		<option>Under Construction</option>
+																		<option>0-2 years</option>
+																		<option>2-5 years</option>
+																		<option>5+ years</option>
+																	</select>
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-6">
+																	<select class="form-select quote-form-select">
+																		<option selected>Number of Bedrooms</option>
+																		<option>1 BHK</option>
+																		<option>2 BHK</option>
+																		<option>3 BHK</option>
+																		<option>4 BHK</option>
+																		<option>4+ BHK</option>
+																	</select>
+																</div>
+																<div class="col-md-6">
+																	<select class="form-select quote-form-select">
+																		<option selected>Furnishing Status</option>
+																		<option>Fully Furnished</option>
+																		<option>Semi Furnished</option>
+																		<option>Unfurnished</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+
+														<!-- Buyer Specific Fields -->
+														<div class="buyer-fields">
+															<div class="row">
+																<div class="col-md-6">
+																	<select class="form-select quote-form-select">
+																		<option selected>Subarban Area</option>
+																		<option>Option 1</option>
+																		<option>Option 2</option>
+																		<option>Option 3</option>
+																		<option>Option 4</option>
+																	</select>
+																</div>
+																<div class="col-md-6">
+																	<input type="number"
+																		class="form-control quote-budget-input quote-form-group"
+																		placeholder="Budget Range">
+																</div>
+															</div>
+														</div>
+
+														<div class="mb-3 mt-3">
+															<div class="form-label">Property Type</div>
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="radio"
+																	name="propertyType" id="residential">
+																<label
+																	class="form-check-label property-type-label quote-radio-label"
+																	for="residential">
+																	Residential
+																</label>
+															</div>
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="radio"
+																	name="propertyType" id="commercial">
+																<label
+																	class="form-check-label property-type-label quote-radio-label"
+																	for="commercial">
+																	Commercial
+																</label>
+															</div>
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="radio"
+																	name="propertyType" id="industrial">
+																<label
+																	class="form-check-label property-type-label quote-radio-label"
+																	for="industrial">
+																	Industrial
+																</label>
+															</div>
+														</div>
+
+														<textarea class="form-control quote-textarea quote-form-group"
+															rows="2" placeholder="Add Message"></textarea>
+
+														<div class="text-center mt-4 mb-2">
+															<button type="submit"
+																class="btn btn-primary submit-btn">Submit
+																Request</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Mobile Navigation Toggler -->
+								<div class="mobile-nav-toggler">
+									<span class="icon flaticon-menu"></span>
+								</div>
+							</div>
               <!-- End Outer Box -->
             </div>
           </div>
@@ -601,9 +673,6 @@
                     <span class="text-two">Read More</span>
                   </span>
                 </a>
-                <!-- <a href="https://www.youtube.com/watch?v=kxPCFljwJws"
-									class="lightbox-video story-two_play"><span class="flaticon-play"><i
-											class="ripple"></i></span>Watch Video</a> -->
               </div>
             </div>
           </div>
@@ -1309,29 +1378,7 @@
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const slides = document.querySelectorAll(".carousel-slide");
-      let currentSlide = 0;
-
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-        });
-      }
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }
-
-      showSlide(currentSlide);
-
-      setInterval(nextSlide, 5000);
-    });
-
-  </script>
+  
   <script src="assets/js/jquery.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
@@ -1344,13 +1391,11 @@
   <script src="assets/js/backtotop.js"></script>
   <script src="assets/js/odometer.js"></script>
   <script src="assets/js/parallax-scroll.js"></script>
-
   <script src="assets/js/gsap.min.js"></script>
   <script src="assets/js/SplitText.min.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>
   <script src="assets/js/ScrollToPlugin.min.js"></script>
   <script src="assets/js/ScrollSmoother.min.js"></script>
-
   <script src="assets/js/magnific-popup.min.js"></script>
   <script src="assets/js/jquery.meanmenu.min.js"></script>
   <script src="assets/js/nav-tool.js"></script>
@@ -1360,6 +1405,7 @@
   <script src="assets/js/element-in-view.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/quote.js"></script>
-</body>
+  <script src="assets/js/header.js"></script>
 
+</body>
 </html>

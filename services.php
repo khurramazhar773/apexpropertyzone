@@ -1,3 +1,7 @@
+<?php
+include "config.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +26,9 @@
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -78,7 +84,7 @@
 											<li><a href="about.html">About</a>
 
 											</li>
-											<li><a href="services.html">services</a>
+											<li><a href="services.php">services</a>
 											</li>
 											<li><a href="property.html">property</a>
 
@@ -118,8 +124,9 @@
 									<div id="quoteModal" class="modal">
 										<div class="modal-content">
 											<div class="logo-box">
-												<div class="logo"><a href="index.html"><img src="assets/images/FINAL A-01.png"
-															alt="" title=""></a></div>
+												<div class="logo"><a href="index.html"><img
+															src="assets/images/FINAL A-01.png" alt="" title=""></a>
+												</div>
 											</div>
 											<div class="sec-title">
 												<div class="sec-title_title ps-5">Contact Us</div>
@@ -128,64 +135,64 @@
 
 											</div>
 											<!-- Your form content here -->
-                                            <div class="contact-three_form-column col-lg-12 col-md-12 col-sm-12">
-                                                <div class="contact-three_form-outer ">
-                                                    <div class="default-form contact-form">
-                                                        <form method="post" action="sendemail.php" id="contact-form">
-                                                            <div class="row clearfix">
-                                                                <!--Form Group-->
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <input type="text" name="username" value=""
-                                                                        placeholder="Name" required>
-                                                                </div>
-                                                                <!--Form Group-->
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <input type="email" name="email" value=""
-                                                                        placeholder="Email" required>
-                                                                </div>
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <input type="text" name="phone" value=""
-                                                                        placeholder="Phone" required>
-                                                                </div>
-                                                                <!--Form Group-->
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <select name="Service" class="service-dropdown">
-                                                                        <option value="">Services</option>
-                                                                        <option value="service01">Service 01</option>
-                                                                        <option value="service02">Service 02</option>
-                                                                        <option value="service03">Service 03</option>                                                                        
-                                                                    </select>
-                                                                    
-                                                                </div>
-                                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                                    <select name="Purpose" class="purpose-drowdown">
-                                                                        <option>Purpose</option>
-                                                                        <option>Sale</option>
-                                                                        <option>Purchase</option>
-                                                                        <option>Rent</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                                    <textarea name="message"
-                                                                        placeholder="Write a Message"></textarea>
-                                                                </div>
-                                                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                                                    <div
-                                                                        class="story-two_button d-flex align-items-center justify-content-end flex-wrap">
-                                                                        <a href="#" class="theme-btn btn-style-one">
-                                                                            <span class="btn-wrap">
-                                                                                <span class="text-one">SUBMIT</span>
-                                                                                <span class="text-two">SUBMIT</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
+											<div class="contact-three_form-column col-lg-12 col-md-12 col-sm-12">
+												<div class="contact-three_form-outer ">
+													<div class="default-form contact-form">
+														<form method="post" action="sendemail.php" id="contact-form">
+															<div class="row clearfix">
+																<!--Form Group-->
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<input type="text" name="username" value=""
+																		placeholder="Name" required>
+																</div>
+																<!--Form Group-->
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<input type="email" name="email" value=""
+																		placeholder="Email" required>
+																</div>
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<input type="text" name="phone" value=""
+																		placeholder="Phone" required>
+																</div>
+																<!--Form Group-->
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<select name="Service" class="service-dropdown">
+																		<option value="">Services</option>
+																		<option value="service01">Service 01</option>
+																		<option value="service02">Service 02</option>
+																		<option value="service03">Service 03</option>
+																	</select>
 
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+																</div>
+																<div class="form-group col-lg-6 col-md-6 col-sm-6">
+																	<select name="Purpose" class="purpose-drowdown">
+																		<option>Purpose</option>
+																		<option>Sale</option>
+																		<option>Purchase</option>
+																		<option>Rent</option>
+																	</select>
+																</div>
+																<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+																	<textarea name="message"
+																		placeholder="Write a Message"></textarea>
+																</div>
+																<div class="form-group col-lg-12 col-md-12 col-sm-12">
+																	<div
+																		class="story-two_button d-flex align-items-center justify-content-end flex-wrap">
+																		<a href="#" class="theme-btn btn-style-one">
+																			<span class="btn-wrap">
+																				<span class="text-one">SUBMIT</span>
+																				<span class="text-two">SUBMIT</span>
+																			</span>
+																		</a>
+																	</div>
+
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -233,123 +240,46 @@
 		</section>
 		<!-- End Page Title -->
 
-
-
-
 		<!-- Services Two -->
 		<section class="services-two">
 			<div class="auto-container">
 				<div class="row clearfix">
-
 					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/services_page/pages/building1.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-building"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.html">Building <br>
-									Construction</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.html">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
+					<?php
+					$query = "SELECT * FROM `service`";
+					$temp = mysqli_query($conn, $query);
+					if ($temp) {
+						while ($row = mysqli_fetch_assoc($temp)) {
+							$id = $row['service_id'];
+							$heading = $row['service_name'];
+							$desc = $row['service_desc'];
+							$icon = $row['service_logo'];
+							$bg_img = $row['service_bg'];
 
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/services_page/pages/interior.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-interior-design"></i>
+							?>
+							<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
+								<div class="service-block_one-inner">
+									<div class="service-block_one_image"
+										style="background-image:url(./assets/images/services_page/pages/<?php echo $bg_img ?>)">
+									</div>
+									<div class="service-block_one-icon">
+										<i class="<?php echo $icon ?>"></i>
+									</div>
+									<h4 class="service-block_one-heading"><a
+											href="service-detail.html"><?php echo $heading ?></a></h4>
+									<div class="service-block_one-text"><?php echo $desc ?></div>
+									<a class="service-block_one-more" href="service-detail.php?service_id=<?php echo $id ?>">Read More <i
+											class="flaticon-next-1"></i></a>
+								</div>
 							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.html">Interior <br>
-									designing</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.html">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/services_page/pages/general1.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-building-1"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.html">General <br>
-									Construction</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.html">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/services_page/pages/investment.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-plant"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.html">Investment <br>
-									Construction</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.html">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/services_page/pages/consultancy.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-favourite"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.html">Real Estate <br>
-									Consultancy</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.html">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/services_page/pages/development.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-building"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.html">Real Estate <br>
-									Development</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.html">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
+							<?php
+						}
+					}
+					?>
 				</div>
-
-
 			</div>
 		</section>
 		<!-- End Services Two -->
-
 
 		<!-- Main Footer -->
 		<footer class="main-footer">

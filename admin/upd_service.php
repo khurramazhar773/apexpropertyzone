@@ -1,3 +1,47 @@
+<?php
+include "../config.php";
+
+$id = $_GET["update_id"];
+$sql = "select * from `service` where service_id = $id";
+$temp = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($temp);
+$ser_name = $row['service_name'];
+$ser_desc = $row['service_desc'];
+$ser_icon = $row['service_logo'];
+$ser_bg = $row['service_bg'];
+
+if (isset($_POST['update'])) {
+    $service_name = $_POST['name'];
+    $service_desc = $_POST['description'];
+    $service_icon = $_POST['icon'];
+
+    // Accessing Images
+    $service_bg_img = $_FILES['serv_bg_image']['name'];
+    $temp_image = $_FILES['serv_bg_image']['tmp_name'];
+    $size_image = $_FILES['serv_bg_image']['size'];
+    $type_image = $_FILES['serv_bg_image']['type'];
+
+    // Sanitize input to prevent SQL injection
+    $service_name = mysqli_real_escape_string($conn, $service_name);
+    $service_desc = mysqli_real_escape_string($conn, $service_desc);
+    $service_icon = mysqli_real_escape_string($conn, $service_icon);
+
+    // Insert query
+    $query = "UPDATE `service` SET `service_id`='$id',`service_name`='$service_name',`service_desc`='$service_desc',`service_logo`='$service_icon' , `service_bg` = '$service_bg_img' WHERE service_id = $id";
+
+    // Execute the query
+    $result = mysqli_query($conn, $query);
+
+    if ($result) {
+        // Check if the upload was successful
+        move_uploaded_file($temp_image, 'images/' . $service_bg_img);
+        echo "<script>alert('Updated Successfully!'); window.location='service.php';</script>";
+        exit();
+    } else {
+        echo "Service hasn't been inserted: " . mysqli_error($conn);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,13 +75,18 @@
     <link rel="stylesheet" href="css/custom.css" />
     <!-- calendar file css -->
     <link rel="stylesheet" href="js/semantic.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/flaticon_palace-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
 </head>
 
-<body class="inner_page general_elements">
+<body class="dashboard dashboard_1">
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
@@ -45,11 +94,10 @@
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
-                <!-- topbar -->
                 <div class="topbar">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="full">
-                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i
+                            <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="width: 6%;"><i
                                     class="fa fa-bars"></i></button>
                             <div class="logo_section">
                                 <a href="index.html"><img class="img-responsive" src="images/logo/logo.png"
@@ -84,97 +132,49 @@
                         </div>
                     </nav>
                 </div>
-                <!-- end topbar -->
-                <!-- dashboard inner -->
-                <div class="midde_cont">
-                    <div class="container-fluid">
-                        <div class="row column_title">
-                            <div class="col-md-12">
-                                <div class="page_title">
-                                    <h2>General Elements</h2>
-                                </div>
+                <div class="container-fluid">
+                    <div class="row column_title">
+                        <div class="col-md-12">
+                            <div class="page_title">
+                                <h2>Update Services</h2>
                             </div>
                         </div>
-                        <!-- Contact Three -->
-
-                        <div class="full-form">
-                            <div class="">
-                                <div class="sec-title">
-                                    <div class="sec-title_title">Give us detail</div>
+                    </div>
+                    <div style="width: 50%; margin: auto;">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="head" class="form-label">Service Name: </label>
+                                <input type="text" class="form-control" name="name" id="head" required
+                                    value="<?php echo $ser_name ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="desc" class="form-label">Service Description: </label>
+                                <input type="text" class="form-control" name="description" id="desc" required
+                                    value="<?php echo $ser_desc ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="logo" class="form-label">Service Icon: </label>
+                                <input type="text" class="form-control" name="icon" id="logo"
+                                    aria-describedby="logo_sugges" required value="<?php echo $ser_icon ?>">
+                                <div id="logo_sugges" class="form-text">Please paste only class text of <a
+                                        style="color: red;" href="https://fontawesome.com/icons" target="_blank">font
+                                        awesome's</a> icon of latest version.
                                 </div>
                             </div>
-                            <div class="">
-                                <h3>Make Your Blog</h3>
-                                <div class="">
-                                    <form method="post" action="php/add-blog.php" id="contact-form" enctype="multipart/form-data">
-                                        <div class="row clearfix">
-                                            <!-- Title Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="title" placeholder="Title" required class="custom-input">
-                                            </div>
-                                            <!-- Description Textarea -->
-                                            <div class="diss">
-                                                <label for="description">Description:</label>
-                                                <textarea id="description" name="description" rows="4" class="form-control" placeholder="Enter property description"></textarea>
-                                            </div>
-                                    
-                                            <!-- Main Image Upload -->
-                                            <div class="file-g">
-                                                <div class="main-files">
-                                                    <label>Main Image</label>
-                                                    <input type="file" name="main_img" class="form-control" required>
-                                                </div>
-                                            
-                                                <div id="imageContainer" class="image-preview-container"></div>
-                                            </div>
-                                    
-                                            </div>
-                                            <!-- Submit Button -->
-                                            <button name="submit" type="submit" class="btn btn-primary sell-form-button-1">Submit</button>
-                                        </div>
-                                    </form>
-                                    
-                                </div>
+                            <div class="mb-3" style="height: 100%">
+                                <img src="images/<?php echo $ser_bg ?>" alt="No Internet!">
                             </div>
-                        </div>
-
+                            <div class="mb-3">
+                                <label for="bg_img" class="form-label">Background Image: </label>
+                                <input type="file" class="form-control" name="serv_bg_image" id="bg_img" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="update">Update Service</button>
+                        </form>
                     </div>
                 </div>
-                <!-- Contact Three -->
-            </div>
-            <!-- footer -->
-            
-        </div>
-        <!-- end dashboard inner -->
-        <div class="container-fluid">
-            <div class="footer">
-                <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
             </div>
         </div>
-    </div>
-    
-    <!-- model popup -->
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Modal body..
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end model popup -->
+
     </div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
@@ -197,11 +197,8 @@
         var ps = new PerfectScrollbar('#sidebar');
     </script>
     <!-- custom js -->
+    <script src="js/chart_custom_style1.js"></script>
     <script src="js/custom.js"></script>
-    <!-- calendar file css -->
-    <script src="js/semantic.min.js"></script>
-    <script src="../assets/js/Seller.js"></script>
-    <script src="js/property-add.js"></script>
 </body>
 
 </html>

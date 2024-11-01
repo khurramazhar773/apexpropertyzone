@@ -1,3 +1,7 @@
+<?php
+include "../config.php"
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,13 +35,18 @@
     <link rel="stylesheet" href="css/custom.css" />
     <!-- calendar file css -->
     <link rel="stylesheet" href="js/semantic.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/flaticon_palace-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
 </head>
 
-<body class="inner_page general_elements">
+<body class="dashboard dashboard_1">
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
@@ -45,11 +54,10 @@
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
-                <!-- topbar -->
                 <div class="topbar">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="full">
-                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i
+                            <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="width: 6%;"><i
                                     class="fa fa-bars"></i></button>
                             <div class="logo_section">
                                 <a href="index.html"><img class="img-responsive" src="images/logo/logo.png"
@@ -84,97 +92,67 @@
                         </div>
                     </nav>
                 </div>
-                <!-- end topbar -->
-                <!-- dashboard inner -->
-                <div class="midde_cont">
-                    <div class="container-fluid">
-                        <div class="row column_title">
-                            <div class="col-md-12">
-                                <div class="page_title">
-                                    <h2>General Elements</h2>
-                                </div>
+                <div class="container-fluid">
+                    <div class="row column_title">
+                        <div class="col-md-12">
+                            <div class="page_title">
+                                <h2>Services</h2>
                             </div>
                         </div>
-                        <!-- Contact Three -->
-
-                        <div class="full-form">
-                            <div class="">
-                                <div class="sec-title">
-                                    <div class="sec-title_title">Give us detail</div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <h3>Make Your Blog</h3>
-                                <div class="">
-                                    <form method="post" action="php/add-blog.php" id="contact-form" enctype="multipart/form-data">
-                                        <div class="row clearfix">
-                                            <!-- Title Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="title" placeholder="Title" required class="custom-input">
-                                            </div>
-                                            <!-- Description Textarea -->
-                                            <div class="diss">
-                                                <label for="description">Description:</label>
-                                                <textarea id="description" name="description" rows="4" class="form-control" placeholder="Enter property description"></textarea>
-                                            </div>
-                                    
-                                            <!-- Main Image Upload -->
-                                            <div class="file-g">
-                                                <div class="main-files">
-                                                    <label>Main Image</label>
-                                                    <input type="file" name="main_img" class="form-control" required>
-                                                </div>
-                                            
-                                                <div id="imageContainer" class="image-preview-container"></div>
-                                            </div>
-                                    
-                                            </div>
-                                            <!-- Submit Button -->
-                                            <button name="submit" type="submit" class="btn btn-primary sell-form-button-1">Submit</button>
-                                        </div>
-                                    </form>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+                    <!-- Services Two -->
+                    <section class="services-two">
+                        <div class="auto-container">
+                            <div class="row clearfix">
+                                <!-- Service Block One -->
+
+                                <?php
+                                $query = "SELECT * FROM `service`";
+                                $temp = mysqli_query($conn, $query);
+                                if ($temp) {
+                                    while ($row = mysqli_fetch_assoc($temp)) {
+                                        $id = $row['service_id'];
+                                        $heading = $row['service_name'];
+                                        $desc = $row['service_desc'];
+                                        $icon = $row['service_logo'];
+                                        $bg_img = $row['service_bg'];
+
+                                        ?>
+                                        <div class='service-block_one col-lg-6 col-md-6 col-sm-12'>
+                                            <div class='service-block_one-inner' style="">
+                                                <div class='service-block_one_image'
+                                                    style='background-image:url(../assets/images/services_page/pages/<?php echo $bg_img ?>)'>
+                                                </div>
+                                                <div class='service-block_one-icon'>
+                                                <i class="<?php echo $icon ?>"></i>
+                                                </div>
+                                                <h4 class='service-block_one-heading'><a
+                                                        href='service-detail.html'><?php echo $heading ?></a>
+                                                </h4>
+                                                <div class='service-block_one-text'><?php echo $desc ?></div>
+                                                <div class='row mt-3'>
+                                                    <div class='col-6'>
+                                                        <a href='upd_service.php?update_id=<?php echo $id ?>'
+                                                            class='btn btn-success px-4 py-2'>Update</a>
+                                                    </div>
+                                                    <div class='col-6'>
+                                                        <a href='../assets/php/service_delete.php?delete_id=<?php echo $id ?>'
+                                                            class='btn btn-danger px-4 py-2'>Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End Services Two -->
                 </div>
-                <!-- Contact Three -->
             </div>
-            <!-- footer -->
-            
         </div>
-        <!-- end dashboard inner -->
-        <div class="container-fluid">
-            <div class="footer">
-                <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- model popup -->
-    <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Modal body..
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end model popup -->
     </div>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
@@ -197,11 +175,8 @@
         var ps = new PerfectScrollbar('#sidebar');
     </script>
     <!-- custom js -->
+    <script src="js/chart_custom_style1.js"></script>
     <script src="js/custom.js"></script>
-    <!-- calendar file css -->
-    <script src="js/semantic.min.js"></script>
-    <script src="../assets/js/Seller.js"></script>
-    <script src="js/property-add.js"></script>
 </body>
 
 </html>
