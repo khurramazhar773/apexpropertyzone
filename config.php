@@ -1,5 +1,5 @@
 <?php
-$servername = "csoft.live";
+$servername = "localhost";
 $username = "u793298586_apz";
 $password = "5xgj~y9hT*";
 $dbname = "u793298586_apz";
