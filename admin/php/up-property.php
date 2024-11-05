@@ -23,6 +23,7 @@ if (isset($_POST['submit'])) {
     $cond = $_POST['condition'];
     $price = $_POST['price'];
     $c_price = $_POST['c_price'];
+    $permission = $_POST['permission'];
 
     // Array to hold image URLs
     $image_urls = [];
@@ -71,10 +72,10 @@ if (isset($_POST['submit'])) {
     $gallery_json = json_encode($image_urls);
 
     // Prepare and bind the SQL statement for update
-    $stmt = $conn->prepare("UPDATE `property` SET `title`=?, `location`=?, `address`=?, `lot_area`=?, `constructed_area`=?, `property_type`=?, `subtype`=?, `rooms`=?, `bedrooms`=?, `elecMeter`=?, `gasMeter`=?, `areaSq`=?, `CareaSq`=?, `Cprice`=?, `baths`=?, `status`=?, `description`=?, `cond`=?, `price`=?, `gallery`=? WHERE `property_id`=?");
+    $stmt = $conn->prepare("UPDATE `property` SET `title`=?, `location`=?, `address`=?, `lot_area`=?, `constructed_area`=?, `property_type`=?, `subtype`=?, `rooms`=?, `bedrooms`=?, `elecMeter`=?, `gasMeter`=?, `areaSq`=?, `baths`=?, `status`=?, `description`=?, `cond`=?, `price`=?, `gallery`=?, `permission`=? WHERE `property_id`=?");
     
     // Bind parameters, including the property ID for the WHERE clause
-    $stmt->bind_param('ssssssssssssssssssssi', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq, $c_area_sq, $c_price, $baths, $status, $description, $cond, $price, $gallery_json, $property_id);
+    $stmt->bind_param('sssssssssssssssssssi', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq, $baths, $status, $description, $cond, $price, $gallery_json, $permission, $property_id);
 
     // Execute the prepared statement
     if ($stmt->execute()) {

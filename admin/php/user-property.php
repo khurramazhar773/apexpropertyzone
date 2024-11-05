@@ -39,18 +39,6 @@ if (isset($_POST['submit'])) {
         mkdir($uploadDir, 0777, true);
     }
 
-    // Handle main image upload
-    if (isset($_FILES['main_img']) && $_FILES['main_img']['error'] === UPLOAD_ERR_OK) {
-        $main_img = $_FILES['main_img'];
-        $main_img_path = $uploadDir . basename($main_img['name']);
-
-        if (move_uploaded_file($main_img['tmp_name'], $main_img_path)) {
-            $image_urls[] = $main_img_path;  // Add main image URL to array
-        } else {
-            echo "Failed to upload main image.";
-        }
-    }
-
     // Handle additional images upload
     if (!empty($_FILES['additional_imgs']['name'][0])) {
         $additional_imgs = $_FILES['additional_imgs'];
@@ -75,22 +63,22 @@ if (isset($_POST['submit'])) {
     $gallery_json = json_encode($image_urls);
 
     // Prepare and bind the SQL statement
-
-    $stmt = $conn->query();
+    $user_pro_sql = "INSERT INTO `property` (`name`, `email`, `phone`, `title`, `location`, `address`, `lot_area`, `constructed_area`, `property_type`, `subtype`, `rooms`, `bedrooms`, `elecMeter`, `gasMeter`, `areaSq`, `baths`, `description`, `cond`, `price`, `gallery`, `permission`)
+                                     VALUES ('$name', '$email', '$phone', '$title', '$location', ',$address', '$lot_area', '$constructed_area', '$property_type', '$subtype', '$rooms', '$bedrooms', '$electricityMeter', '$gasMeter', '$area_sq', '$baths', '$description', '$cond', '$price', '$gallery_json', 'pending')";
+    $user_pro_result = $conn->query($user_pro_sql);
     
-    $stmt->bind_param('ssssssssssssssssss', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq, $baths, $description, $cond, $price, $gallery_json, $permission);
 
     // Execute the prepared statement
-    if ($stmt) {
+    if ($user_pro_result) {
         // Uncomment the next line if you want to redirect after successful insertion
-        header('Location: ../add-property.php');
+        header('Location: ../../sell.php');
         echo "Property added successfully. It is pending admin approval.";
     } else {
-        echo "Error inserting property: " . $stmt->error;
+        echo "Error inserting property: " . $user_pro_result->error;
     }
 
     // Close the statement and the connection
-    $stmt->close()
+    $user_pro_result->close()
     
     ;
     $conn->close();

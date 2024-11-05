@@ -1,6 +1,6 @@
-<?php include '../config.php'; 
+<?php include '../config.php'; ?>
 
-?>
+<?php include 'auth_check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,12 +12,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+    <title>Apex - Property</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- site icon -->
-    <link rel="icon" href="images/fevicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- site css -->
@@ -44,49 +47,12 @@
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
-            <?php  include 'admin-nav.php'; ?>
+            <?php include 'admin-nav.php'; ?>
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
                 <!-- topbar -->
-                <div class="topbar">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="full">
-                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i
-                                    class="fa fa-bars"></i></button>
-                            <div class="logo_section">
-                                <a href="index.html"><img class="img-responsive" src="images/logo/logo.png"
-                                        alt="#" /></a>
-                            </div>
-                            <div class="right_topbar">
-                                <div class="icon_info">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                    <ul class="user_profile_dd">
-                                        <li>
-                                            <a class="dropdown-toggle" data-toggle="dropdown"><img
-                                                    class="img-responsive rounded-circle"
-                                                    src="images/layout_img/user_img.jpg" alt="#" /><span
-                                                    class="name_user">John David</span></a>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="profile.html">My Profile</a>
-                                                <a class="dropdown-item" href="settings.html">Settings</a>
-                                                <a class="dropdown-item" href="help.html">Help</a>
-                                                <a class="dropdown-item" href="#"><span>Log Out</span> <i
-                                                        class="fa fa-sign-out"></i></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                <?php include 'admin-top.php'; ?>
                 <!-- end topbar -->
                 <!-- dashboard inner -->
                 <div class="midde_cont">
@@ -100,95 +66,102 @@
                         </div>
                         <!-- Contact Three -->
                         <?php
-                            if(isset($_GET['id'])){
-                                $property_id = intval($_GET['id']);
-                                
-                                $d_p_sql = "SELECT * FROM blog WHERE id =$property_id";
-                                $d_p_result = $conn->query($d_p_sql);
+                        if (isset($_GET['id'])) {
+                            $property_id = intval($_GET['id']);
+
+                            $d_p_sql = "SELECT * FROM blog WHERE id =$property_id";
+                            $d_p_result = $conn->query($d_p_sql);
 
 
-                                                if ($d_p_result) {
-                            $property = $d_p_result->fetch_assoc();
-                            $gallery = json_decode($property['img'], true);
-                            
-                            // Initialize main image and additional images
-                            $main_image = isset($gallery[0]) ? $gallery[0] : '';
-                            $additional_images = (is_array($gallery) && count($gallery) > 1) ? array_slice($gallery, 1) : []; // Ensure it's an array
+                            if ($d_p_result) {
+                                $property = $d_p_result->fetch_assoc();
+                                $gallery = json_decode($property['img'], true);
 
-                            // Initialize an array to hold images to be deleted
-                            $images_to_delete = [];
+                                // Initialize main image and additional images
+                                $main_image = isset($gallery[0]) ? $gallery[0] : '';
+                                $additional_images = (is_array($gallery) && count($gallery) > 1) ? array_slice($gallery, 1) : []; // Ensure it's an array
+                        
+                                // Initialize an array to hold images to be deleted
+                                $images_to_delete = [];
 
-                        ?>
-                        <div class="full-form">
-                            <div class="">
-                                <div class="sec-title">
-                                    <div class="sec-title_title">Want to Sell | Rent?</div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <h3>Share Your Details</h3>
-                                <div class="">
-                                    <form method="post" action="php/up-blog.php" id="contact-form" enctype="multipart/form-data">
-                                        <div class="row clearfix">
-                                            <!-- Title Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="title" value="<?php echo $property['title'] ?>" placeholder="Title" required class="custom-input">
-                                            </div>
-                                            <input type="hidden"  name="property_id" value="<?php echo $property_id; ?>">
-
-                                            <div class="diss">
-                                                <label for="description">Description:</label>
-                                                <textarea id="description" name="description" rows="4" class="form-control" placeholder="Enter property description"><?php echo $property['detail'] ?></textarea>
-                                            </div>
-                                    
-                                                                
-                                            <div class="file-g">
-                                                <label>Blog Image :> Must Select Image</label>
-                                                <?php if ($main_image): ?>
-                                                    <img src="php/<?php echo $main_image; ?>" alt="Main Image" style="max-width: 100%; height: auto;" id="mainImage">
-                                                    <a href="#" class="btn btn-danger" onclick="deleteImage('main')">Delete Main Image</a>
-                                                <?php else: ?>
-                                                    <p>No main image available.</p>
-                                                <?php endif; ?>
-                                                <input type="file" name="main_img" class="form-control" >
-                                                
-                                            </div>
-
-                                            
-
-                                            <!-- Submit Button -->
-                                            <button name="submit" type="submit" class="btn btn-primary sell-form-button-1">Update</button>
+                                ?>
+                                <div class="full-form">
+                                    <div class="">
+                                        <div class="sec-title">
+                                            <div class="sec-title_title">Want to Sell | Rent?</div>
                                         </div>
-                                    </form>
-                                    
+                                    </div>
+                                    <div class="">
+                                        <h3>Share Your Details</h3>
+                                        <div class="">
+                                            <form method="post" action="php/up-blog.php" id="contact-form"
+                                                enctype="multipart/form-data">
+                                                <div class="row clearfix">
+                                                    <!-- Title Input -->
+                                                    <div class="khass-input">
+                                                        <input type="text" name="title" value="<?php echo $property['title'] ?>"
+                                                            placeholder="Title" required class="custom-input">
+                                                    </div>
+                                                    <input type="hidden" name="property_id" value="<?php echo $property_id; ?>">
+
+                                                    <div class="diss">
+                                                        <label for="description">Description:</label>
+                                                        <textarea id="description" name="description" rows="4"
+                                                            class="form-control"
+                                                            placeholder="Enter property description"><?php echo $property['detail'] ?></textarea>
+                                                    </div>
+
+
+                                                    <div class="file-g">
+                                                        <label>Blog Image :> Must Select Image</label>
+                                                        <?php if ($main_image): ?>
+                                                            <img src="php/<?php echo $main_image; ?>" alt="Main Image"
+                                                                style="max-width: 100%; height: auto;" id="mainImage">
+                                                            <a href="#" class="btn btn-danger" onclick="deleteImage('main')">Delete
+                                                                Main Image</a>
+                                                        <?php else: ?>
+                                                            <p>No main image available.</p>
+                                                        <?php endif; ?>
+                                                        <input type="file" name="main_img" class="form-control">
+
+                                                    </div>
+
+
+
+                                                    <!-- Submit Button -->
+                                                    <button name="submit" type="submit"
+                                                        class="btn btn-primary sell-form-button-1">Update</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
 
-                        <!-- js for update form images -->
-                        <script>
-// Function to mark an image for deletion
-function markForDeletion(imagePath, imageId = null) {
-    let imagesToDelete = document.getElementById('imagesToDelete').value;
-    if (!imagesToDelete.includes(imagePath)) {
-        imagesToDelete += (imagesToDelete ? ',' : '') + imagePath;
-        document.getElementById('imagesToDelete').value = imagesToDelete;
-    }
-    // Hide image on UI
-    if (imageId) {
-        document.getElementById('img-' + imageId).style.display = 'none';
-    }
-}
-</script>
-
-                        <?php
-                                } else {
-                                    echo "No property found.";
-                                }
-                            }else{
-                                        echo "no id found";
+                                <!-- js for update form images -->
+                                <script>
+                                    // Function to mark an image for deletion
+                                    function markForDeletion(imagePath, imageId = null) {
+                                        let imagesToDelete = document.getElementById('imagesToDelete').value;
+                                        if (!imagesToDelete.includes(imagePath)) {
+                                            imagesToDelete += (imagesToDelete ? ',' : '') + imagePath;
+                                            document.getElementById('imagesToDelete').value = imagesToDelete;
+                                        }
+                                        // Hide image on UI
+                                        if (imageId) {
+                                            document.getElementById('img-' + imageId).style.display = 'none';
+                                        }
                                     }
+                                </script>
+
+                                <?php
+                            } else {
+                                echo "No property found.";
+                            }
+                        } else {
+                            echo "no id found";
+                        }
                         ?>
 
 
@@ -198,12 +171,12 @@ function markForDeletion(imagePath, imageId = null) {
                 <!-- Contact Three -->
             </div>
             <!-- footer -->
-            
+
         </div>
         <!-- end dashboard inner -->
-        
+
     </div>
-    
+
     <!-- model popup -->
     <!-- The Modal -->
     <div class="modal fade" id="myModal">

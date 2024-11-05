@@ -24,8 +24,8 @@ if (isset($_POST['submit'])) {
 
     if ($result) {
         // Check if the upload was successful
-        move_uploaded_file($temp_image, '../../admin/images' . $service_bg_img);
-        header("location:../../admin/crea_service.html");
+        move_uploaded_file($temp_image, '../../admin/images/' . $service_bg_img);
+        header("location:../../admin/crea_service.php");
     } else {
         echo "Service hasn't been inserted: " . mysqli_error($conn);
     }

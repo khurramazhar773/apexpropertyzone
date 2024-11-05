@@ -734,6 +734,7 @@ a:focus {
     margin-right: 0;
     cursor: pointer;
     float: left;
+    width: 7%;
 }
 
 .icon_info span.badge {
@@ -1029,7 +1030,7 @@ a[data-toggle="collapse"] {
 }
 
 .logo_section img {
-    height: 42px;
+    height: 50px;
     padding: 0;
     margin: 8px 15px 0;
 }
@@ -3553,3 +3554,47 @@ table.projects tr td:first-child {
 .content-buttons1{
     margin-top: 50px;
 }
+/* _______ */
+
+.property-req .p-row{
+    border:1px solid #000;
+    color: #000;
+    margin: 10px;
+    font-size: large;
+    border-radius: 10px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+.property-req .p-row .name{
+    padding: 15px;
+    padding-right: 50px;
+    border-right: 1px solid black;
+}
+.property-req .p-row .title{
+    padding: 15px;
+    padding-right: 60px;
+    /* border-right: 1px solid black; */
+}
+.property-req .p-row .butn{
+    float: right;
+}
+.property-req .p-row .butn a{
+    padding: 16px 18px;
+    margin-right: -5px;
+}
+.property-req .p-row .butn a:hover{
+    background: #000;
+    color: #fff;
+}
+.property-req .p-row .butn button{
+    padding: 15px;
+    border: none;
+    background: #f16836;
+    color: #fff;
+    border-radius: 0px 10px 10px 0px;
+}
+.property-req .p-row .butn button:hover{
+    background: #ee490e;
+}
+

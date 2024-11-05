@@ -406,4 +406,5 @@
 	<script src="assets/js/Seller.js"></script>
 
 </body>
+
 </html>
