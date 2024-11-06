@@ -158,7 +158,8 @@
                                             <div class="drop-g">
                                                 <label for="bathrooms">Bathrooms:</label>
                                                 <select id="bathrooms" name="baths" class="form-control">
-                                                    <option value="1"><?php echo $property['baths'] ?></option>
+                                                    <option value="<?php echo $property['baths'] ?>"><?php echo $property['baths'] ?></option>
+                                                    <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3+</option>
                                                 </select>
@@ -168,7 +169,7 @@
                                             <div class="drop-g">
                                                 <label for="rooms">Rooms:</label>
                                                 <select id="rooms" name="rooms" class="form-control">
-                                                    <option value="1"><?php echo $property['rooms'] ?></option>
+                                                    <option value="<?php echo $property['rooms'] ?>"><?php echo $property['rooms'] ?></option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3+</option>
@@ -179,7 +180,7 @@
                                             <div class="drop-g">
                                                 <label for="bedrooms">Bedrooms:</label>
                                                 <select id="bedrooms" name="bedrooms" class="form-control">
-                                                    <option value="1"><?php echo $property['bedrooms'] ?></option>
+                                                    <option value="<?php echo $property['bedrooms'] ?>"><?php echo $property['bedrooms'] ?></option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3+</option>
@@ -190,18 +191,18 @@
                                             <div class="drop-g">
                                                 <label for="electricityMeter">Electricity Meter:</label>
                                                 <select id="electricityMeter" name="electricityMeter" class="form-control">
-                                                    <option value="0"><?php echo $property['elecMeter'] ?></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
+                                                    <option value="<?php echo $property['elecMeter'] ?>"><?php echo $property['elecMeter'] ?></option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
                                                 </select>
                                             </div>
                                             
                                             <div class="drop-g">
                                                 <label for="gasMeter">Sui Gas Meter:</label>
                                                 <select id="gasMeter" name="gasMeter" class="form-control">
-                                                    <option value="0"><?php echo $property['gasMeter'] ?></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
+                                                    <option value="<?php echo $property['gasMeter'] ?>"><?php echo $property['gasMeter'] ?></option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
                                                 </select>
                                             </div>
                                     
@@ -223,11 +224,11 @@
                                                 <h4>Commercial Details</h4>
                                                 <div>
                                                     <label for="commercialArea">Area (sq ft):</label>
-                                                    <input type="number" name="c_area_sq" value="<?php echo $property['CareaSq'] ?>" id="commercialArea" class="form-control">
+                                                    <input type="number" name="c_area_sq" value="<?php echo $property['areaSq'] ?>" id="commercialArea" class="form-control">
                                                 </div>
                                                 <div>
                                                     <label for="commercialPrice">Price Range:</label>
-                                                    <input type="text" name="c_price" value="<?php echo $property['Cprice'] ?>" id="commercialPrice" class="form-control">
+                                                    <input type="text" name="c_price" value="<?php echo $property['price'] ?>" id="commercialPrice" class="form-control">
                                                 </div>
                                             </div>
 
@@ -380,7 +381,7 @@ function markForDeletion(imagePath, imageId = null) {
     <script src="js/custom.js"></script>
     <!-- calendar file css -->
     <script src="js/semantic.min.js"></script>
-    <script src="../assets/js/Seller.js"></script>
+    <script src="js/sell2.js"></script>
     <script src="js/property-add.js"></script>
 </body>
 

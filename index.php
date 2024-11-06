@@ -888,7 +888,7 @@
               <!-- Contact Form -->
 
               <div class="contact-form contact-with-us">
-                <form method="post" action="contact.php">
+                <form method="post" action="assets/php/contact1.php">
                   <div class="form-group d-flex align-items-center justify-content-center">
                     <i class="flaticon-user"></i>
                     <input type="text" name="username" placeholder="Full Name" required="" />
@@ -910,7 +910,7 @@
 
                   <!-- Button Box -->
                   <div class="form-group">
-                    <button class="submit-btn">Send Now</button>
+                    <button class="submit-btn" type="submit" name="submit">Send Now</button>
                   </div>
                 </form>
               </div>

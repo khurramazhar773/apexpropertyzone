@@ -80,6 +80,7 @@ $result = $conn->query($sql);
                               <span class="butn">
                                  <form action="php/approve.php" method="post">
                                     <input type="hidden" name="property_id" value="<?php echo $row['property_id'] ?>">
+                                    <a href="property-view.php?id=<?php echo $row['property_id'] ?>">view</a>
                                     <a href="update-form.php?id=<?php echo $row['property_id'] ?>">Edit</a>
                                     <button type="submit" name="approve">Aprove</button>
                                  </form>
