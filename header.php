@@ -54,14 +54,16 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="assets/php/quot.php" method="post">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control quote-top-inputs quote-form-group"
-                                        placeholder="Your Name" required>
+                                    <input type="text" name="quot_name"
+                                        class="form-control quote-top-inputs quote-form-group" placeholder="Your Name"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control quote-top-inputs quote-form-group"
+                                    <input type="tel" name="quot_phone"
+                                        class="form-control quote-top-inputs quote-form-group"
                                         placeholder="Phone Number" required>
                                 </div>
                             </div>
@@ -69,21 +71,21 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <select class="form-control form-select service-type quote-form-select"
-                                        id="serviceType" onchange="toggleFields()" required>
-                                        <option value="sell">Select Property</option>
+                                        id="serviceType" name="quot_services" onchange="toggleFields()" required>
+                                        <option value="">Select Property</option>
                                         <option value="sell">Sell Property</option>
                                         <option value="buy">Buy Property</option>
                                         <option value="rent">Rent/Lease Property</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-select quote-form-select">
+                                    <select name="quot_city" class="form-select quote-form-select">
                                         <option selected>Select City</option>
-                                        <option>Faisalabad</option>
-                                        <option>Lahore</option>
-                                        <option>Islamabad</option>
-                                        <option>karachi</option>
-                                        <option>Patoki</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Lahore">Lahore</option>
+                                        <option value="Islamabad">Islamabad</option>
+                                        <option value="Karachi">karachi</option>
+                                        <option value="Patoki">Patoki</option>
                                     </select>
                                 </div>
                             </div>
@@ -92,52 +94,56 @@
                             <div class="seller-fields">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control quote-title-inputs quote-form-group"
+                                        <input type="text" name="quot_property_title"
+                                            class="form-control quote-title-inputs quote-form-group"
                                             placeholder="Property Title/Name">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control quote-title-inputs quote-form-group"
+                                        <input type="text" name="quot_address"
+                                            class="form-control quote-title-inputs quote-form-group"
                                             placeholder="Complete Property Address">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <input type="number" class="form-control quote-input quote-form-group"
+                                        <input type="number" name="quot_area"
+                                            class="form-control quote-input quote-form-group"
                                             placeholder="Property Area (sq ft)">
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="number" class="form-control quote-input quote-form-group"
+                                        <input type="number" name="seller_price"
+                                            class="form-control quote-input quote-form-group"
                                             placeholder="Expected Price">
                                     </div>
                                     <div class="col-md-4">
-                                        <select class="form-select quote-form-select">
+                                        <select name="property_age" class="form-select quote-form-select">
                                             <option selected>Property Age</option>
-                                            <option>Under Construction</option>
-                                            <option>0-2 years</option>
-                                            <option>2-5 years</option>
-                                            <option>5+ years</option>
+                                            <option value="Under Construction">Under Construction</option>
+                                            <option value="0-2 years">0-2 years</option>
+                                            <option value="2-5 years">2-5 years</option>
+                                            <option value="5+ years">5+ years</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select class="form-select quote-form-select">
+                                        <select name="bedroom" class="form-select quote-form-select">
                                             <option selected>Number of Bedrooms</option>
-                                            <option>1 BHK</option>
-                                            <option>2 BHK</option>
-                                            <option>3 BHK</option>
-                                            <option>4 BHK</option>
-                                            <option>4+ BHK</option>
+                                            <option value="1 BHK">1 BHK</option>
+                                            <option value="2 BHK">2 BHK</option>
+                                            <option value="3 BHK">3 BHK</option>
+                                            <option value="4 BHK">4 BHK</option>
+                                            <option value="4+ BHK">4+ BHK</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-select quote-form-select">
+                                        <select name="furnished" class="form-select quote-form-select">
                                             <option selected>Furnishing Status</option>
-                                            <option>Fully Furnished</option>
-                                            <option>Semi Furnished</option>
-                                            <option>Unfurnished</option>
+                                            <option value="Fully Furnished">Fully Furnished</option>
+                                            <option value="Semi Furnished">Semi Furnished</option>
+                                            <option value="Unfurnished">Unfurnished</option>
                                         </select>
                                     </div>
                                 </div>
@@ -147,16 +153,17 @@
                             <div class="buyer-fields">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select class="form-select quote-form-select">
+                                        <select name="buy_area" class="form-select quote-form-select">
                                             <option selected>Subarban Area</option>
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                            <option>Option 4</option>
+                                            <option value="OP1">Option 1</option>
+                                            <option value="OP2">Option 2</option>
+                                            <option value="OP3">Option 3</option>
+                                            <option value="OP4">Option 4</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="number" class="form-control quote-budget-input quote-form-group"
+                                        <input type="number" name="buy_price"
+                                            class="form-control quote-budget-input quote-form-group"
                                             placeholder="Budget Range">
                                     </div>
                                 </div>
@@ -165,21 +172,24 @@
                             <div class="mb-3 mt-3">
                                 <div class="form-label">Property Type</div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="propertyType" id="residential">
+                                    <input class="form-check-input" value="Residential" type="radio" name="propertyType"
+                                        id="residential">
                                     <label class="form-check-label property-type-label quote-radio-label"
                                         for="residential">
                                         Residential
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="propertyType" id="commercial">
+                                    <input class="form-check-input" value="Commercial" type="radio" name="propertyType"
+                                        id="commercial">
                                     <label class="form-check-label property-type-label quote-radio-label"
                                         for="commercial">
                                         Commercial
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="propertyType" id="industrial">
+                                    <input class="form-check-input" value="Industrial" type="radio" name="propertyType"
+                                        id="industrial">
                                     <label class="form-check-label property-type-label quote-radio-label"
                                         for="industrial">
                                         Industrial
@@ -187,11 +197,11 @@
                                 </div>
                             </div>
 
-                            <textarea class="form-control quote-textarea quote-form-group" rows="2"
+                            <textarea name="quot_message" class="form-control quote-textarea quote-form-group" rows="2"
                                 placeholder="Add Message"></textarea>
 
                             <div class="text-center mt-4 mb-2">
-                                <button type="submit" class="btn btn-primary submit-btn">Submit
+                                <button type="submit" name="submit" class="btn btn-primary submit-btn">Submit
                                     Request</button>
                             </div>
                         </form>

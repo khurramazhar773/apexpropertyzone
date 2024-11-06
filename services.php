@@ -13,7 +13,7 @@ include "config.php";
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
-	<link href="assets/css/quote.css" rel="stylesheet" />
+	<link href="assets/css/quote.css" rel="stylesheet"/>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -117,12 +117,11 @@ include "config.php";
 							$desc = $row['service_desc'];
 							$icon = $row['service_logo'];
 							$bg_img = $row['service_bg'];
-
 							?>
 							<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
 								<div class="service-block_one-inner">
 									<div class="service-block_one_image"
-										style="background-image:url(./assets/images/services_page/pages/<?php echo $bg_img ?>)">
+										style="background-image:url(admin/images/<?php echo $bg_img ?>)">
 									</div>
 									<div class="service-block_one-icon">
 										<i class="<?php echo $icon ?>"></i>

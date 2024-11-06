@@ -1,3 +1,4 @@
+<?php include 'auth_check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+    <title>Apex - Blog</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -31,6 +32,11 @@
     <link rel="stylesheet" href="css/custom.css" />
     <!-- calendar file css -->
     <link rel="stylesheet" href="js/semantic.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,49 +47,12 @@
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
-            <?php  include 'admin-nav.php'; ?>
+            <?php include 'admin-nav.php'; ?>
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
                 <!-- topbar -->
-                <div class="topbar">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="full">
-                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i
-                                    class="fa fa-bars"></i></button>
-                            <div class="logo_section">
-                                <a href="index.html"><img class="img-responsive" src="images/logo/logo.png"
-                                        alt="#" /></a>
-                            </div>
-                            <div class="right_topbar">
-                                <div class="icon_info">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                    <ul class="user_profile_dd">
-                                        <li>
-                                            <a class="dropdown-toggle" data-toggle="dropdown"><img
-                                                    class="img-responsive rounded-circle"
-                                                    src="images/layout_img/user_img.jpg" alt="#" /><span
-                                                    class="name_user">John David</span></a>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="profile.html">My Profile</a>
-                                                <a class="dropdown-item" href="settings.html">Settings</a>
-                                                <a class="dropdown-item" href="help.html">Help</a>
-                                                <a class="dropdown-item" href="#"><span>Log Out</span> <i
-                                                        class="fa fa-sign-out"></i></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                <?php include 'admin-top.php'; ?>
                 <!-- end topbar -->
                 <!-- dashboard inner -->
                 <div class="midde_cont">
@@ -91,7 +60,7 @@
                         <div class="row column_title">
                             <div class="col-md-12">
                                 <div class="page_title">
-                                    <h2>General Elements</h2>
+                                    <h2>Add blog</h2>
                                 </div>
                             </div>
                         </div>
@@ -106,53 +75,58 @@
                             <div class="">
                                 <h3>Make Your Blog</h3>
                                 <div class="">
-                                    <form method="post" action="php/add-blog.php" id="contact-form" enctype="multipart/form-data">
+                                    <form method="post" action="php/add-blog.php" id="contact-form"
+                                        enctype="multipart/form-data">
                                         <div class="row clearfix">
                                             <!-- Title Input -->
                                             <div class="khass-input">
-                                                <input type="text" name="title" placeholder="Title" required class="custom-input">
+                                                <input type="text" name="title" placeholder="Title" required
+                                                    class="custom-input">
                                             </div>
                                             <!-- Description Textarea -->
                                             <div class="diss">
                                                 <label for="description">Description:</label>
-                                                <textarea id="description" name="description" rows="4" class="form-control" placeholder="Enter property description"></textarea>
+                                                <textarea id="description" name="description" rows="4"
+                                                    class="form-control"
+                                                    placeholder="Enter property description"></textarea>
                                             </div>
-                                    
+
                                             <!-- Main Image Upload -->
                                             <div class="file-g">
                                                 <div class="main-files">
                                                     <label>Main Image</label>
                                                     <input type="file" name="main_img" class="form-control" required>
                                                 </div>
-                                            
+
                                                 <div id="imageContainer" class="image-preview-container"></div>
                                             </div>
-                                    
-                                            </div>
-                                            <!-- Submit Button -->
-                                            <button name="submit" type="submit" class="btn btn-primary sell-form-button-1">Submit</button>
+
                                         </div>
-                                    </form>
-                                    
+                                        <!-- Submit Button -->
+                                        <button name="submit" type="submit"
+                                            class="btn btn-primary sell-form-button-1">Submit</button>
                                 </div>
+                                </form>
+
                             </div>
                         </div>
-
                     </div>
+
                 </div>
-                <!-- Contact Three -->
             </div>
-            <!-- footer -->
-            
+            <!-- Contact Three -->
         </div>
-        <!-- end dashboard inner -->
-        <div class="container-fluid">
-            <div class="footer">
-                <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
-            </div>
+        <!-- footer -->
+
+    </div>
+    <!-- end dashboard inner -->
+    <div class="container-fluid">
+        <div class="footer">
+            <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
         </div>
     </div>
-    
+    </div>
+
     <!-- model popup -->
     <!-- The Modal -->
     <div class="modal fade" id="myModal">

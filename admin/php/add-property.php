@@ -15,13 +15,12 @@ if (isset($_POST['submit'])) {
     $electricityMeter = $_POST['electricityMeter'];
     $gasMeter = $_POST['gasMeter'];
     $area_sq = $_POST['area_sq'];
-    $c_area_sq = $_POST['c_area_sq'];
     $baths = $_POST['baths'];
     $status = $_POST['status'];
     $description = $_POST['description'];
     $cond = $_POST['condition'];
     $price = $_POST['price'];
-    $c_price = $_POST['c_price'];
+    $permission = $_POST['permission'];
 
     // Array to hold image URLs
     $image_urls = [];
@@ -71,8 +70,8 @@ if (!empty($_FILES['additional_imgs']['name'][0])) {
     $gallery_json = json_encode($image_urls);
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO `property` (`title`, `location`, `address`, `lot_area`, `constructed_area`, `property_type`, `subtype`, `rooms`, `bedrooms`, `elecMeter`, `gasMeter`, `areaSq`, `CareaSq`, `Cprice`, `baths`, `status`, `description`, `cond`, `price`, `gallery`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('ssssssssssssssssssss', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq, $c_area_sq, $c_price, $baths, $status, $description, $cond, $price, $gallery_json);
+    $stmt = $conn->prepare("INSERT INTO `property` (`title`, `location`, `address`, `lot_area`, `constructed_area`, `property_type`, `subtype`, `rooms`, `bedrooms`, `elecMeter`, `gasMeter`, `areaSq`, `baths`, `status`, `description`, `cond`, `price`, `gallery`, `permission`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('sssssssssssssssssss', $title, $location, $address, $lot_area, $constructed_area, $property_type, $subtype, $rooms, $bedrooms, $electricityMeter, $gasMeter, $area_sq,  $baths, $status, $description, $cond, $price, $gallery_json ,$permission);
 
     // Execute the prepared statement
     if ($stmt->execute()) {
