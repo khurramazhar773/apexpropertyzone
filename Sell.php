@@ -119,7 +119,7 @@
 						<div class="contact-three_form-outer">
 							<h3>Share Your Details</h3>
 							<div class="default-form contact-form col-lg-12 col-md-6 col-sm-12">
-								<form method="post" action="admin/php/user-property.php" id="contact-form">
+								<form method="post" action="admin/php/user-property.php" id="contact-form" enctype="multipart/form-data">
 									<div class="row clearfix">
 										<!-- Name Input -->
 										<div class="form-group col-lg-4 col-md-6 col-sm-6">
