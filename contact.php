@@ -54,8 +54,8 @@ include "config.php";
 
                             <!-- Logo Box -->
                             <div class="logo-box">
-                                <div class="logo"><a href="index.php"><img src="assets/images/FINAL A-01.png"
-                                            alt="" title=""></a></div>
+                                <div class="logo"><a href="index.php"><img src="assets/images/FINAL A-01.png" alt=""
+                                            title=""></a></div>
                             </div>
                             <!-- End Logo Box -->
 
@@ -71,10 +71,12 @@ include "config.php";
             <div class="mobile-menu">
                 <div class="menu-backdrop"></div>
                 <div class="close-btn"><span class="icon flaticon-close-1"></span></div>
-                
+
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index.php"><img src="assets/images/logo.svg" alt="" title=""></a></div>
-                    <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                    <div class="nav-logo"><a href="index.php"><img src="assets/images/logo.svg" alt="" title=""></a>
+                    </div>
+                    <div class="menu-outer">
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 </nav>
             </div>
 
@@ -130,7 +132,7 @@ include "config.php";
                             <h3>Get a Free Quote</h3>
 
                             <div class="default-form contact-form">
-                                <form method="post" action="assets/php/contact.php" id="contact-form">
+                                <form method="post" action="assets/php/contact.php" id="contact-form contactForm">
                                     <div class="row clearfix">
                                         <!--Form Group-->
                                         <div class="form-group col-lg-6 col-md-6 col-sm-6">
@@ -146,7 +148,7 @@ include "config.php";
                                         <!--Form Group-->
                                         <div class="form-group select-service col-lg-6 col-md-6 col-sm-6">
                                             <select name="services" class="custom-select-box"
-                                            style="border: 1px solid rgba(0, 0, 0, 0.133);">
+                                                style="border: 1px solid rgba(0, 0, 0, 0.133);">
                                                 <option>Select Service</option>
                                                 <option value="Service 01">Service 01</option>
                                                 <option value="Service 02">Service 02</option>
@@ -197,8 +199,8 @@ include "config.php";
     </div>
 
     <!--  -->
-	<?php require 'footer.php'; ?>
-	<!--  -->
+    <?php require 'footer.php'; ?>
+    <!--  -->
 
     <!-- End PageWrapper -->
     <div class="progress-wrap">
@@ -235,6 +237,29 @@ include "config.php";
     <script src="assets/js/element-in-view.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/quote.js"></script>
+    <script>
+        // Handle form submission
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
 
+            // Collect form data
+            const formData = new FormData(this);
+
+            // Send AJAX request
+            fetch("assets/php/contact1.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text()) // Adjust if PHP returns JSON (use .json())
+                .then(data => {
+                    // Display the confirmation message
+                    document.getElementById("confirmation-message").style.display = "block";
+                    document.getElementById("confirmation-message").textContent = data || "Your message has been submitted successfully!";
+
+                })
+        });
+
+    </script>
 </body>
+
 </html>
