@@ -112,10 +112,10 @@ $p_result = $conn->query($p_sql);
 				<div class="page-title_gradient"></div>
 				<div class="auto-container">
 					<h2>Properties</h2>
-					<ul class="bread-crumb clearfix bread-crumb-ul">
-						<li><a href="index.php"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
+					<!-- <ul class="bread-crumb clearfix">
+						<li><a href="index.html"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
 						<li>Properties</li>
-					</ul>
+					</ul> -->
 				</div>
 
 			</section>
