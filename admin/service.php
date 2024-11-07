@@ -1,3 +1,4 @@
+<?php include 'auth_check.php'; ?>
 <?php
 include "../config.php"
     ?>
@@ -13,12 +14,13 @@ include "../config.php"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+    <title>Apex - Services</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- site icon -->
-    <link rel="icon" href="images/fevicon.png" type="image/png" />
+
+    <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- site css -->
@@ -50,48 +52,11 @@ include "../config.php"
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
-            <?php  include 'admin-nav.php'; ?>
+            <?php include 'admin-nav.php'; ?>
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
-                <div class="topbar">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="full">
-                            <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="width: 6%;"><i
-                                    class="fa fa-bars"></i></button>
-                            <div class="logo_section">
-                                <a href="index.html"><img class="img-responsive" src="images/logo/logo.png"
-                                        alt="#" /></a>
-                            </div>
-                            <div class="right_topbar">
-                                <div class="icon_info">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a>
-                                        </li>
-                                    </ul>
-                                    <ul class="user_profile_dd">
-                                        <li>
-                                            <a class="dropdown-toggle" data-toggle="dropdown"><img
-                                                    class="img-responsive rounded-circle"
-                                                    src="images/layout_img/user_img.jpg" alt="#" /><span
-                                                    class="name_user">John David</span></a>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="profile.html">My Profile</a>
-                                                <a class="dropdown-item" href="settings.html">Settings</a>
-                                                <a class="dropdown-item" href="help.html">Help</a>
-                                                <a class="dropdown-item" href="#"><span>Log Out</span> <i
-                                                        class="fa fa-sign-out"></i></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                <?php include 'admin-top.php'; ?>
                 <div class="container-fluid">
                     <div class="row column_title">
                         <div class="col-md-12">
@@ -121,15 +86,17 @@ include "../config.php"
                                         <div class='service-block_one col-lg-6 col-md-6 col-sm-12'>
                                             <div class='service-block_one-inner' style="">
                                                 <div class='service-block_one_image'
-                                                    style='background-image:url(../assets/images/services_page/pages/<?php echo $bg_img ?>)'>
+                                                    style='background-image:url(images/<?php echo $bg_img ?>)'>
                                                 </div>
                                                 <div class='service-block_one-icon'>
-                                                <i class="<?php echo $icon ?>"></i>
+                                                    <i class="<?php echo $icon ?>"></i>
                                                 </div>
                                                 <h4 class='service-block_one-heading'><a
                                                         href='service-detail.html'><?php echo $heading ?></a>
                                                 </h4>
-                                                <div class='service-block_one-text'><?php echo $desc ?></div>
+                                                <div class='service-block_one-text'
+                                                    style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;  text-overflow: ellipsis;">
+                                                    <?php echo $desc ?></div>
                                                 <div class='row mt-3'>
                                                     <div class='col-6'>
                                                         <a href='upd_service.php?update_id=<?php echo $id ?>'

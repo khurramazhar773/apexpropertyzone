@@ -1,3 +1,7 @@
+<?php
+include "config.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -94,9 +98,12 @@
       </div>
       <!--  -->
       <div class="banner-two_image carousel">
-        <div class="carousel-slide banner-two_image" style="background-image: url('assets/images/banner/banner.jpg');"></div>
-        <div class="carousel-slide banner-two_image" style="background-image: url('assets/images/banner/banner2.jpg');"></div>
-        <div class="carousel-slide banner-two_image" style="background-image: url('assets/images/banner/banner3.jpg');"></div>
+        <div class="carousel-slide banner-two_image" style="background-image: url('assets/images/banner/banner.jpg');">
+        </div>
+        <div class="carousel-slide banner-two_image" style="background-image: url('assets/images/banner/banner2.jpg');">
+        </div>
+        <div class="carousel-slide banner-two_image" style="background-image: url('assets/images/banner/banner3.jpg');">
+        </div>
       </div>
 
       <div class="auto-container">
@@ -105,7 +112,7 @@
           <div class="banner-two_content-inner">
             <div class="banner-two_title">real estate</div>
             <h2 class="banner-two_heading">
-              Your Gateway  <br />
+              Your Gateway <br />
               <span>to Luxury Living </span>
             </h2>
 
@@ -300,78 +307,46 @@
         </div>
         <div class="three-items_slider swiper-container">
           <div class="swiper-wrapper">
-            <!-- Slide -->
-            <div class="swiper-slide">
-              <!-- Service Block One -->
-              <div class="service-block_one">
-                <div class="service-block_one-inner">
-                  <div class="service-block_one_image" style="
-                        background-image: url(assets/images/Carts/Building\ card\ 2.jpg);
+            <?php
+            $query = "SELECT * FROM `service` order by rand() limit 0,3";
+            $temp = mysqli_query($conn, $query);
+            if ($temp) {
+              while ($row = mysqli_fetch_assoc($temp)) {
+                $id = $row['service_id'];
+                $heading = $row['service_name'];
+                $desc = $row['service_desc'];
+                $icon = $row['service_logo'];
+                $bg_img = $row['service_bg'];
+                ?>
+                <!-- Slide -->
+                <div class="swiper-slide">
+                  <!-- Service Block One -->
+                  <div class="service-block_one">
+                    <div class="service-block_one-inner">
+                      <div class="service-block_one_image" style="
+                        background-image: url(admin/images/<?php echo $bg_img ?>);
                       "></div>
-                  <div class="service-block_one-icon">
-                    <i class="flaticon-building"></i>
+                      <div class="service-block_one-icon">
+                        <i class="<?php echo $icon ?>"></i>
+                      </div>
+                      <h4 class="service-block_one-heading">
+                        <a href="service-detail.php?service_id=<?php echo $id ?>">
+                          <?php echo $heading ?>
+                        </a>
+                      </h4>
+                      <div class="service-block_one-text"
+                        style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;">
+                        <?php echo $desc ?>
+                      </div>
+                      <a class="service-block_one-more" href="service-detail.php?service_id=<?php echo $id ?>">Read More <i
+                          class="flaticon-next-1"></i></a>
+                    </div>
                   </div>
-                  <h4 class="service-block_one-heading">
-                    <a href="service-detail.php">Building <br />
-                      Construction</a>
-                  </h4>
-                  <div class="service-block_one-text">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
-                    et massa mi. Aliquam in hendrerit urna.
-                  </div>
-                  <a class="service-block_one-more" href="service-detail.php">Read More <i
-                      class="flaticon-next-1"></i></a>
                 </div>
-              </div>
-            </div>
-            <!-- Slide -->
-            <div class="swiper-slide">
-              <!-- Service Block One -->
-              <div class="service-block_one">
-                <div class="service-block_one-inner">
-                  <div class="service-block_one_image" style="
-                        background-image: url(assets/images/Carts/Building\ card\ 4.jpg);
-                      "></div>
-                  <div class="service-block_one-icon">
-                    <i class="flaticon-interior-design"></i>
-                  </div>
-                  <h4 class="service-block_one-heading">
-                    <a href="service-detail.php">Interior <br />
-                      designing</a>
-                  </h4>
-                  <div class="service-block_one-text">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
-                    et massa mi. Aliquam in hendrerit urna.
-                  </div>
-                  <a class="service-block_one-more" href="service-detail.php">Read More <i
-                      class="flaticon-next-1"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- Slide -->
-            <div class="swiper-slide">
-              <!-- Service Block One -->
-              <div class="service-block_one">
-                <div class="service-block_one-inner">
-                  <div class="service-block_one_image" style="
-                        background-image: url(assets/images/Carts/Building\ card\ 5.jpg);
-                      "></div>
-                  <div class="service-block_one-icon">
-                    <i class="flaticon-building-1"></i>
-                  </div>
-                  <h4 class="service-block_one-heading">
-                    <a href="service-detail.php">General <br />
-                      Construction</a>
-                  </h4>
-                  <div class="service-block_one-text">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
-                    et massa mi. Aliquam in hendrerit urna.
-                  </div>
-                  <a class="service-block_one-more" href="service-detail.php">Read More <i
-                      class="flaticon-next-1"></i></a>
-                </div>
-              </div>
-            </div>
+                <?php
+              }
+            }
+            ?>
           </div>
 
           <!-- If we need pagination -->
@@ -466,101 +441,50 @@
         </div>
         <div class="three-items_slider swiper-container">
           <div class="swiper-wrapper">
-            <!-- Slide -->
-            <div class="swiper-slide">
-              <!-- Property Block One / Style Two -->
-              <div class="property-block_one style-two">
-                <div class="property-block_one-inner">
-                  <div class="property-block_one-image">
-                    <div class="property-block_one-title">Featuerd</div>
-                    <img src="assets/images/Bedroom/beach2.jpg" alt="" />
-                    <div class="property-block_one-image-content">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <div class="property-block_one-price">
-                          $2,400 <span>/month</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="property-block_one-content">
-                    <div class="property-block_one-location">
-                      <i class="flaticon-maps-and-flags"></i>Pasadena 809b-2,
-                      Oklahoma
-                    </div>
-                    <h4 class="property-block_one-heading">
-                      <a href="property-detail.php">Super deluxe bed room near sea beech</a>
-                    </h4>
-                    <div class="property-block_one-btn">
-                      <a href="property-detail.php" class="theme-btn">View Details</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php
+            $p_sql = "SELECT property_id ,title , address, gallery FROM property order by rand() limit 0,3";
+            $p_result = $conn->query($p_sql);
 
-            <!-- Slide -->
-            <div class="swiper-slide">
-              <!-- Property Block One / Style Two -->
-              <div class="property-block_one style-two">
-                <div class="property-block_one-inner">
-                  <div class="property-block_one-image">
-                    <div class="property-block_one-off">20% off</div>
-                    <a href="property-detail.php"><img src="assets/images/Bedroom/beach3.jpg" alt="" /></a>
-                    <div class="property-block_one-image-content">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <div class="property-block_one-price">
-                          $2,400 <span>/month</span>
+            if ($p_result) {
+              while ($rows = $p_result->fetch_assoc()) {
+                $gallery = json_decode($rows['gallery'], true);
+                ?>
+                <!-- Slide -->
+                <div class="swiper-slide">
+                  <!-- Property Block One / Style Two -->
+                  <div class="property-block_one style-two">
+                    <div class="property-block_one-inner">
+                      <div class="property-block_one-image">
+                        <div class="property-block_one-title">Featuerd</div>
+                        <img src="admin/php/<?php echo $gallery[0] ?>" alt="" />
+                        <div class="property-block_one-image-content">
+                        </div>
+                      </div>
+                      <div class="property-block_one-content">
+                        <div class="property-block_one-location">
+                          <i class="flaticon-maps-and-flags"></i>
+                          <?php echo $rows['address'] ?>
+                        </div>
+                        <h4 class="property-block_one-heading">
+                          <a href="property-detail.php?id=<?php echo $rows['property_id'] ?>">
+                            <?php echo $rows['title'] ?>
+                          </a>
+                        </h4>
+                        <div class="property-block_one-btn">
+                          <a href="property-detail.php?id=<?php echo $rows['property_id'] ?>" class="theme-btn">View
+                            Details</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="property-block_one-content">
-                    <div class="property-block_one-location">
-                      <i class="flaticon-maps-and-flags"></i>Pasadena 809b-2,
-                      Oklahoma
-                    </div>
-                    <h4 class="property-block_one-heading">
-                      <a href="property-detail.php">Luxury Villa with Sunset By Residence</a>
-                    </h4>
-                    <div class="property-block_one-btn">
-                      <a href="property-detail.php" class="theme-btn">View Details</a>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
+                <?php
+              }
+            } else {
+              echo "no data found";
+            }
 
-            <!-- Slide -->
-            <div class="swiper-slide">
-              <!-- Property Block One / Style Two -->
-              <div class="property-block_one style-two">
-                <div class="property-block_one-inner">
-                  <div class="property-block_one-image">
-                    <div class="property-block_one-title">Featuerd</div>
-                    <a href="property-detail.php"><img src="assets/images/Bedroom/beach1.jpg" alt="" /></a>
-                    <div class="property-block_one-image-content">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <div class="property-block_one-price">
-                          $2,400 <span>/month</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="property-block_one-content">
-                    <div class="property-block_one-location">
-                      <i class="flaticon-maps-and-flags"></i>Pasadena 809b-2,
-                      Oklahoma
-                    </div>
-                    <h4 class="property-block_one-heading">
-                      <a href="property-detail.php">Seaside Luxury Suite Sunset By Residence</a>
-                    </h4>
-                    <div class="property-block_one-btn">
-                      <a href="property-detail.php" class="theme-btn">View Details</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ?>
           </div>
 
           <!-- If we need pagination -->
@@ -715,8 +639,8 @@
                 <img src="assets/images/palace/Versiles1.jpg" alt="" />
               </div>
               <!-- <a href="#" class="faq-one_chat">
-								Live Chat <i><img src="assets/images/icons/chat-1.svg" alt="" /></i>
-							</a> -->
+                Live Chat <i><img src="assets/images/icons/chat-1.svg" alt="" /></i>
+              </a> -->
             </div>
           </div>
         </div>
@@ -884,7 +808,7 @@
               <!-- Contact Form -->
 
               <div class="contact-form contact-with-us">
-                <form method="post" action="contact.php">
+                <form method="post" action="assets/php/contact1.php">
                   <div class="form-group d-flex align-items-center justify-content-center">
                     <i class="flaticon-user"></i>
                     <input type="text" name="username" placeholder="Full Name" required="" />
@@ -906,7 +830,7 @@
 
                   <!-- Button Box -->
                   <div class="form-group">
-                    <button class="submit-btn">Send Now</button>
+                    <button class="submit-btn" type="submit" name="submit">Send Now</button>
                   </div>
                 </form>
               </div>
@@ -927,62 +851,44 @@
         </div>
 
         <div class="row clearfix">
-          <!-- News Block One -->
-          <div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-            <div class="news-block_one-inner">
-              <div class="news-block_one-image">
-                <a href="blogdetail.php"><img src="assets/images/Blog/blog1.jpg" alt="" /></a>
-              </div>
-              <div class="news-block_one-content">
-                <ul class="news-block_one-meta">
-                  <li>By Admin</li>
-                  <li>6 min read</li>
-                </ul>
-                <h4 class="news-block_one-title">
-                  <a href="blogdetail.php">Home buying 101 Essential best Tips.</a>
-                </h4>
-                <a class="news-block_one-more" href="blogdetail.php">Read More <i class="flaticon-next-1"></i></a>
-              </div>
-            </div>
-          </div>
 
-          <!-- News Block One -->
-          <div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-            <div class="news-block_one-inner">
-              <div class="news-block_one-image">
-                <a href="blogdetail.php"><img src="assets/images/Blog/blog2.jpg" alt="" /></a>
-              </div>
-              <div class="news-block_one-content">
-                <ul class="news-block_one-meta">
-                  <li>By Admin</li>
-                  <li>6 min read</li>
-                </ul>
-                <h4 class="news-block_one-title">
-                  <a href="blogdetail.php">Finding Dream Home: Step by Step with us</a>
-                </h4>
-                <a class="news-block_one-more" href="blogdetail.php">Read More <i class="flaticon-next-1"></i></a>
-              </div>
-            </div>
-          </div>
+          <?php
+          $b_p_sql = "SELECT * FROM blog order by rand() limit 0,3";
+          $b_p_result = $conn->query($b_p_sql);
 
-          <!-- News Block One -->
-          <div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-            <div class="news-block_one-inner">
-              <div class="news-block_one-image">
-                <a href="blogdetail.php"><img src="assets/images/Blog/blog3.jpg" alt="" /></a>
+          if ($b_p_result) {
+            while ($rows = $b_p_result->fetch_assoc()) {
+              $gallery = json_decode($rows['img'], true);
+
+              ?>
+              <!-- News Block One -->
+              <div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
+                <div class="news-block_one-inner">
+                  <div class="news-block_one-image">
+                    <a href="blog-detail.php?id=<?php echo $rows['id'] ?>"><img src="admin/php/<?php echo $gallery[0] ?>"
+                        alt="" /></a>
+                  </div>
+                  <div class="news-block_one-content">
+                    <ul class="news-block_one-meta">
+                      <li>By Admin</li>
+                      <li>
+                        <?php echo $rows['time'] ?>
+                      </li>
+                    </ul>
+                    <h4 class="news-block_one-title"><a href="blog-detail.php?id=<?php echo $rows['id'] ?>">
+                        <?php echo $rows['title'] ?>
+                      </a></h4>
+                    <a class="news-block_one-more" href="blog-detail.php?id=<?php echo $rows['id'] ?>">Read More <i
+                        class="flaticon-next-1"></i></a>
+                  </div>
+                </div>
               </div>
-              <div class="news-block_one-content">
-                <ul class="news-block_one-meta">
-                  <li>By Admin</li>
-                  <li>6 min read</li>
-                </ul>
-                <h4 class="news-block_one-title">
-                  <a href="blogdetail.php">Selling Your Home: Quick Pro Tips now</a>
-                </h4>
-                <a class="news-block_one-more" href="blogdetail.php">Read More <i class="flaticon-next-1"></i></a>
-              </div>
-            </div>
-          </div>
+              <?php
+            }
+          } else {
+            echo "no data found";
+          }
+          ?>
         </div>
       </div>
     </section>
@@ -1013,7 +919,7 @@
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
-  
+
   <script src="assets/js/jquery.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
@@ -1044,4 +950,5 @@
   <script src="assets/js/quote.js"></script>
 
 </body>
+
 </html>

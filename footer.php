@@ -11,22 +11,31 @@
                         <div class="footer_column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget">
                                 <div class="footer-logo">
-                                    <a href="index.php"><img src="assets/images/FINAL B 3-01.png" alt=""
-                                            title="" /></a>
+                                    <a href="index.php"><img src="assets/images/FINAL B 3-01.png" alt="" title="" /></a>
                                 </div>
                                 <div class="footer-text">
-                                    Lorem ipsum dolor sit amet assa mi. Aliquam hendrerit
-                                    urna.
+                                    Apex! Place of mind blowing deals for Property and Construction.
                                 </div>
 
                                 <h5 class="footer-title-subs">Subscribe Now!</h5>
                                 <!-- Newsletter Box -->
                                 <div class="newsletter-box">
-                                    <form method="post" action="contact.php">
+                                    <?php
+                                    if (isset($_POST["submit_sub"])) {
+                                        $email = $_POST["foot_sub"];
+                                        $query = "INSERT INTO `user_sub`(`user_email`) VALUES ('$email')";
+                                        $result = mysqli_query($conn, $query);
+                                        if ($result) {
+                                            echo "<script>alert('You have been subscribe!')</script>";
+                                        } else {
+                                            echo "You can't Subscribed!";
+                                        }
+                                    }
+                                    ?>
+                                    <form method="post">
                                         <div class="form-group">
-                                            <input type="email" name="search-field" value="" placeholder="Your Email"
-                                                required />
-                                            <button type="submit">
+                                            <input type="email" name="foot_sub" placeholder="Your Email" required />
+                                            <button type="submit" name="submit_sub">
                                                 <i class="flaticon-bell"></i>
                                             </button>
                                         </div>

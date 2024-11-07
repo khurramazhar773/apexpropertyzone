@@ -2640,7 +2640,7 @@
 }
 
 .services-one .swiper-container {
-	overflow: visible;
+	overflow: hidden;
 }
 
 .services-one .swiper-container:before {
