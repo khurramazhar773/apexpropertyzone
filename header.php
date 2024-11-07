@@ -70,7 +70,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control form-select service-type quote-form-select"
                                         id="serviceType" onchange="toggleFields()" required>
-                                        <option value="sell">Select Property</option>
+                                        <option value="">Select Property</option>
                                         <option value="sell">Sell Property</option>
                                         <option value="buy">Buy Property</option>
                                         <option value="rent">Rent/Lease Property</option>
