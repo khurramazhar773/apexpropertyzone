@@ -28,7 +28,6 @@ include "config.php";
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
 </head>
 
 <body>
@@ -92,7 +91,7 @@ include "config.php";
 			<div class="page-title_gradient"></div>
 			<div class="auto-container">
 				<h2>About Us</h2>
-				<ul class="bread-crumb clearfix" style="position:">
+				<ul class="bread-crumb clearfix bread-crumb-ul">
 					<li><a href="index.php"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
 					<li>About Us</li>
 				</ul>
