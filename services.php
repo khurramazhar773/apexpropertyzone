@@ -13,7 +13,7 @@ include "config.php";
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
-	<link href="assets/css/quote.css" rel="stylesheet"/>
+	<link href="assets/css/quote.css" rel="stylesheet" />
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -108,7 +108,7 @@ include "config.php";
 				<div class="row clearfix">
 					<!-- Service Block One -->
 					<?php
-					$query = "SELECT * FROM `service`";
+					$query = "SELECT * FROM `service` order by rand()";
 					$temp = mysqli_query($conn, $query);
 					if ($temp) {
 						while ($row = mysqli_fetch_assoc($temp)) {
@@ -127,9 +127,13 @@ include "config.php";
 										<i class="<?php echo $icon ?>"></i>
 									</div>
 									<h4 class="service-block_one-heading"><a
-											href="service-detail.php"><?php echo $heading ?></a></h4>
-									<div class="service-block_one-text"><?php echo $desc ?></div>
-									<a class="service-block_one-more" href="service-detail.php?service_id=<?php echo $id ?>">Read More <i
+											href="service-detail.php?service_id=<?php echo $id ?>"><?php echo $heading ?></a>
+									</h4>
+									<div class="service-block_one-text"
+										style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;  text-overflow: ellipsis;">
+										<?php echo $desc ?></div>
+									<a class="service-block_one-more"
+										href="service-detail.php?service_id=<?php echo $id ?>">Read More <i
 											class="flaticon-next-1"></i></a>
 								</div>
 							</div>
@@ -183,4 +187,5 @@ include "config.php";
 	<script src="assets/js/quote.js"></script>
 
 </body>
+
 </html>

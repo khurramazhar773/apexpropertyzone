@@ -25,7 +25,7 @@ $dis_con_result = $conn->query($dis_con_sql);
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+      <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <!-- site css -->
@@ -124,15 +124,6 @@ $dis_con_result = $conn->query($dis_con_sql);
                         </div>
                      </div>
                      <!-- end row -->
-                  </div>
-
-                  <!-- footer -->
-                  <div class="container-fluid">
-                     <div class="footer">
-                        <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
-                           Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
-                        </p>
-                     </div>
                   </div>
                </div>
                <!-- end dashboard inner -->

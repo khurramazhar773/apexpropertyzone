@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-$p_sql = "SELECT property_id ,title , address, gallery FROM property";
+$p_sql = "select * from `property` where permission = 'approved' order by rand()";
 
 $p_result = $conn->query($p_sql);
 
@@ -189,11 +189,13 @@ $p_result = $conn->query($p_sql);
 														<div class="price-range col-lg-3 col-md-6 col-sm-12 form-group">
 															<div style="display: flex; flex-direction: column;">
 																<label>Price(From)</label>
-																<input type="number" id="minPrice" placeholder="0" min="0">
+																<input type="number" id="minPrice" placeholder="0"
+																	min="0">
 															</div>
 															<div style="display: flex; flex-direction: column;">
 																<label>(To Any)</label>
-																<input type="number" id="maxPrice" placeholder="0" min="0">
+																<input type="number" id="maxPrice" placeholder="0"
+																	min="0">
 															</div>
 														</div>
 
@@ -259,11 +261,13 @@ $p_result = $conn->query($p_sql);
 														<div class="price-range col-lg-3 col-md-6 col-sm-12 form-group">
 															<div style="display: flex; flex-direction: column;">
 																<label>Price (From)</label>
-																<input type="number" id="minPrice" placeholder="0" min="0">
+																<input type="number" id="minPrice" placeholder="0"
+																	min="0">
 															</div>
 															<div style="display: flex; flex-direction: column;">
 																<label>(To Any)</label>
-																<input type="number" id="maxPrice" placeholder="0" min="0">
+																<input type="number" id="maxPrice" placeholder="0"
+																	min="0">
 															</div>
 														</div>
 
@@ -294,284 +298,55 @@ $p_result = $conn->query($p_sql);
 
 			</div>
 		</section>
-		
+
 		<section class="property-three">
 			<div class="auto-container">
 				<div class="row clearfix">
-<?php
-		
-		if($p_result){
-			while($rows = $p_result->fetch_assoc()){
-				$gallery = json_decode($rows['gallery'], true);
-			
-		?>
-					<!-- Property Block One -->
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInLeft" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php?id=<?php echo $rows['property_id'] ?>"><img src="admin/php/<?php echo $gallery[0] ?>" alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i><?php echo $rows['address'] ?></div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php"><?php echo $rows['title'] ?></a></h4>								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-					</div>
 					<?php
+
+					if ($p_result) {
+						while ($rows = $p_result->fetch_assoc()) {
+							$gallery = json_decode($rows['gallery'], true);
+
+							?>
+							<!-- Property Block One -->
+							<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
+								<div class="property-block_one-inner wow fadeInLeft" data-wow-delay="0ms"
+									data-wow-duration="1500ms">
+									<div class="property-block_one-image">
+										<div class="property-block_one-title">Featuerd</div>
+										<a href="property-detail.php?id=<?php echo $rows['property_id'] ?>"><img
+												src="admin/php/<?php echo $gallery[0] ?>" alt="" /></a>
+									</div>
+									<div class="property-block_one-content">
+										<div class="property-block_one-location"><i
+												class="flaticon-maps-and-flags"></i><?php echo $rows['address'] ?></div>
+										<h4 class="property-block_one-heading"><a
+												href="property-detail.php?id=<?php echo $rows['property_id'] ?>"><?php echo $rows['title'] ?></a></h4>
+									</div>
+									<div class="widget-content-buttons">
+										<a href="" class="property-detail-button" style="text-decoration: none;">
+											<img src="assets/images/icons/envelope.png" alt="">
+											Email
+										</a>
+										<a href="" class="property-detail-button">
+											<img src="./assets/images/icons/circle-phone.png" alt="">
+											<span>Call</span>
+										</a>
+									</div>
+									<a class="service-block_one-more" href="property-detail.php?id=<?php echo $rows['property_id'] ?>">
+										Read More
+										<i class="flaticon-next-1"></i>
+									</a>
+								</div>
+							</div>
+							<?php
+						}
+					} else {
+						echo "no data found";
 					}
-				}else{
-					echo "no data found";
-				}
-		
+
 					?>
-					<!-- Property Block One -->
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInUp" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/Bedroom/beach1.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">Luxury Villa with
-										Sunset By Residence</a></h4>
-								<!-- <div class="d-flex justify-content-between align-items-center flex-wrap">
-									<div class="property-block_one-price">$2,400 <span>/month</span></div>
-
-								</div> -->
-								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-					</div>
-
-					<!-- Property Block One -->
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInRight" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/Bedroom/beach3.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">Seaside Luxury
-										Suite Sunset By Residence</a></h4>
-								<!-- <div class="d-flex justify-content-between align-items-center flex-wrap">
-									<div class="property-block_one-price">$2,400 <span>/month</span></div>
-
-								</div> -->
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>							
-						</div>
-					</div>
-
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInRight" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/Bedroom/beach3.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">Seaside Luxury
-									Suite Sunset By Residence</a></h4>								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-					</div>
-
-					<!-- Property Block One -->
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInLeft" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/Bedroom/beach4.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">Outside the
-										cities happy home for live</a></h4>
-								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-					</div>
-
-					<!-- Property Block One -->
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInUp" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/services_detail/4.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">deluxe bed
-									room with best touch</a></h4>								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-					</div>
-
-					<!-- Property Block One -->
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInRight" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/services_detail/3.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">Fully glaze
-									oriented house for sell</a></h4>								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-						
-					</div>
-
-					<div class="property-block_one style-three col-lg-3 col-md-6 col-sm-12">
-						<div class="property-block_one-inner wow fadeInRight" data-wow-delay="0ms"
-							data-wow-duration="1500ms">
-							<div class="property-block_one-image">
-								<div class="property-block_one-title">Featuerd</div>
-								<a href="property-detail.php"><img src="assets/images/services_detail/3.jpg"
-										alt="" /></a>
-							</div>
-							<div class="property-block_one-content">
-								<div class="property-block_one-location"><i class="flaticon-maps-and-flags"></i>Pasadena
-									809b-2, Oklahoma</div>
-								<h4 class="property-block_one-heading"><a href="property-detail.php">Fully glaze
-									oriented house for sell</a></h4>								
-							</div>
-							<div class="widget-content-buttons">
-								<a href="" class="property-detail-button" style="text-decoration: none;">
-									<img src="assets/images/icons/envelope.png" alt="">
-									Email
-								</a>								
-								<a href="" class="property-detail-button">
-									<img src="./assets/images/icons/circle-phone.png" alt="">
-									<span>Call</span>
-								</a>
-							</div>	
-							<a class="service-block_one-more" href="property-detail.php">
-								Read More 
-								<i class="flaticon-next-1"></i>
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -614,4 +389,5 @@ $p_result = $conn->query($p_sql);
 	<script src="assets/js/quote.js"></script>
 
 </body>
+
 </html>

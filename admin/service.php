@@ -18,8 +18,9 @@ include "../config.php"
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- site icon -->
-    <link rel="icon" href="images/fevicon.png" type="image/png" />
+
+    <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- site css -->
@@ -51,11 +52,11 @@ include "../config.php"
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
-            <?php  include 'admin-nav.php'; ?>
+            <?php include 'admin-nav.php'; ?>
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
-            <?php  include 'admin-top.php'; ?>
+                <?php include 'admin-top.php'; ?>
                 <div class="container-fluid">
                     <div class="row column_title">
                         <div class="col-md-12">
@@ -88,12 +89,14 @@ include "../config.php"
                                                     style='background-image:url(images/<?php echo $bg_img ?>)'>
                                                 </div>
                                                 <div class='service-block_one-icon'>
-                                                <i class="<?php echo $icon ?>"></i>
+                                                    <i class="<?php echo $icon ?>"></i>
                                                 </div>
                                                 <h4 class='service-block_one-heading'><a
                                                         href='service-detail.html'><?php echo $heading ?></a>
                                                 </h4>
-                                                <div class='service-block_one-text'><?php echo $desc ?></div>
+                                                <div class='service-block_one-text'
+                                                    style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;  text-overflow: ellipsis;">
+                                                    <?php echo $desc ?></div>
                                                 <div class='row mt-3'>
                                                     <div class='col-6'>
                                                         <a href='upd_service.php?update_id=<?php echo $id ?>'

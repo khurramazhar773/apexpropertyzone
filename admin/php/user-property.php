@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $lot_area = $_POST['lot_area'];
     $constructed_area = $_POST['constructed_area'];
     $property_type = $_POST['property_type'];
-    // $subtype = $_POST['subtype'];
+    $subtype = $_POST['Subtype'];
     $rooms = $_POST['rooms'];
     $bedrooms = $_POST['bedrooms'];
     $electricityMeter = $_POST['electricityMeter'];
@@ -61,6 +61,7 @@ if (isset($_POST['submit'])) {
 
     // Convert the array of image URLs to JSON format
     $gallery_json = json_encode($image_urls);
+    echo $gallery_json;
 
     // Prepare and bind the SQL statement
     $user_pro_sql = "INSERT INTO `property` (`name`, `email`, `phone`, `title`, `location`, `address`, `lot_area`, `constructed_area`, `property_type`, `subtype`, `rooms`, `bedrooms`, `elecMeter`, `gasMeter`, `areaSq`, `baths`, `description`, `cond`, `price`, `gallery`, `permission`)
@@ -78,7 +79,6 @@ if (isset($_POST['submit'])) {
     }
 
     // Close the statement and the connection
-    $user_pro_result->close()
     
     ;
     $conn->close();

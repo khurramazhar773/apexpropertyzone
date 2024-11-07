@@ -14,8 +14,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- site icon -->
-    <link rel="icon" href="images/fevicon.png" type="image/png" />
+    <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- site css -->
@@ -118,13 +117,6 @@
         </div>
         <!-- footer -->
 
-    </div>
-    <!-- end dashboard inner -->
-    <div class="container-fluid">
-        <div class="footer">
-            <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
-        </div>
-    </div>
     </div>
 
     <!-- model popup -->

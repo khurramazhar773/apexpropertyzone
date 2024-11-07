@@ -16,10 +16,11 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- site icon -->
-    <link rel="icon" href="images/fevicon.png" type="image/png" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
+
     <!-- site css -->
     <link rel="stylesheet" href="style.css" />
     <!-- responsive css -->

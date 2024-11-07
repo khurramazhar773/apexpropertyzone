@@ -24,6 +24,8 @@ $dis_con_result = $conn->query($dis_con_sql);
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <!-- site css -->
@@ -99,23 +101,11 @@ $dis_con_result = $conn->query($dis_con_sql);
                                                 </div>
 
                                                 <div class="bottom_list">
-                                                   <div class="left_rating">
-                                                      <p class="ratings">
-                                                         <a href="#"><span class="fa fa-star"></span></a>
-                                                         <a href="#"><span class="fa fa-star"></span></a>
-                                                         <a href="#"><span class="fa fa-star"></span></a>
-                                                         <a href="#"><span class="fa fa-star"></span></a>
-                                                         <a href="#"><span class="fa fa-star-o"></span></a>
-                                                      </p>
-                                                   </div>
                                                    <div class="right_button">
-                                                      <button type="button" class="btn btn-success btn-xs"> <i
-                                                            class="fa fa-user">
-                                                         </i> <i class="fa fa-comments-o"></i>
-                                                      </button>
-                                                      <button type="button" class="btn btn-primary btn-xs">
+                                                      <a class="btn btn-primary btn-xs"
+                                                         href="booking_profile.php?booking_id=<?php echo $row["booking_id"] ?>">
                                                          <i class="fa fa-user"> </i> View Profile
-                                                      </button>
+                                                      </a>
                                                    </div>
                                                 </div>
                                              </div>

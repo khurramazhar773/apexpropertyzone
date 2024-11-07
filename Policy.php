@@ -1,3 +1,6 @@
+<?php
+include "config.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -344,4 +347,5 @@
   <script src="assets/js/quote.js"></script>
 
 </body>
+
 </html>

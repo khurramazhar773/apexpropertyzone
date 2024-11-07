@@ -1,7 +1,7 @@
 <?php include 'auth_check.php'; ?>
 <?php include '../config.php';
 
-$sql = "SELECT * FROM property WHERE permission = 'pending' ORDER BY property_id DESC";
+$sql = "SELECT * FROM property WHERE permission = 'pending'";
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -19,8 +19,7 @@ $result = $conn->query($sql);
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
-   <!-- site icon -->
-   <link rel="icon" href="images/fevicon.png" type="image/png" />
+   <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <!-- site css -->
@@ -80,6 +79,7 @@ $result = $conn->query($sql);
                               <span class="butn">
                                  <form action="php/approve.php" method="post">
                                     <input type="hidden" name="property_id" value="<?php echo $row['property_id'] ?>">
+                                    <a href="property-view.php?id=<?php echo $row['property_id'] ?>">view</a>
                                     <a href="update-form.php?id=<?php echo $row['property_id'] ?>">Edit</a>
                                     <button type="submit" name="approve">Aprove</button>
                                  </form>
