@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-$b_p_sql = "SELECT * FROM blog";
+$b_p_sql = "SELECT * FROM blog order by rand()";
 
 $b_p_result = $conn->query($b_p_sql);
 
@@ -98,10 +98,6 @@ $b_p_result = $conn->query($b_p_sql);
 			<div class="page-title_gradient"></div>
 			<div class="auto-container">
 				<h2>Blog</h2>
-				<!-- <ul class="bread-crumb clearfix">
-					<li><a href="index.html"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
-					<li>Blog</li>
-				</ul> -->
 			</div>
 
 		</section>
@@ -128,11 +124,11 @@ $b_p_result = $conn->query($b_p_sql);
 									<div class="news-block_one-content">
 										<ul class="news-block_one-meta">
 											<li>By Admin</li>
-											<li>6 min read</li>
+											<li><?php echo $rows['time'] ?></li>
 										</ul>
 										<h4 class="news-block_one-title"><a
-												href="blogdetail.php"><?php echo $rows['title'] ?></a></h4>
-										<a class="news-block_one-more" href="blogdetail.php">Read More <i
+												href="blog-detail.php?id=<?php echo $rows['id'] ?>"><?php echo $rows['title'] ?></a></h4>
+										<a class="news-block_one-more" href="blog-detail.php?id=<?php echo $rows['id'] ?>">Read More <i
 												class="flaticon-next-1"></i></a>
 									</div>
 								</div>
@@ -144,158 +140,6 @@ $b_p_result = $conn->query($b_p_sql);
 					}
 
 					?>
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog2.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">Finding Dream Home: Step by
-										Step with us</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog3.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">Selling Your Home: Quick
-										Pro
-										Tips now</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog4.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">Top 10 Neighborhoods for
-										Families</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog5.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">10 Must-Have Features to
-										Look for in Home</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog6.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">10 Steps to Selling Your
-										Home Quickly</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog8.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">Eco-Friendly Home
-										Upgrades Real Estate</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog8.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">From Fixer-Upper to Dream
-										Home</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<!-- News Block One -->
-					<div class="news-block_one style-two col-lg-4 col-md-6 col-sm-12">
-						<div class="news-block_one-inner">
-							<div class="news-block_one-image">
-								<a href="blogdetail.php"><img src="assets/images/Blog/blog9.jpg" alt="" /></a>
-							</div>
-							<div class="news-block_one-content">
-								<ul class="news-block_one-meta">
-									<li>By Admin</li>
-									<li>6 min read</li>
-								</ul>
-								<h4 class="news-block_one-title"><a href="blogdetail.php">Trends Shape the Future of
-										Real Estate</a></h4>
-								<a class="news-block_one-more" href="blogdetail.php">Read More <i
-										class="flaticon-next-1"></i></a>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>

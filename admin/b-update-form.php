@@ -170,8 +170,6 @@
                 </div>
                 <!-- Contact Three -->
             </div>
-            <!-- footer -->
-
         </div>
         <!-- end dashboard inner -->
 

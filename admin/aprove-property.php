@@ -1,7 +1,7 @@
 <?php include 'auth_check.php'; ?>
 <?php include '../config.php';
 
-$sql = "SELECT * FROM property WHERE permission = 'pending' ORDER BY property_id DESC";
+$sql = "SELECT * FROM property WHERE permission = 'pending'";
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -19,8 +19,7 @@ $result = $conn->query($sql);
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
-   <!-- site icon -->
-   <link rel="icon" href="images/fevicon.png" type="image/png" />
+   <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <!-- site css -->

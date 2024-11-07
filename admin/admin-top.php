@@ -9,10 +9,11 @@
          <div class="right_topbar">
             <div class="icon_info">
                <ul style="margin-right: 20px;">
-                  <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                  <li><a href="subscribed_user.php"><i class="fa fa-bell-o"></i><span
+                           class="badge"><?php include 'top_admin_sub.php' ?></span></a></li>
                   <li><a href="aprove-property.php"><i class="fa fa-envelope-o"></i><span class="badge">
-                     <?php include "top_apprv_count.php" ?>
-                  </span></a>
+                           <?php include "top_apprv_count.php" ?>
+                        </span></a>
                   </li>
                </ul>
                <span>

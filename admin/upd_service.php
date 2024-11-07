@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
     $service_icon = mysqli_real_escape_string($conn, $service_icon);
 
     // Insert query
-    $query = "UPDATE `service` SET `service_id`='$id',`service_name`='$service_name',`service_desc`='$service_desc',`service_logo`='$service_icon' , `service_bg` = '$service_bg_img' WHERE service_id = $id";
+    $query = "UPDATE `service` SET `service_id`='$id',`service_name`='$service_name',`service_desc`='$service_desc',`service_logo`='$service_icon' , `service_bg` = '$service_bg_img' WHERE service_id = $id ";
 
     // Execute the query
     $result = mysqli_query($conn, $query);

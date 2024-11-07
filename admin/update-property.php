@@ -43,6 +43,7 @@ $p_result = $conn->query($p_sql);
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -74,8 +75,6 @@ $p_result = $conn->query($p_sql);
                   <section class="property-three">
                      <div class="auto-container">
                         <div class="row clearfix">
-
-
                            <?php
 
                            if ($p_result) {
@@ -119,13 +118,10 @@ $p_result = $conn->query($p_sql);
                            } else {
                               echo "no data found";
                            }
-
                            ?>
                         </div>
                      </div>
                   </section>
-
-
                </div>
             </div>
          </div>

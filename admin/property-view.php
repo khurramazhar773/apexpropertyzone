@@ -12,13 +12,11 @@
 	<link href="../assets/css/responsive.css" rel="stylesheet">
 	<link href="../assets/css/quote.css" rel="stylesheet" />
 	<link href="../assets/css/property.css" rel="stylesheet" />
-
+	<link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
 		rel="stylesheet">
 	<link href="AIzaSyDs97brJ-t3CvW7pbrq2ZmEliTZVEHf6PM" rel="stylesheet">
-	<!-- TAB ICON -->
-	<link rel="icon" href="../assets/images/Layer 2.png" type="image/x-icon">
 
 	<!-- Responsive -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

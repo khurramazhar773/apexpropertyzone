@@ -1,3 +1,7 @@
+<?php
+include "config.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -224,58 +228,42 @@
 					<h2 class="sec-title_heading">Take a stroll around <br> surroundings.</h2>
 				</div>
 				<div class="row clearfix">
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/aboutpage/block1.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-building"></i>
+					<?php
+					$query = "SELECT * FROM `service` order by rand() limit 0,3";
+					$temp = mysqli_query($conn, $query);
+					if ($temp) {
+						while ($row = mysqli_fetch_assoc($temp)) {
+							$id = $row['service_id'];
+							$heading = $row['service_name'];
+							$desc = $row['service_desc'];
+							$icon = $row['service_logo'];
+							$bg_img = $row['service_bg'];
+							?>
+							<!-- Service Block One -->
+							<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
+								<div class="service-block_one-inner">
+									<div class="service-block_one_image"
+										style="background-image:url(admin/images/<?php echo $bg_img ?>)"></div>
+									<div class="service-block_one-icon">
+										<i class="<?php echo $icon ?>"></i>
+									</div>
+									<h4 class="service-block_one-heading"><a
+											href="service-detail.php?service_id=<?php echo $id ?>">
+											<?php echo $heading ?>
+									</h4>
+									<div class="service-block_one-text"
+										style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;  text-overflow: ellipsis;">
+										<?php echo $desc ?>
+									</div>
+									<a class="service-block_one-more"
+										href="service-detail.php?service_id=<?php echo $id ?>">Read More <i
+											class="flaticon-next-1"></i></a>
+								</div>
 							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail.php">Building <br>
-									Construction</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail.php">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/aboutpage/block2.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-interior-design"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail2.php">Interior <br>
-									designing</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail2.php">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
-					<!-- Service Block One -->
-					<div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one_image"
-								style="background-image:url(assets/images/aboutpage/block3.jpg)"></div>
-							<div class="service-block_one-icon">
-								<i class="flaticon-building-1"></i>
-							</div>
-							<h4 class="service-block_one-heading"><a href="service-detail3.php">General <br>
-									Construction</a></h4>
-							<div class="service-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing elit
-								Ut et massa mi. Aliquam in hendrerit urna.</div>
-							<a class="service-block_one-more" href="service-detail3.php">Read More <i
-									class="flaticon-next-1"></i></a>
-						</div>
-					</div>
-
+							<?php
+						}
+					}
+					?>
 				</div>
 			</div>
 		</section>
