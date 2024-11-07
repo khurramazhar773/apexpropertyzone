@@ -280,11 +280,7 @@ include "config.php";
     <section class="page-title d-none">
       <div class="page-title_gradient"></div>
       <div class="auto-container">
-        <h2>Contact us</h2>
-        <!-- <ul class="bread-crumb clearfix">
-          <li><a href="index.html"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
-          <li>Contact us</li>
-        </ul> -->
+
       </div>
 
       <div class="banner-two_socials_contact">

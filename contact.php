@@ -54,8 +54,8 @@ include "config.php";
 
                             <!-- Logo Box -->
                             <div class="logo-box">
-                                <div class="logo"><a href="index.php"><img src="assets/images/FINAL A-01.png"
-                                            alt="" title=""></a></div>
+                                <div class="logo"><a href="index.php"><img src="assets/images/FINAL A-01.png" alt=""
+                                            title=""></a></div>
                             </div>
                             <!-- End Logo Box -->
 
@@ -71,10 +71,12 @@ include "config.php";
             <div class="mobile-menu">
                 <div class="menu-backdrop"></div>
                 <div class="close-btn"><span class="icon flaticon-close-1"></span></div>
-                
+
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index.php"><img src="assets/images/logo.svg" alt="" title=""></a></div>
-                    <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                    <div class="nav-logo"><a href="index.php"><img src="assets/images/logo.svg" alt="" title=""></a>
+                    </div>
+                    <div class="menu-outer">
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 </nav>
             </div>
 
@@ -83,13 +85,14 @@ include "config.php";
 
         <!-- Page Title -->
         <section class="page-title">
-
             <div class="page-title_gradient"></div>
             <div class="auto-container">
                 <h2>Contact us</h2>
+                <ul class="bread-crumb clearfix bread-crumb-ul">
+                    <li><a href="index.php"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
+                    <li>Contact us</li>
+                </ul>
             </div>
-
-
         </section>
         <!-- End Page Title -->
 
@@ -146,7 +149,7 @@ include "config.php";
                                         <!--Form Group-->
                                         <div class="form-group select-service col-lg-6 col-md-6 col-sm-6">
                                             <select name="services" class="custom-select-box"
-                                            style="border: 1px solid rgba(0, 0, 0, 0.133);">
+                                                style="border: 1px solid rgba(0, 0, 0, 0.133);">
                                                 <option>Select Service</option>
                                                 <option value="Service 01">Service 01</option>
                                                 <option value="Service 02">Service 02</option>
@@ -197,8 +200,8 @@ include "config.php";
     </div>
 
     <!--  -->
-	<?php require 'footer.php'; ?>
-	<!--  -->
+    <?php require 'footer.php'; ?>
+    <!--  -->
 
     <!-- End PageWrapper -->
     <div class="progress-wrap">
@@ -237,4 +240,5 @@ include "config.php";
     <script src="assets/js/quote.js"></script>
 
 </body>
+
 </html>
