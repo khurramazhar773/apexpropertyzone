@@ -19,6 +19,7 @@ include "config.php";
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet" />
   <link href="AIzaSyDs97brJ-t3CvW7pbrq2ZmEliTZVEHf6PM" rel="stylesheet" />
+
   <!-- TAB ICON -->
   <link rel="icon" href="assets/images/Layer 2.png" type="image/x-icon" />
 
@@ -280,7 +281,7 @@ include "config.php";
     <section class="page-title d-none">
       <div class="page-title_gradient"></div>
       <div class="auto-container">
-
+        <h2>Contact us</h2>
       </div>
 
       <div class="banner-two_socials_contact">
@@ -806,9 +807,8 @@ include "config.php";
                 </h2>
               </div>
               <!-- Contact Form -->
-
               <div class="contact-form contact-with-us">
-                <form method="post" action="assets/php/contact1.php">
+                <form method="post" action="assets/php/contact1.php" id="contactForm">
                   <div class="form-group d-flex align-items-center justify-content-center">
                     <i class="flaticon-user"></i>
                     <input type="text" name="username" placeholder="Full Name" required="" />
@@ -833,6 +833,9 @@ include "config.php";
                     <button class="submit-btn" type="submit" name="submit">Send Now</button>
                   </div>
                 </form>
+                <div id="confirmation-message" style="display: none; color: green; text-align: center; margin-top: 10px;">
+                
+                </div>
               </div>
             </div>
           </div>
@@ -919,7 +922,9 @@ include "config.php";
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="assets/js/jquery.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
@@ -948,7 +953,32 @@ include "config.php";
   <script src="assets/js/quote.js"></script>
   <script src="assets/js/header.js"></script>
   <script src="assets/js/quote.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-JobWAqYk5CSjWuVV3mxgS+MmccJqkrBaDhk8SKS1BW+71dJ9gzascwzW85UwGhxiSyR7Pxhu50k+Nl3+o5I49A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission
 
+      // Collect form data
+      const formData = new FormData(this);
+
+      // Send AJAX request
+      fetch("assets/php/contact1.php", {
+        method: "POST",
+        body: formData
+      })
+        .then(response => response.text()) // Adjust if PHP returns JSON (use .json())
+        .then(data => {
+          // Display the confirmation message
+          document.getElementById("confirmation-message").style.display = "block";
+          document.getElementById("confirmation-message").textContent = data || "Your message has been submitted successfully!";
+
+        })
+    });
+
+  </script>
 </body>
 
 </html>

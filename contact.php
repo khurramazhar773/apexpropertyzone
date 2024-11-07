@@ -133,7 +133,7 @@ include "config.php";
                             <h3>Get a Free Quote</h3>
 
                             <div class="default-form contact-form">
-                                <form method="post" action="assets/php/contact.php" id="contact-form">
+                                <form method="post" action="assets/php/contact.php" id="contact-form contactForm">
                                     <div class="row clearfix">
                                         <!--Form Group-->
                                         <div class="form-group col-lg-6 col-md-6 col-sm-6">
@@ -238,7 +238,29 @@ include "config.php";
     <script src="assets/js/element-in-view.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/quote.js"></script>
+    <script>
+        // Handle form submission
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
 
+            // Collect form data
+            const formData = new FormData(this);
+
+            // Send AJAX request
+            fetch("assets/php/contact1.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text()) // Adjust if PHP returns JSON (use .json())
+                .then(data => {
+                    // Display the confirmation message
+                    document.getElementById("confirmation-message").style.display = "block";
+                    document.getElementById("confirmation-message").textContent = data || "Your message has been submitted successfully!";
+
+                })
+        });
+
+    </script>
 </body>
 
 </html>
