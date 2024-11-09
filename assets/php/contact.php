@@ -2,23 +2,18 @@
 
 include '../../config.php';
 
-if (isset($_POST['submit'])){
-    $userName = $_POST['username'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $services = $_POST['services'];
-    $message = $_POST['message'];
-
-    
-    $con_sql = "INSERT INTO `contact` (`name`, `email`, `phone`, `service`, `message`) VALUES ('$userName', '$email', '$phone', '$services', '$message')";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $message = $_POST['message'] ?? '';
+    $message = mysqli_real_escape_string($conn, $message);
+    $con_sql = "INSERT INTO `contact` (`name`, `email`, `phone`, `message`) VALUES ('$username', '$email', '$phone', '$message')";
     $con_result = $conn->query($con_sql);
 
-    if($con_result){
-        header('location: ../../contact.html');
-    }
-
-}else{
-    echo "Form not submit";
+    echo "Thank you, $username! Your message has been received.";
+} else {
+    echo "Invalid request method.";
 }
 
 ?>

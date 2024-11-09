@@ -26,6 +26,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js" defer></script>
 
 </head>
+
 <body>
 
 	<div class="page-wrapper">
@@ -204,8 +205,6 @@
 							<div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
 								<aside class="sidebar">
 									<div class="sidebar-inner">
-
-
 										<div class="sidebar-widget message-widget"></div>
 										<div class="widget-content">
 											<div class="widget-content-buttons">
@@ -219,8 +218,8 @@
 												</a>
 											</div>
 											<div class="message-form">
-												<form method="post" action="assets/php/booking.php">
-
+												<form method="post" action="assets/php/booking.php" id="contactForm"
+													onsubmit="handleFormSubmission(event)">
 													<!-- Form Group -->
 													<div class="form-group">
 														<input type="text" name="name" value="" placeholder="Name*" required>
@@ -254,12 +253,14 @@
 														</button>
 													</div>
 												</form>
+												<div id="successMessage"
+													style="display: none; text-align: center; margin-top: 45%;">
+													<i class="fa fa-check-circle" style="font-size: 2em; color: green;"></i>
+													<p>Thank you! Your booking has been submitted successfully.</p>
+												</div>
 											</div>
 										</div>
 									</div>
-
-
-
 							</div>
 							</aside>
 						</div>
@@ -320,6 +321,34 @@
 		const basePath = "admin/php/";
 		const adjustedImageUrls = imageUrls.map(url => basePath + url);
 	</script>
+	<script>
+		async function handleFormSubmission(event) {
+			event.preventDefault(); // Prevent the form from actually submitting
 
+			// Create a FormData object to collect form data
+			const formData = new FormData(document.getElementById("contactForm"));
+
+			try {
+				// Send the form data to the server using AJAX
+				const response = await fetch('assets/php/booking.php', {
+					method: 'POST',
+					body: formData
+				});
+
+				// Check if the submission was successful
+				if (response.ok) {
+					// Hide the form and show the success message
+					document.getElementById("contactForm").style.display = "none";
+					document.getElementById("successMessage").style.display = "block";
+				} else {
+					alert("There was an error with your submission. Please try again.");
+				}
+			} catch (error) {
+				console.error("Error submitting form:", error);
+				alert("An error occurred while submitting the form. Please try again.");
+			}
+		}
+	</script>
 </body>
+
 </html>

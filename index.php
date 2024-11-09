@@ -833,8 +833,9 @@ include "config.php";
                     <button class="submit-btn" type="submit" name="submit">Send Now</button>
                   </div>
                 </form>
-                <div id="confirmation-message" style="display: none; color: green; text-align: center; margin-top: 10px;">
-                
+                <div id="successMessage" style="display: none; text-align: center; margin-top: 45%;">
+                  <i class="fa fa-check-circle" style="font-size: 2em; color: green;"></i>
+                  <p>Thank you! Your Message has been submitted successfully.</p>
                 </div>
               </div>
             </div>
@@ -971,10 +972,9 @@ include "config.php";
       })
         .then(response => response.text()) // Adjust if PHP returns JSON (use .json())
         .then(data => {
-          // Display the confirmation message
-          document.getElementById("confirmation-message").style.display = "block";
-          document.getElementById("confirmation-message").textContent = data || "Your message has been submitted successfully!";
-
+          // Hide the form
+          this.style.display = "none";
+          document.getElementById("successMessage").style.display = "block";
         })
     });
 

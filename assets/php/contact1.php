@@ -7,10 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
     $message = $_POST['message'] ?? '';
-
+    $message = mysqli_real_escape_string($conn, $message);
     $con_sql = "INSERT INTO `contact` (`name`, `email`, `phone`, `message`) VALUES ('$username', '$email', '$phone', '$message')";
     $con_result = $conn->query($con_sql);
-    
+
     echo "Thank you, $username! Your message has been received.";
 } else {
     echo "Invalid request method.";

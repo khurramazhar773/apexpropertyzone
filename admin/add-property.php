@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- site css -->
@@ -53,237 +53,217 @@
                 <?php include 'admin-top.php'; ?>
                 <!-- end topbar -->
                 <!-- dashboard inner -->
-                <div class="midde_cont">
-                    <div class="container-fluid">
-                        <div class="row column_title">
-                            <div class="col-md-12">
-                                <div class="page_title">
-                                    <h2>Add Property</h2>
-                                </div>
-                            </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="page_title col-12" style="width: 100%;">
+                            <h2>Add Property</h2>
                         </div>
-                        <!-- Contact Three -->
-
-                        <div class="full-form">
-                            <div class="">
-                                <div class="sec-title">
-                                    <div class="sec-title_title">Want to Sell | Rent?</div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <h3>Share Your Details</h3>
-                                <div class="">
-                                    <form method="post" action="php/add-property.php" id="contact-form"
-                                        enctype="multipart/form-data">
-                                        <div class="row clearfix">
-                                            <!-- Title Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="title" placeholder="Title" required
-                                                    class="custom-input">
-                                            </div>
-
-                                            <!-- Lot Area Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="lot_area" placeholder="Lot Area" required
-                                                    class="custom-input">
-                                            </div>
-
-                                            <!-- Constructed Area Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="constructed_area"
-                                                    placeholder="Constructed Area" required class="custom-input">
-                                            </div>
-
-                                            <div class="khass-input">
-                                                <input type="text" name="condition" placeholder="Condition" required
-                                                    class="custom-input">
-                                            </div>
-
-                                            <div class="khass-input">
-                                                <input type="text" name="location" placeholder="Location" required
-                                                    class="custom-input">
-                                            </div>
-
-                                            <!-- Address Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="address" placeholder="Address" required
-                                                    class="custom-input">
-                                            </div>
-
-                                            <!-- Status Dropdown -->
-                                            <div class="drop-g">
-                                                <label for="saleOrRent">Status:</label>
-                                                <select id="saleOrRent" name="status" class="form-control">
-                                                    <option value="">Select Option</option>
-                                                    <option value="sale">For Sale</option>
-                                                    <option value="rent">For Rent</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Property Type Dropdown -->
-                                            <div class="drop-g">
-                                                <label for="propertyType">Property Type:</label>
-                                                <select id="propertyType" name="property_type" class="form-control"
-                                                    onchange="updateSubtypes()">
-                                                    <option value="">Select</option>
-                                                    <option value="residential">Residential</option>
-                                                    <option value="commercial">Commercial</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Subtype Dropdown -->
-                                            <div class="drop-g">
-                                                <label for="propertySubtype">Subtype:</label>
-                                                <select id="propertySubtype" name="Subtype" class="form-control">
-                                                    <!-- Options will be dynamically populated -->
-                                                </select>
-                                            </div>
-
-                                            <!-- Bathrooms Dropdown -->
-                                            <div class="drop-g">
-                                                <label for="bathrooms">Bathrooms:</label>
-                                                <select id="bathrooms" name="baths" class="form-control">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3+</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Rooms Dropdown -->
-                                            <div class="drop-g">
-                                                <label for="rooms">Rooms:</label>
-                                                <select id="rooms" name="rooms" class="form-control">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3+</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Bedrooms Dropdown -->
-                                            <div class="drop-g">
-                                                <label for="bedrooms">Bedrooms:</label>
-                                                <select id="bedrooms" name="bedrooms" class="form-control">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3+</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Utilities Section -->
-                                            <div class="drop-g">
-                                                <label for="electricityMeter">Electricity Meter:</label>
-                                                <select id="electricityMeter" name="electricityMeter"
-                                                    class="form-control">
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="drop-g">
-                                                <label for="gasMeter">Sui Gas Meter:</label>
-                                                <select id="gasMeter" name="gasMeter" class="form-control">
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                            </div>
-                                            <div class="drop-g">
-                                                <label for="gasMeter">Permission</label>
-                                                <select id="gasMeter" name="permission" class="form-control">
-                                                    <option value="pending">pending</option>
-                                                    <option value="approved">approved</option>
-                                                    <option value="rejected">rejected</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Residential Section -->
-                                            <div id="residentialSection" class="section" style="display: none;">
-                                                <h4>Residential Details</h4>
-                                                <div>
-                                                    <label for="residentialArea">Area (sq ft):</label>
-                                                    <input type="number" name="area_sq" id="residentialArea"
-                                                        class="form-control">
-                                                </div>
-                                                <div>
-                                                    <label for="residentialPrice">Price Range:</label>
-                                                    <input type="text" name="price" id="residentialPrice"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <!-- Commercial Section -->
-                                            <div id="commercialSection" class="section" style="display: none;">
-                                                <h4>Commercial Details</h4>
-                                                <div>
-                                                    <label for="commercialArea">Area (sq ft):</label>
-                                                    <input type="number" name="area_sq" id="commercialArea"
-                                                        class="form-control">
-                                                </div>
-                                                <div>
-                                                    <label for="commercialPrice">Price Range:</label>
-                                                    <input type="text" name="price" id="commercialPrice"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <!-- Description Textarea -->
-                                            <div class="diss">
-                                                <label for="description">Description:</label>
-                                                <textarea id="description" name="description" rows="4"
-                                                    class="form-control"
-                                                    placeholder="Enter property description"></textarea>
-                                            </div>
-
-                                            <!-- Main Image Upload -->
-                                            <div class="file-g">
-                                                <div class="main-files">
-                                                    <label>Main Image</label>
-                                                    <input type="file" name="main_img" class="form-control" required>
-                                                </div>
-                                                <div class="popup">
-                                                    <div class="heading">Image Size Should be:</div>
-                                                    <div class="height"><span class="bold">Height</span>: 525px;</div>
-                                                    <div class="width"><span class="bold">Width</span>: 785px;</div>
-                                                    <button class="btn btn-primary">Okay!</button>
-                                                </div>
-                                                <div id="imageContainer" class="image-preview-container"></div>
-                                            </div>
-
-                                            <!-- Multiple Image Upload -->
-                                            <div class="main_con">
-                                                <div class="file-g" id="additionalImagesContainer">
-                                                    <div class="add-files">
-                                                        <label>Additional Image 1</label>
-                                                        <input type="file" name="additional_imgs[]" class="form-control"
-                                                            accept="image/*">
-                                                    </div>
-
-                                                    <div class="popup">
-                                                        <div class="heading">Image Size Should be:</div>
-                                                        <div class="height"><span class="bold">Height</span>: 414px;
-                                                        </div>
-                                                        <div class="width"><span class="bold">Width</span>: 434px;</div>
-                                                        <button class="btn btn-primary">Okay!</button>
-                                                    </div>
-                                                    <div id="imageContainer" class="image-preview-container"></div>
-                                                </div>
-                                                <button id="addImageBtn" type="button" class="btn btn-primary">Add
-                                                    Another Image</button>
-                                            </div>
-                                            <!-- Submit Button -->
-                                            <button name="submit" type="submit"
-                                                class="btn btn-primary sell-form-button-1">Submit</button>
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row" style="text-align: center;">
+                        <div class="col-12">
+                            <h2 style="color: red; line-height: 30px;" class="my-4">Want to Sell | Rent?</h2>
                         </div>
-
                     </div>
                 </div>
-                <!-- Contact Three -->
+                <div class="container" style="width: 90%;">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Share Your Details</h3>
+                        </div>
+                    </div>
+                    <form method="post" action="php/add-property.php" id="contact-form" enctype="multipart/form-data">
+                        <div class="row">
+
+                            <!-- Title Input -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <input type="text" name="title" placeholder="Title" required class="form-control">
+                            </div>
+
+                            <!-- Lot Area Input -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <input type="text" name="lot_area" placeholder="Lot Area" required class="form-control">
+                            </div>
+
+                            <!-- Constructed Area Input -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <input type="text" name="constructed_area" placeholder="Constructed Area" required
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <input type="text" name="condition" placeholder="Condition" required
+                                    class="form-control">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <input type="text" name="location" placeholder="Location" required class="form-control">
+                            </div>
+
+                            <!-- Address Input -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <input type="text" name="address" placeholder="Address" required class="form-control">
+                            </div>
+
+                            <!-- Status Dropdown -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="saleOrRent">Status:</label>
+                                <select id="saleOrRent" name="status" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option value="sale">For Sale</option>
+                                    <option value="rent">For Rent</option>
+                                </select>
+                            </div>
+
+                            <!-- Property Type Dropdown -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="propertyType">Property Type:</label>
+                                <select id="propertyType" name="property_type" class="form-control"
+                                    onchange="updateSubtypes()">
+                                    <option value="">Select</option>
+                                    <option value="residential">Residential</option>
+                                    <option value="commercial">Commercial</option>
+                                </select>
+                            </div>
+
+                            <!-- Subtype Dropdown -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="propertySubtype">Subtype:</label>
+                                <select id="propertySubtype" name="Subtype" class="form-control">
+                                    <!-- Options will be dynamically populated -->
+                                </select>
+                            </div>
+
+                            <!-- Bathrooms Dropdown -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="bathrooms">Bathrooms:</label>
+                                <select id="bathrooms" name="baths" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3+</option>
+                                </select>
+                            </div>
+
+                            <!-- Rooms Dropdown -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="rooms">Rooms:</label>
+                                <select id="rooms" name="rooms" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3+</option>
+                                </select>
+                            </div>
+
+                            <!-- Bedrooms Dropdown -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="bedrooms">Bedrooms:</label>
+                                <select id="bedrooms" name="bedrooms" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3+</option>
+                                </select>
+                            </div>
+
+                            <!-- Utilities Section -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="electricityMeter">Electricity Meter:</label>
+                                <select id="electricityMeter" name="electricityMeter" class="form-control">
+                                    <option value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="gasMeter">Sui Gas Meter:</label>
+                                <select id="gasMeter" name="gasMeter" class="form-control">
+                                    <option value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                            </div>
+                            <div class="drop-g">
+                                <label for="gasMeter">Permission</label>
+                                <select id="gasMeter" name="permission" class="form-control">
+                                    <option value="pending">pending</option>
+                                    <option value="approved">approved</option>
+                                    <option value="rejected">rejected</option>
+                                </select>
+                            </div>
+
+                            <!-- Residential Section -->
+                            <div id="residentialSection" class="section" style="display: none;">
+                                <h4>Residential Details</h4>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                    <label for="residentialArea">Area (sq ft):</label>
+                                    <input type="number" name="area_sq" id="residentialArea" class="form-control">
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                    <label for="residentialPrice">Price Range:</label>
+                                    <input type="text" name="price" id="residentialPrice" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Commercial Section -->
+                            <div id="commercialSection" class="section" style="display: none;">
+                                <h4>Commercial Details</h4>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                    <label for="commercialArea">Area (sq ft):</label>
+                                    <input type="number" name="area_sq" id="commercialArea" class="form-control">
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                    <label for="commercialPrice">Price Range:</label>
+                                    <input type="text" name="price" id="commercialPrice" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Description Textarea -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label for="description">Description:</label>
+                                <textarea id="description" name="description" rows="4" class="form-control"
+                                    placeholder="Enter property description"></textarea>
+                            </div>
+
+                            <!-- Main Image Upload -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <label>Main Image</label>
+                                <input type="file" name="main_img" class="form-control" required>
+                                <div class="popup">
+                                    <div class="heading">Image Size Should be:</div>
+                                    <div class="height"><span class="bold">Height</span>: 525px;</div>
+                                    <div class="width"><span class="bold">Width</span>: 785px;</div>
+                                    <button class="btn btn-primary">Okay!</button>
+                                </div>
+                                <div id="imageContainer" class="image-preview-container"></div>
+                            </div>
+
+                            <!-- Multiple Image Upload -->
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xxl-4 mb-4">
+                                <div class="file-g" id="additionalImagesContainer">
+                                    <label>Additional Image 1</label>
+                                    <input type="file" name="additional_imgs[]" class="form-control" accept="image/*">
+                                    <div class="popup">
+                                        <div class="heading">Image Size Should be:</div>
+                                        <div class="height"><span class="bold">Height</span>: 414px;
+                                        </div>
+                                        <div class="width"><span class="bold">Width</span>: 434px;</div>
+                                        <button class="btn btn-primary">Okay!</button>
+                                    </div>
+                                    <div id="imageContainer" class="image-preview-container"></div>
+                                </div>
+                                <div class="col-12">
+                                    <button id="addImageBtn" type="button" class="btn btn-success">Add
+                                        Another Image</button>
+                                </div>
+
+                            </div>
+                            <!-- Submit Button -->
+                            <div class="col-12">
+                                <button name="submit" type="submit" class="btn btn-primary my-3 px-4">Submit
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- footer -->
         </div>
     </div>
 

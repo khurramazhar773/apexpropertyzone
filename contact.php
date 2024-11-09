@@ -76,7 +76,8 @@ include "config.php";
                     <div class="nav-logo"><a href="index.php"><img src="assets/images/logo.svg" alt="" title=""></a>
                     </div>
                     <div class="menu-outer">
-                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                    </div>
                 </nav>
             </div>
 
@@ -132,7 +133,7 @@ include "config.php";
                             <h3>Get a Free Quote</h3>
 
                             <div class="default-form contact-form">
-                                <form method="post" action="assets/php/contact.php" id="contact-form contactForm">
+                                <form method="post" action="assets/php/contact.php" id="contact-form">
                                     <div class="row clearfix">
                                         <!--Form Group-->
                                         <div class="form-group col-lg-6 col-md-6 col-sm-6">
@@ -169,33 +170,36 @@ include "config.php";
 
                                     </div>
                                 </form>
-                                <div id="success" class="hidden">✔️</div>
+                                <div id="successMessage" style="display: none; text-align: center; margin-top: 35%;">
+                                    <i class="fa fa-check-circle" style="font-size: 2em; color: green;"></i>
+                                    <p>Thank you! Your Message has been submitted successfully.</p>
+                                </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Contact Three -->
+    </div>
+    </section>
+    <!-- Contact Three -->
 
-        <script src="assets/js/contact.js"></script>
+    <script src="assets/js/contact.js"></script>
 
-        <!-- Map One -->
-        <section class="map-one">
-            <div class="auto-container">
-                <div class="map-one_map">
+    <!-- Map One -->
+    <section class="map-one">
+        <div class="auto-container">
+            <div class="map-one_map">
 
-                    <div class="mapouter">
-                        <div class="gmap_canvas"><iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7249.506658903715!2d73.0997932555346!3d31.411199536728642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1727263923818!5m2!1sen!2s"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe><a
-                                href="https://textcaseconvert.com"></a><br><a
-                                href="https://www.tabclocktab.com"></a><br>
-                        </div>
+                <div class="mapouter">
+                    <div class="gmap_canvas"><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7249.506658903715!2d73.0997932555346!3d31.411199536728642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1727263923818!5m2!1sen!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe><a
+                            href="https://textcaseconvert.com"></a><br><a href="https://www.tabclocktab.com"></a><br>
                     </div>
-        </section>
+                </div>
+    </section>
     </div>
 
     <!--  -->
@@ -239,26 +243,24 @@ include "config.php";
     <script src="assets/js/quote.js"></script>
     <script>
         // Handle form submission
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
             e.preventDefault(); // Prevent the default form submission
 
             // Collect form data
             const formData = new FormData(this);
 
             // Send AJAX request
-            fetch("assets/php/contact1.php", {
+            fetch("assets/php/contact.php", {
                 method: "POST",
                 body: formData
             })
                 .then(response => response.text()) // Adjust if PHP returns JSON (use .json())
                 .then(data => {
-                    // Display the confirmation message
-                    document.getElementById("confirmation-message").style.display = "block";
-                    document.getElementById("confirmation-message").textContent = data || "Your message has been submitted successfully!";
-
+                    document.getElementById("successMessage").style.display = "block";
+                    // Hide the form
+                    this.style.display = "none";
                 })
         });
-
     </script>
 </body>
 
