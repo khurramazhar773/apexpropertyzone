@@ -84,14 +84,14 @@ include "config.php";
       <div class="page-title_gradient"></div>
       <div class="auto-container">
         <h2>Policy</h2>
-        <!-- <ul class="bread-crumb clearfix">
+        <ul class="bread-crumb clearfix bread-crumb-ul">
                 <li>
-                  <a href="index.html"
+                  <a href="index.php"
                     ><i class="fa-solid fa-house fa-fw"></i> Home</a
                   >
                 </li>
                 <li>Policy</li>
-              </ul> -->
+              </ul>
       </div>
     </section>
     <!-- End Page Title -->

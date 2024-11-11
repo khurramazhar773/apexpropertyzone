@@ -279,11 +279,6 @@ include "config.php";
 
     <!-- Page Title -->
     <section class="page-title d-none">
-      <div class="page-title_gradient"></div>
-      <div class="auto-container">
-        <h2>Contact us</h2>
-      </div>
-
       <div class="banner-two_socials_contact">
         <a href="#"><img src="assets/images/banner/facebook.png" alt="" /></a>
         <a href="#"><img src="assets/images/banner/instagram.png" alt="" /></a>

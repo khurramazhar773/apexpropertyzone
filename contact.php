@@ -85,15 +85,18 @@ include "config.php";
         <!-- End Main Header -->
 
         <!-- Page Title -->
-        <section class="page-title">
+		<section class="page-title">
 
-            <div class="page-title_gradient"></div>
-            <div class="auto-container">
-                <h2>Contact us</h2>
-            </div>
+			<div class="page-title_gradient"></div>
+			<div class="auto-container">
+				<h2>Contact Us</h2>
+				<ul class="bread-crumb clearfix bread-crumb-ul">
+					<li><a href="index.php"><i class="fa-solid fa-house fa-fw"></i> Home</a></li>
+					<li>Contact Us</li>
+				</ul>
+			</div>
 
-
-        </section>
+		</section>
         <!-- End Page Title -->
 
         <!-- Contact Three -->
