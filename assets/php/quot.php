@@ -8,6 +8,7 @@ if (isset($_POST['submit'])) {
     $city = $_POST['quot_city'];
     $propertyType = $_POST['propertyType'];
     $message = $_POST['quot_message'];
+    $message = mysqli_real_escape_string($conn, $message);
     // Seller Specific Fields
     $title = $_POST['quot_property_title'];
     $adress = $_POST['quot_address'];

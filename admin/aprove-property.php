@@ -68,32 +68,52 @@ $result = $conn->query($sql);
                   </div>
                   <h1>Property Requests</h1>
                   <div class="property-req">
-                     <?php
-                     if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
+                     <div class="row">
+                        <?php
+                        if ($result->num_rows > 0) {
+                           while ($row = $result->fetch_assoc()) {
 
-                           ?>
-                           <div class="p-row">
-                              <span class="name">Name:"<?php echo $row['name'] ?>"</span><span
-                                 class="title">Title:<?php echo $row['title'] ?></span>
-                              <span class="butn">
-                                 <form action="php/approve.php" method="post">
-                                    <input type="hidden" name="property_id" value="<?php echo $row['property_id'] ?>">
-                                    <a href="property-view.php?id=<?php echo $row['property_id'] ?>">view</a>
-                                    <a href="update-form.php?id=<?php echo $row['property_id'] ?>">Edit</a>
-                                    <button type="submit" name="approve">Aprove</button>
-                                 </form>
-                              </span>
-                           </div>
-                           <?php
+                              ?>
+
+                              <!-- column contact -->
+                              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 profile_details margin_bottom_30">
+                                 <div class="contact_blog">
+                                    <div class="contact_inner">
+                                       <div class="left">
+                                          <h3 style="color: red;"><?php echo $row['name'] ?></h3>
+                                          <div>
+                                             <h5 style="text-wrap: nowrap; text-transform: none;">Property title :</h5>
+
+                                             <p><?php echo $row['title'] ?></p>
+                                          </div>
+                                       </div>
+                                       <div class="bottom_list">
+                                          <div class="right_button">
+                                             <a class="btn btn-success"
+                                                href="update-form.php?id=<?php echo $row['property_id'] ?>">Edit</a>
+                                             <a class="btn btn-danger"
+                                                href="property-view.php?id=<?php echo $row['property_id'] ?>">view</a>
+                                             <form method="post" action="php/approve.php" class="d-inline">
+                                                <input type="hidden" name="property_id"
+                                                   value="<?php echo $row['property_id'] ?>">
+                                                <button type="submit" class="btn btn-primary" name="approve">Approve</button>
+                                             </form>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- end column contact blog -->
+                              <?php
+                           }
+                           echo "</table>";
+                        } else {
+                           echo "No pending properties found.";
                         }
-                        echo "</table>";
-                     } else {
-                        echo "No pending properties found.";
-                     }
 
-                     $conn->close();
-                     ?>
+                        $conn->close();
+                        ?>
+                     </div>
                   </div>
                </div>
             </div>

@@ -75,40 +75,32 @@ $p_result = $conn->query($p_sql);
 
                   <section class="property-three">
                      <div class="auto-container">
-                        <div class="row clearfix">
-
-
+                        <div class="row">
                            <?php
 
                            if ($p_result) {
                               while ($rows = $p_result->fetch_assoc()) {
                                  $gallery = json_decode($rows['img'], true);
-
                                  ?>
                                  <!-- Property Block One -->
-                                 <div
-                                    class="property-block_one property-block_one12 update-p-d style-three col-lg-3 col-md-6 col-sm-12">
-                                    <div class="property-block_one-inner wow fadeInUp" data-wow-delay="0ms"
-                                       data-wow-duration="1500ms">
-                                       <div class="property-block_one-image">
-                                          <a href="property-detail.html"></a>
-                                       </div>
-                                       <div class="property-block_one-content">
-                                          <div class="property-block_one-location one-location-1"><i
-                                                class="flaticon-maps-and-flags"></i><?php echo $rows['title']; ?></div>
-                                          <h4 class="property-block_one-heading one-heading-1"><a
-                                                href="property-detail.html"><?php echo $rows['detail']; ?></a></h4>
-
-                                       </div>
-                                       <div class="widget-content-buttons content-buttons1">
-                                          <a href="b-update-form.php?id=<?php echo $rows['id'] ?>"
-                                             class=" p-up property-detail-button" style="text-decoration: none;">
+                                 <div class="col-12 col-md-4 col-lg-4 col-xxl-4 m-0">
+                                    <div style="border: 1px solid gainsboro; padding: 20px;" class="my-3">
+                                       <h4 style="line-height: 30px; color: blue;" class="my-2">
+                                          <?php echo $rows['title']; ?>
+                                       </h4>
+                                       <p
+                                          style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;  text-overflow: ellipsis; font-size: 14px;">
+                                          <?php echo $rows['detail']; ?>
+                                       </p>
+                                       <div>
+                                          <a href="b-update-form.php?id=<?php echo $rows['id'] ?>" class="btn btn-primary"
+                                             style="text-decoration: none;">
 
                                              Update
                                           </a>
                                           <a href="php/delete-blog.php?id=<?php echo $rows['id'] ?>"
                                              onclick="return confirm('Are you sure you want to delete this property?');"
-                                             class=" p-del property-detail-button" style="text-decoration: none;">
+                                             class="btn btn-danger" style="text-decoration: none;">
 
                                              delete
                                           </a>

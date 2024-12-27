@@ -174,7 +174,8 @@
                                                         <label for="bathrooms">Bathrooms:</label>
                                                         <select id="bathrooms" name="baths" class="form-control">
                                                             <option value="<?php echo $property['baths'] ?>">
-                                                                <?php echo $property['baths'] ?></option>
+                                                                <?php echo $property['baths'] ?>
+                                                            </option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3+</option>
@@ -186,7 +187,8 @@
                                                         <label for="rooms">Rooms:</label>
                                                         <select id="rooms" name="rooms" class="form-control">
                                                             <option value="<?php echo $property['rooms'] ?>">
-                                                                <?php echo $property['rooms'] ?></option>
+                                                                <?php echo $property['rooms'] ?>
+                                                            </option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3+</option>
@@ -198,7 +200,8 @@
                                                         <label for="bedrooms">Bedrooms:</label>
                                                         <select id="bedrooms" name="bedrooms" class="form-control">
                                                             <option value="<?php echo $property['bedrooms'] ?>">
-                                                                <?php echo $property['bedrooms'] ?></option>
+                                                                <?php echo $property['bedrooms'] ?>
+                                                            </option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3+</option>
@@ -211,7 +214,8 @@
                                                         <select id="electricityMeter" name="electricityMeter"
                                                             class="form-control">
                                                             <option value="<?php echo $property['elecMeter'] ?>">
-                                                                <?php echo $property['elecMeter'] ?></option>
+                                                                <?php echo $property['elecMeter'] ?>
+                                                            </option>
                                                             <option value="Yes">Yes</option>
                                                             <option value="No">No</option>
                                                         </select>
@@ -221,7 +225,8 @@
                                                         <label for="gasMeter">Sui Gas Meter:</label>
                                                         <select id="gasMeter" name="gasMeter" class="form-control">
                                                             <option value="<?php echo $property['gasMeter'] ?>">
-                                                                <?php echo $property['gasMeter'] ?></option>
+                                                                <?php echo $property['gasMeter'] ?>
+                                                            </option>
                                                             <option value="Yes">Yes</option>
                                                             <option value="No">No</option>
                                                         </select>
@@ -264,7 +269,8 @@
                                                         <label for="gasMeter">Permission</label>
                                                         <select id="gasMeter" name="permission" class="form-control">
                                                             <option value="<?php echo $property['permission'] ?>">
-                                                                <?php echo $property['permission'] ?></option>
+                                                                <?php echo $property['permission'] ?>
+                                                            </option>
                                                             <option value="pending">pending</option>
                                                             <option value="approved">approved</option>
                                                             <option value="rejected">rejected</option>
@@ -320,10 +326,12 @@
                                                         <button id="addImageBtn" type="button" class="btn btn-primary">Add
                                                             Another Image</button>
                                                     </div>
+                                                </div>
 
-                                                    <!-- Submit Button -->
-                                                    <button name="submit" type="submit"
-                                                        class="btn btn-primary sell-form-button-1">Update</button>
+                                                <!-- Submit Button -->
+                                                <div class="">
+                                                    <button name="submit" type="submit" d
+                                                        class="btn btn-primary mt-3 px-3">Update</button>
                                                 </div>
                                             </form>
 

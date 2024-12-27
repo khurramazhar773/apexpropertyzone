@@ -54,69 +54,52 @@
                 <?php include 'admin-top.php'; ?>
                 <!-- end topbar -->
                 <!-- dashboard inner -->
-                <div class="midde_cont">
-                    <div class="container-fluid">
-                        <div class="row column_title">
-                            <div class="col-md-12">
-                                <div class="page_title">
-                                    <h2>Add blog</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Contact Three -->
-
-                        <div class="full-form">
-                            <div class="">
-                                <div class="sec-title">
-                                    <div class="sec-title_title">Give us detail</div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <h3>Make Your Blog</h3>
-                                <div class="">
-                                    <form method="post" action="php/add-blog.php" id="contact-form"
-                                        enctype="multipart/form-data">
-                                        <div class="row clearfix">
-                                            <!-- Title Input -->
-                                            <div class="khass-input">
-                                                <input type="text" name="title" placeholder="Title" required
-                                                    class="custom-input">
-                                            </div>
-                                            <!-- Description Textarea -->
-                                            <div class="diss">
-                                                <label for="description">Description:</label>
-                                                <textarea id="description" name="description" rows="4"
-                                                    class="form-control"
-                                                    placeholder="Enter property description"></textarea>
-                                            </div>
-
-                                            <!-- Main Image Upload -->
-                                            <div class="file-g">
-                                                <div class="main-files">
-                                                    <label>Main Image</label>
-                                                    <input type="file" name="main_img" class="form-control" required>
-                                                </div>
-
-                                                <div id="imageContainer" class="image-preview-container"></div>
-                                            </div>
-
-                                        </div>
-                                        <!-- Submit Button -->
-                                        <button name="submit" type="submit"
-                                            class="btn btn-primary sell-form-button-1">Submit</button>
-                                </div>
-                                </form>
-
+                <div class="container-fluid">
+                    <div class="row column_title">
+                        <div class="col-12">
+                            <div class="page_title">
+                                <h2>Add blog</h2>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="container" style="width: 70%; margin: auto; padding: 0px;">
+                    <div class="row">
+                        <div class="sec-title col-12">
+                            <div class="sec-title_title">
+                                Give us detail
+                            </div>
+                            <h3>Make Your Blog</h3>
+                        </div>
+                    </div>
+                    <form method="post" action="php/add-blog.php" id="contact-form" enctype="multipart/form-data">
+                        <div class="row">
+                            <!-- Title Input -->
+                            <div class="main-files col-12 col-md-7 col-lg-7 col-xxl-9">
+                                <input type="text" name="title" placeholder="Title" class="form-control" required>
+                            </div>
+                            <!-- Description Textarea -->
+                            <div class="col-12 col-md-7 col-lg-7 col-xxl-9">
+                                <label for="description">Description:</label>
+                                <textarea id="description" name="description" rows="4" class="form-control"
+                                    placeholder="Enter property description"></textarea>
+                            </div>
 
+                            <!-- Main Image Upload -->
+                            <div class="col-12 col-md-7 col-lg-7 col-xxl-9">
+                                <div class="main-files">
+                                    <label>Main Image</label>
+                                    <input type="file" name="main_img" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <button name="submit" type="submit" class="btn btn-primary my-3 px-3">
+                            Submit</button>
+                    </form>
                 </div>
             </div>
-            <!-- Contact Three -->
         </div>
-        <!-- footer -->
-
     </div>
 
     <!-- model popup -->

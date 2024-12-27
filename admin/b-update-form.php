@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Apex - Property</title>
+    <title>Apex - Blog</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- site css -->
@@ -55,124 +55,103 @@
                 <?php include 'admin-top.php'; ?>
                 <!-- end topbar -->
                 <!-- dashboard inner -->
-                <div class="midde_cont">
-                    <div class="container-fluid">
-                        <div class="row column_title">
-                            <div class="col-md-12">
-                                <div class="page_title">
-                                    <h2>General Elements</h2>
-                                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_title">
+                                <h2>Update Blog</h2>
                             </div>
                         </div>
-                        <!-- Contact Three -->
-                        <?php
-                        if (isset($_GET['id'])) {
-                            $property_id = intval($_GET['id']);
-
-                            $d_p_sql = "SELECT * FROM blog WHERE id =$property_id";
-                            $d_p_result = $conn->query($d_p_sql);
-
-
-                            if ($d_p_result) {
-                                $property = $d_p_result->fetch_assoc();
-                                $gallery = json_decode($property['img'], true);
-
-                                // Initialize main image and additional images
-                                $main_image = isset($gallery[0]) ? $gallery[0] : '';
-                                $additional_images = (is_array($gallery) && count($gallery) > 1) ? array_slice($gallery, 1) : []; // Ensure it's an array
-                        
-                                // Initialize an array to hold images to be deleted
-                                $images_to_delete = [];
-
-                                ?>
-                                <div class="full-form">
-                                    <div class="">
-                                        <div class="sec-title">
-                                            <div class="sec-title_title">Want to Sell | Rent?</div>
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <h3>Share Your Details</h3>
-                                        <div class="">
-                                            <form method="post" action="php/up-blog.php" id="contact-form"
-                                                enctype="multipart/form-data">
-                                                <div class="row clearfix">
-                                                    <!-- Title Input -->
-                                                    <div class="khass-input">
-                                                        <input type="text" name="title" value="<?php echo $property['title'] ?>"
-                                                            placeholder="Title" required class="custom-input">
-                                                    </div>
-                                                    <input type="hidden" name="property_id" value="<?php echo $property_id; ?>">
-
-                                                    <div class="diss">
-                                                        <label for="description">Description:</label>
-                                                        <textarea id="description" name="description" rows="4"
-                                                            class="form-control"
-                                                            placeholder="Enter property description"><?php echo $property['detail'] ?></textarea>
-                                                    </div>
-
-
-                                                    <div class="file-g">
-                                                        <label>Blog Image :> Must Select Image</label>
-                                                        <?php if ($main_image): ?>
-                                                            <img src="php/<?php echo $main_image; ?>" alt="Main Image"
-                                                                style="max-width: 100%; height: auto;" id="mainImage">
-                                                            <a href="#" class="btn btn-danger" onclick="deleteImage('main')">Delete
-                                                                Main Image</a>
-                                                        <?php else: ?>
-                                                            <p>No main image available.</p>
-                                                        <?php endif; ?>
-                                                        <input type="file" name="main_img" class="form-control">
-
-                                                    </div>
-
-
-
-                                                    <!-- Submit Button -->
-                                                    <button name="submit" type="submit"
-                                                        class="btn btn-primary sell-form-button-1">Update</button>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- js for update form images -->
-                                <script>
-                                    // Function to mark an image for deletion
-                                    function markForDeletion(imagePath, imageId = null) {
-                                        let imagesToDelete = document.getElementById('imagesToDelete').value;
-                                        if (!imagesToDelete.includes(imagePath)) {
-                                            imagesToDelete += (imagesToDelete ? ',' : '') + imagePath;
-                                            document.getElementById('imagesToDelete').value = imagesToDelete;
-                                        }
-                                        // Hide image on UI
-                                        if (imageId) {
-                                            document.getElementById('img-' + imageId).style.display = 'none';
-                                        }
-                                    }
-                                </script>
-
-                                <?php
-                            } else {
-                                echo "No property found.";
-                            }
-                        } else {
-                            echo "no id found";
-                        }
-                        ?>
-
-
-
                     </div>
                 </div>
-                <!-- Contact Three -->
+                <div class="container">
+                    <?php
+                    if (isset($_GET['id'])) {
+                        $property_id = intval($_GET['id']);
+
+                        $d_p_sql = "SELECT * FROM blog WHERE id =$property_id";
+                        $d_p_result = $conn->query($d_p_sql);
+
+                        if ($d_p_result) {
+                            $property = $d_p_result->fetch_assoc();
+                            $gallery = json_decode($property['img'], true);
+
+                            // Initialize main image and additional images
+                            $main_image = isset($gallery[0]) ? $gallery[0] : '';
+                            $additional_images = (is_array($gallery) && count($gallery) > 1) ? array_slice($gallery, 1) : []; // Ensure it's an array
+                    
+                            // Initialize an array to hold images to be deleted
+                            $images_to_delete = [];
+
+                            ?>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="sec-title">
+                                        <div class="sec-title_title">Want to Sell | Rent?</div>
+                                    </div>
+                                    <h3>Share Your Details</h3>
+                                </div>
+                            </div>
+
+                            <form method="post" action="php/up-blog.php" id="contact-form" enctype="multipart/form-data">
+                                <div class="row" style="width: 60%; margin-auto;">
+                                    <!-- Title Input -->
+                                    <div class="col-12">
+                                        <input type="text" name="title" value="<?php echo $property['title'] ?>"
+                                            placeholder="Title" required class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="description">Description:</label>
+                                        <textarea id="description" name="description" rows="4" class="form-control"
+                                            placeholder="Enter property description"><?php echo $property['detail'] ?></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Blog Image : Must Select Image</label>
+                                        <?php if ($main_image): ?>
+                                            <img src="php/<?php echo $main_image; ?>" alt="Main Image"
+                                                style="max-width: 100%; height: auto;" id="mainImage">
+                                        <?php else: ?>
+                                            <p>No main image available.</p>
+                                        <?php endif; ?>
+                                        <input type="file" name="main_img" class="form-control">
+                                    </div>
+                                    <!-- Submit Button -->
+                                    <div class="col-12">
+                                        <button name="submit" type="submit" class="btn btn-primary my-2 px-4 py-2">
+                                            Update
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                            <!-- js for update form images -->
+                            <script>
+                                // Function to mark an image for deletion
+                                function markForDeletion(imagePath, imageId = null) {
+                                    let imagesToDelete = document.getElementById('imagesToDelete').value;
+                                    if (!imagesToDelete.includes(imagePath)) {
+                                        imagesToDelete += (imagesToDelete ? ',' : '') + imagePath;
+                                        document.getElementById('imagesToDelete').value = imagesToDelete;
+                                    }
+                                    // Hide image on UI
+                                    if (imageId) {
+                                        document.getElementById('img-' + imageId).style.display = 'none';
+                                    }
+                                }
+                            </script>
+
+                            <?php
+                        } else {
+                            echo "No property found.";
+                        }
+                    } else {
+                        echo "no id found";
+                    }
+                    ?>
+                </div>
             </div>
         </div>
-        <!-- end dashboard inner -->
-
     </div>
 
     <!-- model popup -->

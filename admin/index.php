@@ -81,8 +81,7 @@ include "../config.php";
                      </div>
                   </div>
                   <div class="col-12" style="margin-top: 20px;">
-                     <h1>"Greetings, <strong style="color: red;"><?php echo $uName ?>!</strong> At
-                        <strong>APEX</strong>,
+                     <h1>"Greetings, <strong style="color: red;"><?php echo $uName ?>!</strong>
                         you’re not just <br> a guest; you’re part of our story, and we’re
                         excited to <br> create wonderful moments together."
                      </h1>

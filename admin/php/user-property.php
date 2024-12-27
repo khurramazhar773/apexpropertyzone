@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     $cond = $_POST['condition'];
     $price = $_POST['price'];
     // $c_price = $_POST['c_price'];
-
+    $description = mysqli_real_escape_string($conn, $description);
     // Set permission to 'pending' for new user submissions
     $permission = 'pending';
 
@@ -67,19 +67,19 @@ if (isset($_POST['submit'])) {
     $user_pro_sql = "INSERT INTO `property` (`name`, `email`, `phone`, `title`, `location`, `address`, `lot_area`, `constructed_area`, `property_type`, `subtype`, `rooms`, `bedrooms`, `elecMeter`, `gasMeter`, `areaSq`, `baths`, `description`, `cond`, `price`, `gallery`, `permission`)
                                      VALUES ('$name', '$email', '$phone', '$title', '$location', ',$address', '$lot_area', '$constructed_area', '$property_type', '$subtype', '$rooms', '$bedrooms', '$electricityMeter', '$gasMeter', '$area_sq', '$baths', '$description', '$cond', '$price', '$gallery_json', 'pending')";
     $user_pro_result = $conn->query($user_pro_sql);
-    
+
 
     // Execute the prepared statement
     if ($user_pro_result) {
         // Uncomment the next line if you want to redirect after successful insertion
-        header('Location: ../../sell.php');
-        echo "Property added successfully. It is pending admin approval.";
+        echo "<script>alert('Property added successfully. It is pending on admin approval.')</script>";
+        echo "<script> window.location.href = '../../Sell.php';</script>";
     } else {
-        echo "Error inserting property: " . $user_pro_result->error;
+        die("Error inserting into property");
     }
 
     // Close the statement and the connection
-    
+
     ;
     $conn->close();
 }

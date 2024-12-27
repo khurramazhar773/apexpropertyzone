@@ -83,7 +83,7 @@ include "../config.php"
                                         $bg_img = $row['service_bg'];
 
                                         ?>
-                                        <div class='service-block_one col-lg-6 col-md-6 col-sm-12'>
+                                        <div class='service-block_one col-sm-12 col-md-4 col-lg-4 col-xxl-3'>
                                             <div class='service-block_one-inner' style="">
                                                 <div class='service-block_one_image'
                                                     style='background-image:url(images/<?php echo $bg_img ?>)'>

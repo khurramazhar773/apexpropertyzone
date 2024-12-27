@@ -25,7 +25,7 @@ $dis_con_result = $conn->query($dis_con_sql);
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
+   <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <!-- site css -->
@@ -106,6 +106,9 @@ $dis_con_result = $conn->query($dis_con_sql);
                                                       <a href="profile.php?contact_id=<?php echo $row["id"] ?>"
                                                          class="btn btn-primary btn-xs"><i class="fa fa-user"></i> View
                                                          Profile</a>
+                                                      <a href="php/del_contact.php?delete_id=<?php echo $row["id"] ?>"
+                                                         class="btn btn-danger btn-xs"><i class="far fa-trash-alt"
+                                                            style="margin-right: 3px;"></i>Delete</a>
                                                    </div>
                                                 </div>
                                              </div>

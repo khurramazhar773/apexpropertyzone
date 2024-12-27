@@ -25,7 +25,7 @@ $dis_con_result = $conn->query($dis_con_sql);
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
+   <link rel="shortcut icon" href="../assets/images/Layer 2.png" type="image/x-icon">
    <!-- bootstrap css -->
    <link rel="stylesheet" href="css/bootstrap.min.css" />
    <!-- site css -->
@@ -105,6 +105,10 @@ $dis_con_result = $conn->query($dis_con_sql);
                                                       <a class="btn btn-primary btn-xs"
                                                          href="booking_profile.php?booking_id=<?php echo $row["booking_id"] ?>">
                                                          <i class="fa fa-user"> </i> View Profile
+                                                      </a>
+                                                      <a class="btn btn-danger btn-xs"
+                                                         href="php/del_booking.php?delete_id=<?php echo $row["booking_id"] ?>">
+                                                         <i class="far fa-trash-alt" style="margin-right: 3px;"></i> Delete
                                                       </a>
                                                    </div>
                                                 </div>
